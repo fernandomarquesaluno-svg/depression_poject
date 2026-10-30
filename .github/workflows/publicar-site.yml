@@ -1,0 +1,56 @@
+name: Publicar tabela no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'styles.css'
+      - '.nojekyll'
+      - 'tabelas/visualizacao-15-estudos/**'
+      - '.github/workflows/publicar-site.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Obter arquivos do repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar HTML e CSS
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s index.html
+          test -s styles.css
+          test -s tabelas/visualizacao-15-estudos/index.html
+          test -s tabelas/visualizacao-15-estudos/styles.css
+          mkdir -p public/tabelas/visualizacao-15-estudos
+          cp index.html styles.css public/
+          cp tabelas/visualizacao-15-estudos/index.html tabelas/visualizacao-15-estudos/styles.css public/tabelas/visualizacao-15-estudos/
+          touch public/.nojekyll
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Enviar arquivos para publicacao
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
