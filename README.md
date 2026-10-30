@@ -2,7 +2,7 @@
 
 Revisão bibliográfica dirigida de técnicas de **Inteligência Artificial e Processamento de Linguagem Natural (PLN)** para análise de indicadores linguísticos em textos escritos e transcritos.
 
-**Recorte:** 2013–2026 · **Atualização:** 30/10/2026 · **16 publicações/recursos distintos** · **Não é revisão sistemática.**
+**Recorte:** 2013–2026 · **Atualização:** 30/10/2026 · **28 trabalhos bibliográficos distintos (27 publicações e 1 recurso de benchmark)** · **Não é revisão sistemática.**
 
 ## Documentação
 
@@ -12,7 +12,11 @@ Revisão bibliográfica dirigida de técnicas de **Inteligência Artificial e Pr
 
 ## O que foi verificado
 
-As 16 entradas do catálogo foram reconciliadas por fonte e identificador; não há duplicação de paper por variação de ano de preprint ou de publicação. Métricas com respaldo identificável foram mantidas. Valores de modelo não suficientemente conferidos são indicados como **N/D**, em vez de números presumidos. O mesmo corpus pode sustentar **mais de um experimento**, mas não equivale a dados independentes.
+As 28 entradas do catálogo foram reconciliadas por fonte e identificador; não há duplicação de paper por variação de ano de preprint ou de publicação. Métricas com respaldo identificável foram mantidas. Valores de modelo não suficientemente conferidos são indicados como **N/D**, em vez de números presumidos. O mesmo corpus pode sustentar **mais de um experimento**, mas não equivale a dados independentes.
+
+## Ampliação de literatura em 30/10/2026
+
+O catálogo passou de **16 para 28 entradas únicas**, com **12 novos estudos** (2017–2026) sobre multitarefa, redes neurais, transferência entre condições, validade externa, sintomas interpretáveis, análise clínica vinculada a prontuários e privacidade diferencial. A tabela é **a fonte canônica única**; não foram acrescentadas listas duplicadas dos mesmos trabalhos. Uma referência e um dataset não são conceitos equivalentes: trabalhos distintos podem usar o mesmo corpus. Verifique rótulos, unidade de análise e métricas antes de comparações.
 
 ## Uso responsável
 
