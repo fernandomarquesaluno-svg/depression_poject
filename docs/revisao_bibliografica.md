@@ -2,7 +2,7 @@
 
 **Recorte:** 2013–2026 · **Atualização:** 30/10/2026 · **Escopo:** PLN aplicado à análise de textos em português e inglês. Não é revisão sistemática nem segue PRISMA.
 
-> **Base bibliográfica única:** consulte a [tabela comparativa com 16 referências distintas, métricas e links originais](../tabelas/tabela_comparativa_tecnica.md). Os estudos não são repetidos aqui em fichas ou outra tabela.
+> **Base bibliográfica única:** consulte a [tabela comparativa com 28 referências distintas, métricas e links originais](../tabelas/tabela_comparativa_tecnica.md). Os estudos não são repetidos aqui em fichas ou outra tabela.
 
 ## 1. As seis dimensões da literatura
 
@@ -41,7 +41,19 @@ Sinais linguísticos como pronomes, sono, fadiga, tristeza e preocupação podem
 ### 2.5 Ética, licenças e proteção dos dados
 Conteúdo público pode ser sensível e não deve ser redistribuído sem revisão de licença e termos de plataforma. Evitar publicar mensagens, identificadores pessoais, transcrições clínicas e registros de jovens. Avaliar LGPD, consentimento e eventual necessidade de apreciação por CEP/IRB. Em caso de APIs terceirizadas, considerar fluxo de dados, retenção e minimização.
 
-## 3. Escopo da revisão
+## 3. Novos achados da ampliação para 28 referências
+
+A expansão de 30/10/2026 acrescentou **12 trabalhos distintos**, conferidos em páginas oficiais da ACL Anthology, PubMed/PNAS, PLOS, Springer e Frontiers, sem reapresentar como publicações diferentes versões de um mesmo artigo. Ela fortalece cinco eixos:
+
+- **Validade clínica e ground truth:** Eichstaedt et al. (2018) e Merchant et al. (2019) vinculam linguagem social a registros médicos, enquanto Chung et al. (2025) usam PHQ-9 para triagem, não entrevista diagnóstica.
+- **Transferência e generalização:** Benton et al. (2017) utilizam aprendizado multitarefa; Harrigian et al. (2020) demonstram perda de desempenho entre plataformas; Pirina e Çöltekin (2018) evidenciam impacto da seleção de dados.
+- **Arquiteturas neurais:** Husseini Orabi et al. (2018) estudam redes profundas; Poświata e Perełkiewicz (2022) apresentam o DepRoBERTa com macro-F1 de 0,583 no benchmark DepSign; Alqahtani et al. (2026) avaliam StressRoBERTa entre condições e corpora.
+- **Indicadores interpretáveis:** Yates et al. (2017) distinguem posts de risco e classificação do usuário; Pérez et al. (2025) oferecem DepreSym com 21.580 sentenças anotadas para sintomas BDI-II.
+- **Privacidade e reprodutibilidade:** Karpontinis e Soufleri (2025) investigam DP-AdamW com encoder congelado; resultados são específicos de estresse textual, não diagnóstico.
+
+**Alerta metodológico:** DepreSym reaproveita a iniciativa eRisk; DP-CARE e StressRoBERTa avaliam também Dreaddit; Merchant e Eichstaedt usam dados relacionados à mesma linha de pesquisa. Esses trabalhos **não representam 28 conjuntos de dados independentes**. Algumas métricas permanecem N/D deliberadamente. No DP-CARE, a descrição do recall não é uniforme entre resumo e tabela: preserva-se apenas o F1 inequivocamente atribuído à classe de estresse.
+
+## 4. Escopo da revisão
 
 Esta é uma **síntese narrativa dirigida** de referências representativas, sem alegar exaustividade, metanálise ou busca PRISMA. O [catálogo bibliográfico técnico](../tabelas/tabela_comparativa_tecnica.md) reúne **uma única linha e link para cada publicação**. Os valores que não puderam ser sustentados integralmente nas fontes acessíveis foram removidos ou substituídos por **N/D**. O [registro de auditoria](../tabelas/registro_de_verificacao.md) explica as decisões, sem reproduzir outra vez os estudos.
 
