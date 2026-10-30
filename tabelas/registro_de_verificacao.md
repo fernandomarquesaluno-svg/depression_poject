@@ -54,3 +54,12 @@ O [catálogo comparativo](tabela_comparativa_tecnica.md) contém os links de ori
 - Foram documentadas diferenças de métrica, a divergência de recall no DP-CARE e a interpretação não clínica de rótulos sociais.
 - A formatação das referências é simplificada e poderá ser alinhada ao regulamento institucional quando houver norma específica.
 - Esta auditoria não certifica reprodução de experimentos nem acesso a todos os dados brutos.
+
+
+## Verificação de entrega acadêmica — 30/10/2026
+
+- Materiais sincronizados localmente em quatro artefatos de entrega: revisão Word A4 (10 páginas PDF correspondente), planilha XLSX de 28 entradas e PDF comparativo A3 de 28 entradas.
+- Conferência editorial do conteúdo e de parte das fontes primárias: DOI, autoria e paginação de fontes representativas, métricas atribuídas a modelos e distinção entre rótulos textuais e clínicos.
+- A conferência de fontes não significa leitura integral ou reprodução de todos os 28 estudos; onde necessário, preservou-se N/D e as ressalvas metodológicas.
+- Revisão e tabelas mantêm o foco em textos em português e inglês; Chung et al. (2025), em coreano, permanece explicitamente como exceção metodológica.
+- Verificados 28 identificadores bibliográficos distintos. O conjunto contém 27 publicações e um recurso oficial de benchmark.
