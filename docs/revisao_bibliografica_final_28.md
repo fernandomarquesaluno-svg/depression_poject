@@ -6,7 +6,7 @@
 
 ## Resumo
 
-Esta revisão analisa IA e processamento de linguagem natural para identificação de indicadores textuais associados a depressão, ansiedade e estresse. As 28 fontes foram avaliadas pela origem e unidade do texto, pela qualidade dos rótulos, pelos modelos computacionais e pelos protocolos experimentais. Os trabalhos abrangem recursos lexicais, SVM, redes neurais, transformers especializados, LLMs e ensembles. A síntese identifica desafios de validade de construto, generalização entre plataformas, detecção precoce, privacidade e ausência de dados clinicamente anotados em português brasileiro. As métricas de estudos distintos não foram agregadas; nenhum resultado de classificação textual foi interpretado como diagnóstico clínico.
+Esta revisão bibliográfica narrativa dirigida analisa o emprego de inteligência artificial (IA) e processamento de linguagem natural (PLN) para identificar indicadores textuais de depressão, ansiedade e estresse, contemplando pesquisas baseadas em textos em português e em inglês. O levantamento abrange 28 fontes bibliográficas distintas, de 2013 a 2026: 27 publicações e um recurso oficial de benchmark. Os estudos são comparados quanto à origem e ao idioma dos textos, unidade de análise, estratégia de rotulagem, arquitetura computacional, métricas e ameaças à validade. A síntese examina métodos lexicais, redes neurais, transformers, LLMs e ensembles, destacando desafios comuns aos dois contextos linguísticos, como validade dos rótulos, generalização entre plataformas e línguas, disponibilidade de dados e reprodutibilidade. Trabalhos em outros idiomas são considerados quando contribuem para a avaliação metodológica. Os resultados não são agregados em metanálise, e a identificação de sinais textuais não equivale a diagnóstico clínico.
 
 **Palavras-chave:** inteligência artificial; PLN; saúde mental; depressão; ansiedade; estresse.
 
@@ -14,7 +14,7 @@ Esta revisão analisa IA e processamento de linguagem natural para identificaç�
 
 Redes sociais, fóruns e mensagens de aplicativos tornaram possível investigar características da linguagem relacionadas a estados psicológicos. Entretanto, a origem do texto, a finalidade original da publicação e a forma de rotulagem mudam o significado do que está sendo predito. Classificar uma postagem em uma categoria temática, predizer um autorrelato e identificar o diagnóstico atribuído por avaliação psiquiátrica são tarefas relacionadas, mas conceitualmente distintas.
 
-A questão orientadora é: **como as abordagens de IA e PLN investigam indicadores linguísticos de depressão, ansiedade e estresse, e quais condições limitam a confiabilidade dos seus resultados?** O objetivo é comparar métodos e identificar lacunas relevantes especialmente para dados em português brasileiro.
+A questão orientadora é: **como as abordagens de IA e PLN investigam indicadores linguísticos de depressão, ansiedade e estresse, e quais condições limitam a confiabilidade dos seus resultados?** O objetivo é comparar métodos, resultados e limitações de estudos com textos em português e em inglês, incluindo questões de comparabilidade e generalização entre idiomas e plataformas.
 
 ## 2. Metodologia do levantamento
 
@@ -64,13 +64,13 @@ Pérez et al. (2025) apresentaram DepreSym, com 21.580 sentenças e 21 sintomas 
 
 ## 5. Lacunas e oportunidades
 
-Persistem lacunas em corpora clínicos de português brasileiro que permitam estudar depressão, ansiedade e estresse como dimensões diferentes; em avaliação entre redes sociais e faixas etárias; em anotação de sintomas com consenso de especialistas; e em protocolos reprodutíveis que incluam split por participante, baselines, calibração, intervalos de confiança e análises externas.
+Persistem desafios nos dois contextos linguísticos: estudos em inglês dispõem de maior diversidade de benchmarks, mas enfrentam limitações na qualidade dos rótulos e na transferência entre plataformas; em português, corpora com referência clínica independente para depressão, ansiedade e estresse permanecem restritos. Também há lacunas em avaliação entre faixas etárias, anotação de sintomas com consenso de especialistas e protocolos reprodutíveis com divisão por participante, baselines, calibração, intervalos de confiança e análises externas.
 
-Uma avaliação técnica futura pode comparar TF-IDF e regressão logística, LIWC-PT, BERTimbau e modelos multilíngues sob o mesmo desenho experimental. Quando os rótulos forem apenas sociais ou textuais, a conclusão deve se restringir à detecção de **indicadores linguísticos**, e não a diagnósticos.
+Uma avaliação técnica futura pode comparar TF-IDF e regressão logística, modelos especializados em português e inglês (como BERTimbau e modelos de domínio em inglês) e modelos multilíngues sob protocolos comparáveis e análise separada por idioma. Quando os rótulos forem apenas sociais ou textuais, a conclusão deve se restringir à detecção de **indicadores linguísticos**, e não a diagnósticos.
 
 ## 6. Conclusão
 
-Os 28 trabalhos ilustram a progressão de recursos lexicais a transformers, LLMs e ensembles, mas deixam claro que o desempenho isolado não mede validade clínica. A confiabilidade depende do que o rótulo representa, do grupo sobre o qual o modelo decide, da transferência a outros contextos e dos controles de privacidade e engenharia de software. A principal contribuição desta revisão dirigida é organizar essas distinções com atenção especial ao português brasileiro.
+Os 28 trabalhos ilustram a progressão de recursos lexicais a transformers, LLMs e ensembles, mas deixam claro que o desempenho isolado não mede validade clínica. A confiabilidade depende do que o rótulo representa, do grupo sobre o qual o modelo decide, da transferência a outros contextos e dos controles de privacidade e engenharia de software. A principal contribuição desta revisão dirigida é organizar essas distinções e apoiar avaliações reproduzíveis de textos em português e em inglês, inclusive quanto à transferência entre contextos linguísticos.
 
 ## Quadro comparativo
 
