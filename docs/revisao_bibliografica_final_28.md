@@ -145,3 +145,8 @@ YATES, Andrew; COHAN, Arman; GOHARIAN, Nazli. **Depression and Self-Harm Risk As
 - **Limitações:** nem todos os artigos permitiram consulta integral irrestrita; N/D não significa desempenho zero. A conferência não reproduz experimentos, inspeciona todos os corpora privados nem certifica licenças.
 - **Formatação:** normalização autor-data/ABNT simplificada com acesso em 30/10/2026; ajustar, se necessário, às exigências específicas do programa.
 - **Uso responsável:** o material não reproduz textos pessoais, transcrições clínicas nem identificadores de participantes.
+
+
+## Atualização posterior das métricas bibliográficas
+
+A [tabela canônica](../tabelas/tabela_comparativa_tecnica.md) foi atualizada após a geração do documento: 14 registros de métricas passaram por auditoria adicional, 12 receberam resultados numéricos associados a tarefas/modelos e 2 passaram a explicar a inexistência de escore único. Consulte o [registro da auditoria](../tabelas/registro_de_verificacao.md). Exportações DOCX/PDF/XLSX anteriores podem não refletir essa atualização.
