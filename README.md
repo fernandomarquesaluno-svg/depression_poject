@@ -4,6 +4,10 @@ Revisão bibliográfica dirigida de técnicas de **Inteligência Artificial e Pr
 
 **Recorte:** 2013–2026 · **Atualização:** 30/10/2026 · **28 trabalhos bibliográficos distintos (27 publicações e 1 recurso de benchmark)** · **Não é revisão sistemática.**
 
+## Documento acadêmico final
+
+- [**Revisão bibliográfica final — 28 fontes, análise crítica, metodologia e referências (autor-data/ABNT)**](docs/revisao_bibliografica_final_28.md). Versão em Markdown pronta para consulta e auditoria. Arquivos DOCX/PDF correspondentes foram gerados separadamente para entrega acadêmica.
+
 ## Documentação
 
 - [Revisão bibliográfica e análise crítica](docs/revisao_bibliografica.md): seis dimensões da literatura, problemas metodológicos e lacunas no português brasileiro.
