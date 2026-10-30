@@ -76,47 +76,47 @@ Os 28 trabalhos ilustram a progressão de recursos lexicais a transformers, LLMs
 
 Para evitar duplicação de linhas e facilitar atualização, os **28 trabalhos** estão na [tabela comparativa técnica canônica](../tabelas/tabela_comparativa_tecnica.md). Cada fonte apresenta corpus, modelos, métricas disponíveis e limitações.
 
-## Referências bibliográficas (padrão autor-data/ABNT simplificado)
+## Referências bibliográficas (padrão autor-data, formatação acadêmica)
 
 ALQAHTANI, Amal Abdullah; KAYI, Efsun; DIAB, Mona T.. **StressRoBERTa: Cross-Condition Transfer Learning from Depression, Anxiety, and PTSD to Stress Detection**. Proceedings of HeaLing 2026, p. 305-313, 2026. Disponível em: https://doi.org/10.18653/v1/2026.healing-1.27. Acesso em: 30 out. 2026.
 
-ALSAAD, R.; ALSHAKHS, S.; THOMAS, R.. **Depression subtype classification from social media posts: few-shot prompting vs. fine-tuning of large language models**. Frontiers in Digital Health, v. 8, 1790533, 2026. Disponível em: https://doi.org/10.3389/fdgth.2026.1790533. Acesso em: 30 out. 2026.
+ALSAAD, R.; ALSHAKHS, S.; THOMAS, R. **Depression subtype classification from social media posts: few-shot prompting vs. fine-tuning of large language models**. Frontiers in Digital Health, v. 8, 1790533, 2026. Disponível em: https://doi.org/10.3389/fdgth.2026.1790533. Acesso em: 30 out. 2026.
 
 BENTON, Adrian; MITCHELL, Margaret; HOVY, Dirk. **Multitask Learning for Mental Health Conditions with Limited Social Media Data**. Proceedings of EACL 2017, p. 152-162, 2017. Disponível em: https://aclanthology.org/E17-1015/. Acesso em: 30 out. 2026.
 
-CHUNG, Moo-Kwon et al.. **BERT and BERTopic for screening clinical depression on open-ended text messages collected through a mobile application from older adults**. BMC Public Health, v. 25, 2161, 2025. Disponível em: https://doi.org/10.1186/s12889-025-23337-4. Acesso em: 30 out. 2026.
+CHUNG, Moo-Kwon et al. **BERT and BERTopic for screening clinical depression on open-ended text messages collected through a mobile application from older adults**. BMC Public Health, v. 25, 2161, 2025. Disponível em: https://doi.org/10.1186/s12889-025-23337-4. Acesso em: 30 out. 2026.
 
-COHAN, Arman et al.. **SMHD: a Large-Scale Resource for Exploring Online Language Usage for Multiple Mental Health Conditions**. Proceedings of COLING 2018, p. 1485-1497, 2018. Disponível em: https://aclanthology.org/C18-1126/. Acesso em: 30 out. 2026.
+COHAN, Arman et al. **SMHD: a Large-Scale Resource for Exploring Online Language Usage for Multiple Mental Health Conditions**. Proceedings of COLING 2018, p. 1485-1497, 2018. Disponível em: https://aclanthology.org/C18-1126/. Acesso em: 30 out. 2026.
 
-COPPERSMITH, Glen et al.. **CLPsych 2015 Shared Task: Depression and PTSD on Twitter**. Proceedings of CLPsych 2015, p. 31-39, 2015. Disponível em: https://doi.org/10.3115/v1/W15-1204. Acesso em: 30 out. 2026.
+COPPERSMITH, Glen et al. **CLPsych 2015 Shared Task: Depression and PTSD on Twitter**. Proceedings of CLPsych 2015, p. 31-39, 2015. Disponível em: https://doi.org/10.3115/v1/W15-1204. Acesso em: 30 out. 2026.
 
-DE CHOUDHURY, Munmun et al.. **Predicting Depression via Social Media**. Proceedings of the International AAAI Conference on Web and Social Media, v. 7, n. 1, p. 128-137, 2013. Disponível em: https://doi.org/10.1609/icwsm.v7i1.14432. Acesso em: 30 out. 2026.
+DE CHOUDHURY, Munmun et al. **Predicting Depression via Social Media**. Proceedings of the International AAAI Conference on Web and Social Media, v. 7, n. 1, p. 128-137, 2013. Disponível em: https://doi.org/10.1609/icwsm.v7i1.14432. Acesso em: 30 out. 2026.
 
 DOS SANTOS, Wesley Ramos; DE OLIVEIRA, Rafael Lage; PARABONI, Ivandré. **SetembroBR: a social media corpus for depression and anxiety disorder prediction**. Language Resources and Evaluation, v. 58, p. 273-300, 2024. Disponível em: https://doi.org/10.1007/s10579-022-09633-0. Acesso em: 30 out. 2026.
 
-EICHSTAEDT, Johannes C. et al.. **Facebook language predicts depression in medical records**. Proceedings of the National Academy of Sciences, v. 115, n. 44, p. 11203-11208, 2018. Disponível em: https://doi.org/10.1073/pnas.1802331115. Acesso em: 30 out. 2026.
+EICHSTAEDT, Johannes C. et al. **Facebook language predicts depression in medical records**. Proceedings of the National Academy of Sciences, v. 115, n. 44, p. 11203-11208, 2018. Disponível em: https://doi.org/10.1073/pnas.1802331115. Acesso em: 30 out. 2026.
 
 ERISK. **eRisk 2017: Pilot task on Early Detection of Depression**. Página oficial do desafio CLEF eRisk, recurso eletrônico, 2017. Disponível em: https://erisk.irlab.org/2017/task.html. Acesso em: 30 out. 2026.
 
 HARRIGIAN, Keith; AGUIRRE, Carlos; DREDZE, Mark. **Do Models of Mental Health Based on Social Media Data Generalize?**. Findings of EMNLP 2020, p. 3774-3788, 2020. Disponível em: https://doi.org/10.18653/v1/2020.findings-emnlp.337. Acesso em: 30 out. 2026.
 
-HUSSEINI ORABI, Ahmed et al.. **Deep Learning for Depression Detection of Twitter Users**. Proceedings of CLPsych 2018, p. 88-97, 2018. Disponível em: https://doi.org/10.18653/v1/W18-0609. Acesso em: 30 out. 2026.
+HUSSEINI ORABI, Ahmed et al. **Deep Learning for Depression Detection of Twitter Users**. Proceedings of CLPsych 2018, p. 88-97, 2018. Disponível em: https://doi.org/10.18653/v1/W18-0609. Acesso em: 30 out. 2026.
 
-JI, Shaoxiong et al.. **MentalBERT: Publicly Available Pretrained Language Models for Mental Healthcare**. Proceedings of LREC 2022, p. 7184-7190, 2022. Disponível em: https://aclanthology.org/2022.lrec-1.778/. Acesso em: 30 out. 2026.
+JI, Shaoxiong et al. **MentalBERT: Publicly Available Pretrained Language Models for Mental Healthcare**. Proceedings of LREC 2022, p. 7184-7190, 2022. Disponível em: https://aclanthology.org/2022.lrec-1.778/. Acesso em: 30 out. 2026.
 
-KABIR, Mohsinul et al.. **DEPTWEET: A typology for social media texts to detect depression severities**. Computers in Human Behavior, v. 139, 107503, 2023. Disponível em: https://doi.org/10.1016/j.chb.2022.107503. Acesso em: 30 out. 2026.
+KABIR, Mohsinul et al. **DEPTWEET: A typology for social media texts to detect depression severities**. Computers in Human Behavior, v. 139, 107503, 2023. Disponível em: https://doi.org/10.1016/j.chb.2022.107503. Acesso em: 30 out. 2026.
 
-KALLSTENIUS, Thomas et al.. **Ensemble of Domain-Specific Natural Language Processing and Large Language Models for Detecting Suicidal Ideation and Mental Health Conditions in Social Media Text: Development and Evaluation Study**. JMIR Mental Health, v. 13, e98925, 2026. Disponível em: https://doi.org/10.2196/98925. Acesso em: 30 out. 2026.
+KALLSTENIUS, Thomas et al. **Ensemble of Domain-Specific Natural Language Processing and Large Language Models for Detecting Suicidal Ideation and Mental Health Conditions in Social Media Text: Development and Evaluation Study**. JMIR Mental Health, v. 13, e98925, 2026. Disponível em: https://doi.org/10.2196/98925. Acesso em: 30 out. 2026.
 
 KARPONTINIS, Dimitris; SOUFLERI, Efstathia. **DP-CARE: a differentially private classifier for mental health analysis in social media posts**. Frontiers in Digital Health, v. 7, 1709671, 2025. Disponível em: https://doi.org/10.3389/fdgth.2025.1709671. Acesso em: 30 out. 2026.
 
 MENDES, Augusto R.; CASELI, Helena. **Identifying Fine-grained Depression Signs in Social Media Posts**. Proceedings of LREC-COLING 2024, p. 8594-8604, 2024. Disponível em: https://aclanthology.org/2024.lrec-main.754/. Acesso em: 30 out. 2026.
 
-MERCHANT, Raina M. et al.. **Evaluating the predictability of medical conditions from social media posts**. PLOS ONE, v. 14, n. 6, e0215476, 2019. Disponível em: https://doi.org/10.1371/journal.pone.0215476. Acesso em: 30 out. 2026.
+MERCHANT, Raina M. et al. **Evaluating the predictability of medical conditions from social media posts**. PLOS ONE, v. 14, n. 6, e0215476, 2019. Disponível em: https://doi.org/10.1371/journal.pone.0215476. Acesso em: 30 out. 2026.
 
 NAGAMATU, Bruno; PARABONI, Ivandré. **Detecção precoce de transtornos de saúde mental em português**. Linguamática, v. 16, n. 2, p. 3-19, 2024. Disponível em: https://doi.org/10.21814/lm.16.2.440. Acesso em: 30 out. 2026.
 
-PÉREZ, Anxo et al.. **DepreSym: A Depression Symptom Annotated Corpus and the Role of Large Language Models as Assessors of Psychological Markers**. Language Resources and Evaluation, v. 59, p. 2737-2762, 2025. Disponível em: https://doi.org/10.1007/s10579-025-09831-6. Acesso em: 30 out. 2026.
+PÉREZ, Anxo et al. **DepreSym: A Depression Symptom Annotated Corpus and the Role of Large Language Models as Assessors of Psychological Markers**. Language Resources and Evaluation, v. 59, p. 2737-2762, 2025. Disponível em: https://doi.org/10.1007/s10579-025-09831-6. Acesso em: 30 out. 2026.
 
 PIRINA, Inna; ÇÖLTEKIN, Çağrı. **Identifying Depression on Reddit: The Effect of Training Data**. Proceedings of SMM4H 2018, p. 9-12, 2018. Disponível em: https://doi.org/10.18653/v1/W18-5903. Acesso em: 30 out. 2026.
 
@@ -124,16 +124,18 @@ POŚWIATA, Rafał; PEREŁKIEWICZ, Michał. **OPI@LT-EDI-ACL2022: Detecting Signs
 
 TURCAN, Elsbeth; MCKEOWN, Kathy. **Dreaddit: A Reddit Dataset for Stress Analysis in Social Media**. Proceedings of LOUHI 2019, p. 97-107, 2019. Disponível em: https://aclanthology.org/D19-6213/. Acesso em: 30 out. 2026.
 
-VIDUANI, Anna et al.. **First-person pronouns as linguistic markers of depression among Brazilian youths**. Brazilian Journal of Psychiatry, v. 47, e20244058, 2025. Disponível em: https://doi.org/10.47626/1516-4446-2024-4058. Acesso em: 30 out. 2026.
+VIDUANI, Anna et al. **First-person pronouns as linguistic markers of depression among Brazilian youths**. Brazilian Journal of Psychiatry, v. 47, e20244058, 2025. Disponível em: https://doi.org/10.47626/1516-4446-2024-4058. Acesso em: 30 out. 2026.
 
-VIDUANI, Anna et al.. **Exploring GPT-based models for depression detection in adolescents using naturalistic speech: A proof-of-concept study**. Journal of Affective Disorders, v. 410, 121956, 2026a. Disponível em: https://doi.org/10.1016/j.jad.2026.121956. Acesso em: 30 out. 2026.
+VIDUANI, Anna et al. **Exploring GPT-based models for depression detection in adolescents using naturalistic speech: A proof-of-concept study**. Journal of Affective Disorders, v. 410, 121956, 2026a. Disponível em: https://doi.org/10.1016/j.jad.2026.121956. Acesso em: 30 out. 2026.
 
-VIDUANI, Anna et al.. **From linguistic analyses to large language models: A scoping review of methods used to investigate language features in depression research**. Psychiatry Research, v. 360, 117064, 2026b. Disponível em: https://doi.org/10.1016/j.psychres.2026.117064. Acesso em: 30 out. 2026.
+VIDUANI, Anna et al. **From linguistic analyses to large language models: A scoping review of methods used to investigate language features in depression research**. Psychiatry Research, v. 360, 117064, 2026b. Disponível em: https://doi.org/10.1016/j.psychres.2026.117064. Acesso em: 30 out. 2026.
 
-YANG, Kailai et al.. **MentaLLaMA: Interpretable Mental Health Analysis on Social Media with Large Language Models**. Proceedings of The Web Conference 2024, p. 4489-4500, 2024. Disponível em: https://doi.org/10.1145/3589334.3648137. Acesso em: 30 out. 2026.
+YANG, Kailai et al. **MentaLLaMA: Interpretable Mental Health Analysis on Social Media with Large Language Models**. Proceedings of The Web Conference 2024, p. 4489-4500, 2024. Disponível em: https://doi.org/10.1145/3589334.3648137. Acesso em: 30 out. 2026.
 
 YATES, Andrew; COHAN, Arman; GOHARIAN, Nazli. **Depression and Self-Harm Risk Assessment in Online Forums**. Proceedings of EMNLP 2017, p. 2968-2978, 2017. Disponível em: https://doi.org/10.18653/v1/D17-1322. Acesso em: 30 out. 2026.
 
+
+**Nota editorial da entrega de 30/10/2026:** foram gerados e revisados os arquivos acadêmicos em DOCX (A4, Times New Roman 12, margens 3/2 cm), PDF de 10 páginas, planilha XLSX e PDF comparativo de 28 referências. Esta versão Markdown mantém o mesmo escopo e o catálogo bibliográfico canônico. A normalização segue o estilo autor-data e deverá respeitar eventual manual específico da instituição. A conferência bibliográfica foi documental e pontual, não reproduz os 28 experimentos nem certifica as licenças de dados.
 
 ## Registro de verificações e ressalvas
 
