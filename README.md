@@ -8,6 +8,8 @@ Revisão bibliográfica dirigida de técnicas de **Inteligência Artificial e Pr
 
 - [**Revisão bibliográfica final — 28 fontes, análise crítica, metodologia e referências (autor-data/ABNT)**](docs/revisao_bibliografica_final_28.md). Versão em Markdown pronta para consulta e auditoria. Arquivos DOCX/PDF correspondentes foram gerados separadamente para entrega acadêmica.
 
+**Entregas finais formatadas:** o documento acadêmico em DOCX/PDF e as tabelas em XLSX/PDF foram produzidos e verificados na entrega de 30/10/2026. O Markdown permanece como versão navegável no repositório, e as fontes estão na tabela canônica.
+
 ## Documentação
 
 - [Revisão bibliográfica e análise crítica](docs/revisao_bibliografica.md): seis dimensões da literatura, problemas metodológicos e lacunas no português brasileiro.
