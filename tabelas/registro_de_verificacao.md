@@ -63,3 +63,11 @@ O [catálogo comparativo](tabela_comparativa_tecnica.md) contém os links de ori
 - A conferência de fontes não significa leitura integral ou reprodução de todos os 28 estudos; onde necessário, preservou-se N/D e as ressalvas metodológicas.
 - Revisão e tabelas mantêm o foco em textos em português e inglês; Chung et al. (2025), em coreano, permanece explicitamente como exceção metodológica.
 - Verificados 28 identificadores bibliográficos distintos. O conjunto contém 27 publicações e um recurso oficial de benchmark.
+
+## Auditoria complementar de métricas — 30/10/2026
+
+Na tabela comparativa foram revistos **14 registros com métricas anteriormente indicadas como N/D**. Em **12**, foram inseridos números identificados por modelo, tarefa e fonte; em **2**, foi documentado que não existe um escore único representativo (CLPsych e artigo de corpus SetembroBR). O catálogo continua com 28 referências únicas e sem linhas repetidas.
+
+Os resultados atualizados incluem: [Benton 2017](https://aclanthology.org/E17-1015/) (AUC por condição), [Yates 2017](https://aclanthology.org/D17-1322/) (F1 por tarefa), [Cohan 2018](https://aclanthology.org/C18-1126/) (precisão do extrator, não do classificador), [Orabi 2018](https://aclanthology.org/W18-0609/) (F1 e AUC), [Pirina e Çöltekin 2018](https://aclanthology.org/W18-5903/) (F1 com distinção entre treino e teste), [Dreaddit 2019](https://aclanthology.org/D19-6213/) (F1 por modelo), [Merchant 2019](https://doi.org/10.1371/journal.pone.0215476) (AUC por condição), [Harrigian 2020](https://aclanthology.org/2020.findings-emnlp.337/) (variação de F1), [DEPTWEET 2023](https://www.sciencedirect.com/science/article/pii/S0747563222003235) (AUC por classe de DistilBERT), [MentaLLaMA 2024](https://arxiv.org/abs/2309.13567) (F1 em Dreaddit), [Nagamatu e Paraboni 2024](https://doi.org/10.21814/lm.16.2.440) (F1-latency), e [DepreSym 2025](https://doi.org/10.1007/s10579-025-09831-6) (métricas de recuperação).
+
+**Ressalva:** alguns campos de volumetria continuam descritos como não consolidados, e alguns estudos não têm escore global único. Dados não confirmados não foram estimados. Esta auditoria documental não reproduz código ou experimentos.
