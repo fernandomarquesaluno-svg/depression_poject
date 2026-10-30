@@ -14,7 +14,7 @@ Revisão bibliográfica dirigida de técnicas de **Inteligência Artificial e Pr
 
 - [Revisão bibliográfica e análise crítica](docs/revisao_bibliografica.md): seis dimensões da literatura, problemas metodológicos e lacunas no português brasileiro.
 - [Tabela comparativa técnica — fonte bibliográfica única](tabelas/tabela_comparativa_tecnica.md): **uma linha por publicação**, com link à fonte, dataset, rótulos, modelos, resultados e limitações.
-- [Visualização HTML/CSS da tabela de 15 estudos](tabelas/visualizacao-15-estudos/index.html): versão responsiva do PDF enviado, com fichas completas (12 campos por trabalho) e síntese crítica. **É um recorte de 15 estudos e não substitui o catálogo canônico de 28 fontes.**
+- [Visualização HTML/CSS da tabela atualizada — 28 fontes](tabelas/visualizacao-15-estudos/index.html): versão responsiva da tabela bibliográfica canônica, com 8 dimensões por fonte, fichas expansíveis e notas de integridade. Mantém o mesmo layout da página anterior.
 - [Registro de verificação](tabelas/registro_de_verificacao.md): procedimento de auditoria, correções e limites da verificação.
 
 ## O que foi verificado
