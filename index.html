@@ -3,22 +3,740 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=./tabelas/visualizacao-15-estudos/">
-  <meta name="robots" content="noindex, follow">
-  <title>Tabela comparativa de IA e saúde mental</title>
-  <style>
-    body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f5f7fa;color:#152941;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
-    main{max-width:620px;padding:40px 28px;text-align:center}
-    a{display:inline-block;background:#075c78;color:white;text-decoration:none;border-radius:10px;padding:12px 22px;font-weight:700}
-    a:focus-visible{outline:3px solid #152941;outline-offset:3px}
-  </style>
+  <meta name="description" content="Tabela comparativa de 28 fontes bibliográficas sobre indicadores textuais de saúde mental com técnicas de inteligência artificial e PLN.">
+  <meta name="theme-color" content="#14263f">
+  <title>Tabela comparativa — Indicadores textuais de saúde mental</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<main>
-  <h1>Tabela comparativa de trabalhos relacionados</h1>
-  <p>Revisão bibliográfica sobre IA e PLN aplicados a indicadores textuais de saúde mental, com 28 fontes.</p>
-  <p>Você será redirecionado para a tabela.</p>
-  <p><a href="./tabelas/visualizacao-15-estudos/">Abrir tabela comparativa</a></p>
+<a class="skip-link" href="#estudos">Pular para a tabela</a>
+<header class="hero">
+  <div class="container">
+    <p class="eyebrow">Revisão de literatura · IA &amp; PLN</p>
+    <h1>Tabela comparativa de trabalhos relacionados</h1>
+    <p class="lead">Indicadores textuais de depressão, ansiedade, estresse e condições associadas.</p>
+    <div class="hero-stats" aria-label="Resumo do levantamento">
+      <div><strong>28</strong><span>fontes bibliográficas distintas</span></div>
+      <div><strong>8</strong><span>dimensões de comparação</span></div>
+      <div><strong>2013–2026</strong><span>período do levantamento</span></div>
+    </div>
+  </div>
+</header>
+<main class="container">
+  <div class="intro" role="note">
+    <h2>Sobre este levantamento</h2>
+    <p>Revisão narrativa dirigida de 28 fontes bibliográficas distintas: 27 publicações e um recurso oficial de benchmark (2013–2026). O material reúne análises de IA e processamento de linguagem natural aplicadas a indicadores textuais de saúde mental, com estudos de diferentes idiomas e contextos.</p>
+    <p><strong>Nota de rigor:</strong> usuários, publicações e amostras são unidades distintas; autorrelatos, rótulos comunitários, instrumentos psicométricos e diagnósticos clínicos não são equivalentes. Valores não confirmados não foram preenchidos por estimativa.</p>
+    <p class="context-note">Atualizado em 30/10/2026, conforme <a href="https://github.com/fernandomarquesaluno-svg/depression_poject/blob/main/tabelas/tabela_comparativa_tecnica.md" target="_blank" rel="noopener noreferrer">tabela bibliográfica canônica do repositório</a>. Uma referência não representa necessariamente um dataset independente.</p>
+  </div>
+  <nav class="section-nav" aria-label="Navegação da página">
+    <a href="#estudos">Tabela resumida</a>
+    <a href="#fichas">Análise completa</a>
+    <a href="#sintese">Síntese crítica</a>
+  </nav>
+  <section class="section" id="estudos" aria-labelledby="table-heading">
+    <div class="section-heading"><div><p class="section-kicker">Visão geral</p><h2 id="table-heading">Comparação das 28 fontes</h2></div><p>Referência, condição, tipo de texto e resultados para leitura rápida. Os oito campos completos aparecem nas fichas abaixo.</p></div>
+    <div class="table-container" tabindex="0" role="region" aria-label="Tabela comparativa com 28 fontes, rolável em telas menores">
+      <table class="comparison-table">
+        <caption>Comparação resumida de estudos científicos de IA e PLN aplicados a indicadores de saúde mental.</caption>
+        <thead><tr>
+          <th scope="col">#</th><th scope="col">Referência</th><th scope="col">Condição</th><th scope="col">Texto / idioma</th><th scope="col">Resultados relatados</th><th scope="col">Ficha</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="number">01</th>
+            <td class="reference"><strong><a href="https://ojs.aaai.org/index.php/ICWSM/article/view/14432" target="_blank" rel="noopener noreferrer">De Choudhury et al. (2013)</a></strong></td>
+            <td>Depressão</td>
+            <td>Twitter; inglês</td>
+            <td>Acurácia <strong>≈70%</strong>; precisão <strong>0,74</strong> para classe positiva (modelo reportado no artigo)</td>
+            <td><a class="detail-link" href="#estudo-1">Ver detalhes<span class="visually-hidden"> do estudo 1</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">02</th>
+            <td class="reference"><strong><a href="https://aclanthology.org/W15-1204/" target="_blank" rel="noopener noreferrer">Coppersmith et al. (2015) — CLPsych</a></strong></td>
+            <td>Depressão; PTSD</td>
+            <td>Twitter; inglês</td>
+            <td><strong>Average Precision (AP)</strong> por tarefa e sistema participante; o artigo não define um escore único para as três tarefas (Figura 1).</td>
+            <td><a class="detail-link" href="#estudo-2">Ver detalhes<span class="visually-hidden"> do estudo 2</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">03</th>
+            <td class="reference"><strong><a href="https://erisk.irlab.org/2017/task.html" target="_blank" rel="noopener noreferrer">eRisk — desafio CLEF (2017)</a></strong></td>
+            <td>Depressão; detecção precoce</td>
+            <td>Históricos sequenciais do Reddit; inglês</td>
+            <td>Execução <strong>FHDO-BCSGA</strong>: F1 <strong>0,64</strong>; ERDE50 <strong>9,69%</strong></td>
+            <td><a class="detail-link" href="#estudo-3">Ver detalhes<span class="visually-hidden"> do estudo 3</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">04</th>
+            <td class="reference"><strong><a href="https://aclanthology.org/E17-1015/" target="_blank" rel="noopener noreferrer">Benton, Mitchell &amp; Hovy (2017) — Multitask Learning</a></strong></td>
+            <td>Condições de saúde mental; tarefas múltiplas</td>
+            <td>Textos de redes sociais; inglês</td>
+            <td>Aprendizado multitarefa, <strong>AUC</strong>: ansiedade <strong>0,813</strong>; depressão <strong>0,769</strong>; tentativa de suicídio <strong>0,835</strong> (Tabela 2).</td>
+            <td><a class="detail-link" href="#estudo-4">Ver detalhes<span class="visually-hidden"> do estudo 4</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">05</th>
+            <td class="reference"><strong><a href="https://aclanthology.org/D17-1322/" target="_blank" rel="noopener noreferrer">Yates, Cohan &amp; Goharian (2017) — Depression and Self-Harm Risk</a></strong></td>
+            <td>Depressão e risco de autolesão</td>
+            <td>Fóruns de apoio e fóruns gerais; inglês</td>
+            <td><strong>F1 = 0,51</strong> para identificação de depressão por usuário (Tabela 2); <strong>F1 = 0,50</strong> para postagens de risco *non-green* (Tabela 3).</td>
+            <td><a class="detail-link" href="#estudo-5">Ver detalhes<span class="visually-hidden"> do estudo 5</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">06</th>
+            <td class="reference"><strong><a href="https://aclanthology.org/C18-1126/" target="_blank" rel="noopener noreferrer">Cohan et al. (2018) — SMHD</a></strong></td>
+            <td>Multicondição (nove condições)</td>
+            <td>Reddit; inglês</td>
+            <td><strong>Precisão macro 95,8%</strong> do *extrator de autodeclarações* (amostra avaliada); <strong>não é F1 dos classificadores</strong> de transtornos.</td>
+            <td><a class="detail-link" href="#estudo-6">Ver detalhes<span class="visually-hidden"> do estudo 6</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">07</th>
+            <td class="reference"><strong><a href="https://aclanthology.org/W18-0609/" target="_blank" rel="noopener noreferrer">Husseini Orabi et al. (2018) — Deep Learning for Depression Detection</a></strong></td>
+            <td>Depressão</td>
+            <td>Twitter; inglês</td>
+            <td>CNNWithMax, <strong>validação cruzada CLPsych</strong>: <strong>F1 86,97%</strong>, <strong>AUC 0,951</strong> (Tabela 2).</td>
+            <td><a class="detail-link" href="#estudo-7">Ver detalhes<span class="visually-hidden"> do estudo 7</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">08</th>
+            <td class="reference"><strong><a href="https://aclanthology.org/W18-5903/" target="_blank" rel="noopener noreferrer">Pirina &amp; Çöltekin (2018) — Effect of Training Data</a></strong></td>
+            <td>Depressão</td>
+            <td>Reddit e corpora sociais de comparação; inglês</td>
+            <td>SVM no cenário <strong>DS–BC</strong>: <strong>F1 98,62%</strong> na validação cruzada, mas <strong>56,88%</strong> no teste; cenário <strong>DO–ND</strong>: F1 teste <strong>67,49%</strong> (Tabela 1).</td>
+            <td><a class="detail-link" href="#estudo-8">Ver detalhes<span class="visually-hidden"> do estudo 8</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">09</th>
+            <td class="reference"><strong><a href="https://doi.org/10.1073/pnas.1802331115" target="_blank" rel="noopener noreferrer">Eichstaedt et al. (2018) — Facebook Language Predicts Depression</a></strong></td>
+            <td>Depressão documentada em prontuário</td>
+            <td>Postagens de Facebook, inglês</td>
+            <td><strong>AUC-ROC 0,69</strong> no histórico; <strong>0,72</strong> em janela de 6 meses para subgrupo com dados suficientes</td>
+            <td><a class="detail-link" href="#estudo-9">Ver detalhes<span class="visually-hidden"> do estudo 9</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">10</th>
+            <td class="reference"><strong><a href="https://aclanthology.org/D19-6213/" target="_blank" rel="noopener noreferrer">Turcan &amp; McKeown (2019) — Dreaddit</a></strong></td>
+            <td>Estresse</td>
+            <td>Reddit; inglês</td>
+            <td><strong>F1 no teste</strong>: BERT-base <strong>0,8065</strong>; regressão logística com Word2Vec do domínio + atributos <strong>0,7980</strong> (Tabela 6).</td>
+            <td><a class="detail-link" href="#estudo-10">Ver detalhes<span class="visually-hidden"> do estudo 10</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">11</th>
+            <td class="reference"><strong><a href="https://doi.org/10.1371/journal.pone.0215476" target="_blank" rel="noopener noreferrer">Merchant et al. (2019) — Predictability of Medical Conditions</a></strong></td>
+            <td>Ansiedade, depressão e outras condições médicas</td>
+            <td>Status de Facebook; inglês</td>
+            <td><strong>AUC-ROC</strong>: ansiedade <strong>0,66</strong>; depressão <strong>0,64</strong> (modelos com linguagem; avaliação por condição); a linguagem melhorou <strong>18 de 21</strong> desfechos vs. dados demográficos.</td>
+            <td><a class="detail-link" href="#estudo-11">Ver detalhes<span class="visually-hidden"> do estudo 11</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">12</th>
+            <td class="reference"><strong><a href="https://aclanthology.org/2020.findings-emnlp.337/" target="_blank" rel="noopener noreferrer">Harrigian, Aguirre &amp; Dredze (2020) — Generalization</a></strong></td>
+            <td>Depressão; validade externa de modelos de saúde mental</td>
+            <td>Textos de múltiplas plataformas sociais; inglês</td>
+            <td>Na análise de artefatos temporais, a separação desajustada elevou artificialmente o <strong>F1 em 3–22%</strong>, dependendo do corpus (§5.2.1); <strong>não há F1 único</strong> para transferência entre plataformas.</td>
+            <td><a class="detail-link" href="#estudo-12">Ver detalhes<span class="visually-hidden"> do estudo 12</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">13</th>
+            <td class="reference"><strong><a href="https://aclanthology.org/2022.lrec-1.778/" target="_blank" rel="noopener noreferrer">Ji et al. (2022) — MentalBERT</a></strong></td>
+            <td>Multicondição; estresse e depressão</td>
+            <td>Posts e fóruns; inglês</td>
+            <td>Em <strong>Dreaddit</strong>: MentalRoBERTa F1 <strong>81,76%</strong>, MentalBERT F1 <strong>80,04%</strong> (Tabela 3)</td>
+            <td><a class="detail-link" href="#estudo-13">Ver detalhes<span class="visually-hidden"> do estudo 13</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">14</th>
+            <td class="reference"><strong><a href="https://aclanthology.org/2022.ltedi-1.40/" target="_blank" rel="noopener noreferrer">Poświata &amp; Perełkiewicz (2022) — DepRoBERTa</a></strong></td>
+            <td>Sinais textuais de depressão; três níveis</td>
+            <td>Postagens sociais; inglês</td>
+            <td><strong>Macro-F1 0,583</strong> para o ensemble vencedor da tarefa</td>
+            <td><a class="detail-link" href="#estudo-14">Ver detalhes<span class="visually-hidden"> do estudo 14</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">15</th>
+            <td class="reference"><strong><a href="https://www.sciencedirect.com/science/article/pii/S0747563222003235" target="_blank" rel="noopener noreferrer">Kabir et al. (2023) — DEPTWEET</a></strong></td>
+            <td>Depressão; gravidade expressa no texto</td>
+            <td>Twitter/X; inglês</td>
+            <td>DistilBERT, <strong>AUC-ROC por classe</strong>: não deprimido <strong>0,789</strong>; leve <strong>0,747</strong>; moderado <strong>0,788</strong>; grave <strong>0,866</strong> (Tabela 5 do manuscrito).</td>
+            <td><a class="detail-link" href="#estudo-15">Ver detalhes<span class="visually-hidden"> do estudo 15</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">16</th>
+            <td class="reference"><strong><a href="https://arxiv.org/abs/2309.13567" target="_blank" rel="noopener noreferrer">Yang et al. (2024) — MentaLLaMA; preprint 2023</a></strong></td>
+            <td>Multicondição; avaliação interpretável</td>
+            <td>Redes sociais; inglês</td>
+            <td>MentaLLaMA-chat-13B: <strong>F1 ponderado 75,79%</strong> em <strong>Dreaddit</strong> (Tabela 2); comparar com MentalRoBERTa <strong>81,76%</strong> no mesmo benchmark.</td>
+            <td><a class="detail-link" href="#estudo-16">Ver detalhes<span class="visually-hidden"> do estudo 16</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">17</th>
+            <td class="reference"><strong><a href="https://link.springer.com/article/10.1007/s10579-022-09633-0" target="_blank" rel="noopener noreferrer">dos Santos, de Oliveira &amp; Paraboni (2024) — SetembroBR; online 2023</a></strong></td>
+            <td>Depressão; ansiedade</td>
+            <td>Twitter/X; português brasileiro</td>
+            <td><strong>Artigo de apresentação do corpus</strong>: oferece baselines para tarefas específicas; não existe um resultado agregado único do dataset. As métricas dos modelos não são utilizadas sem identificação de tarefa e configuração.</td>
+            <td><a class="detail-link" href="#estudo-17">Ver detalhes<span class="visually-hidden"> do estudo 17</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">18</th>
+            <td class="reference"><strong><a href="https://www.linguamatica.com/index.php/linguamatica/pt/article/view/440" target="_blank" rel="noopener noreferrer">Nagamatu &amp; Paraboni (2024)</a></strong></td>
+            <td>Depressão; ansiedade; detecção precoce</td>
+            <td>Twitter/X; português brasileiro</td>
+            <td>GPT_relev: <strong>F1-latency 0,24</strong> (depressão) e <strong>0,23</strong> (ansiedade); <strong>F1-macro 0,56/0,55</strong>; antecipação de <strong>436/479 dias</strong> (Tabela 5).</td>
+            <td><a class="detail-link" href="#estudo-18">Ver detalhes<span class="visually-hidden"> do estudo 18</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">19</th>
+            <td class="reference"><strong><a href="https://aclanthology.org/2024.lrec-main.754/" target="_blank" rel="noopener noreferrer">Mendes &amp; Caseli (2024)</a></strong></td>
+            <td>Sinais de depressão (inclui preocupação/ansiedade)</td>
+            <td>Facebook de universitários; português brasileiro</td>
+            <td><strong>Average Precision</strong>: sono <strong>0,900</strong> (regressão logística); preocupação/ansiedade <strong>0,794</strong> (MentalBERT); tristeza <strong>0,745</strong> (BERTimbau); Tabela 5</td>
+            <td><a class="detail-link" href="#estudo-19">Ver detalhes<span class="visually-hidden"> do estudo 19</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">20</th>
+            <td class="reference"><strong><a href="https://doi.org/10.47626/1516-4446-2024-4058" target="_blank" rel="noopener noreferrer">Viduani et al. (2025) — pronomes/LIWC</a></strong></td>
+            <td>Depressão</td>
+            <td>Áudio transcrito; português brasileiro</td>
+            <td>Pronomes de 1ª pessoa singular: <strong>9,15% vs. 8,02%</strong>, <strong>p=0,026</strong>; rho autorrelato <strong>0,366</strong></td>
+            <td><a class="detail-link" href="#estudo-20">Ver detalhes<span class="visually-hidden"> do estudo 20</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">21</th>
+            <td class="reference"><strong><a href="https://doi.org/10.1007/s10579-025-09831-6" target="_blank" rel="noopener noreferrer">Pérez et al. (2025) — DepreSym</a></strong></td>
+            <td>Sinais específicos de depressão e interpretabilidade</td>
+            <td>Sentenças de conteúdos digitais do desafio eRisk; inglês</td>
+            <td>Recuperação de sintomas com <strong>ANCE</strong>: <strong>NDCG@10 = 0,746</strong> e <strong>AP@1000 = 0,340</strong> nas consultas baseadas em respostas do BDI-II (Tabela 6). Métricas de busca, não de diagnóstico.</td>
+            <td><a class="detail-link" href="#estudo-21">Ver detalhes<span class="visually-hidden"> do estudo 21</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">22</th>
+            <td class="reference"><strong><a href="https://doi.org/10.3389/fdgth.2025.1709671" target="_blank" rel="noopener noreferrer">Karpontinis &amp; Soufleri (2025) — DP-CARE</a></strong></td>
+            <td>Estresse textual e privacidade em IA</td>
+            <td>Reddit / Dreaddit; inglês</td>
+            <td><strong>F1 classe estresse 0,7808</strong>, ε≈3; baseline sem DP F1 0,8058</td>
+            <td><a class="detail-link" href="#estudo-22">Ver detalhes<span class="visually-hidden"> do estudo 22</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">23</th>
+            <td class="reference"><strong><a href="https://doi.org/10.1186/s12889-025-23337-4" target="_blank" rel="noopener noreferrer">Chung et al. (2025) — BERT and BERTopic</a></strong></td>
+            <td>Risco de depressão e relatos de situações estressoras</td>
+            <td>Mensagens abertas em aplicativo; coreano</td>
+            <td>KcBERT <strong>F1 global reportado 0,87</strong>; <strong>F1 da classe de risco 0,83</strong></td>
+            <td><a class="detail-link" href="#estudo-23">Ver detalhes<span class="visually-hidden"> do estudo 23</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">24</th>
+            <td class="reference"><strong><a href="https://pubmed.ncbi.nlm.nih.gov/42134742/" target="_blank" rel="noopener noreferrer">Viduani et al. (2026) — estudo experimental GPT-4o</a></strong></td>
+            <td>Depressão</td>
+            <td>Fala cotidiana transcrita; português brasileiro</td>
+            <td>Acurácia <strong>86,6%</strong> (IC95% 70,3–95,6%); sensibilidade <strong>100%</strong>; especificidade <strong>73,3%</strong></td>
+            <td><a class="detail-link" href="#estudo-24">Ver detalhes<span class="visually-hidden"> do estudo 24</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">25</th>
+            <td class="reference"><strong><a href="https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1790533/full" target="_blank" rel="noopener noreferrer">AlSaad, Alshakhs &amp; Thomas (2026)</a></strong></td>
+            <td>Subtipos de depressão; seis classes textuais</td>
+            <td>Twitter/X; inglês</td>
+            <td><strong>RoBERTa-large</strong>: macro-F1 <strong>0,957</strong>, acurácia <strong>0,954</strong> no teste (Tabela 2)</td>
+            <td><a class="detail-link" href="#estudo-25">Ver detalhes<span class="visually-hidden"> do estudo 25</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">26</th>
+            <td class="reference"><strong><a href="https://mental.jmir.org/2026/1/e98925/" target="_blank" rel="noopener noreferrer">Kallstenius et al. (2026)</a></strong></td>
+            <td>Multicondição; depressão, ansiedade, estresse e outras</td>
+            <td>Reddit e Twitter/X; inglês</td>
+            <td>Acurácia teste: <strong>0,939</strong> (soft), <strong>0,938</strong> (híbrido), <strong>0,919</strong> (SVM), <strong>0,886</strong> (GPT ajustado)</td>
+            <td><a class="detail-link" href="#estudo-26">Ver detalhes<span class="visually-hidden"> do estudo 26</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">27</th>
+            <td class="reference"><strong><a href="https://pubmed.ncbi.nlm.nih.gov/41825397/" target="_blank" rel="noopener noreferrer">Viduani et al. (2026) — revisão de escopo</a></strong></td>
+            <td>Depressão; métodos de análise linguística</td>
+            <td>Literatura internacional; idiomas diversos</td>
+            <td><strong>20,5%</strong> com instrumento diagnóstico padrão-ouro; <strong>64,2%</strong> das amostras em inglês</td>
+            <td><a class="detail-link" href="#estudo-27">Ver detalhes<span class="visually-hidden"> do estudo 27</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="number">28</th>
+            <td class="reference"><strong><a href="https://aclanthology.org/2026.healing-1.27/" target="_blank" rel="noopener noreferrer">Alqahtani, Kayi &amp; Diab (2026) — StressRoBERTa</a></strong></td>
+            <td>Estresse crônico autorreportado; transferência de depressão/ansiedade/PTSD</td>
+            <td>Tweets e posts de redes sociais; inglês</td>
+            <td><strong>F1 0,82</strong> no SMM4H 2022 e <strong>0,81</strong> no Dreaddit</td>
+            <td><a class="detail-link" href="#estudo-28">Ver detalhes<span class="visually-hidden"> do estudo 28</span> <span aria-hidden="true">↗</span></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-help">Em telas menores, deslize a tabela horizontalmente ou consulte as fichas de cada estudo.</p>
+  </section>
+  <section class="section" id="fichas" aria-labelledby="details-heading">
+    <div class="section-heading"><div><p class="section-kicker">Conteúdo integral</p><h2 id="details-heading">Fichas técnicas das 28 fontes</h2></div><p>Todos os 8 campos da tabela atualizada, com links para as fontes bibliográficas e ressalvas metodológicas.</p></div>
+    <div class="study-list">
+      <details class="study-card" id="estudo-1">
+        <summary><span class="study-index">01</span><span class="study-summary"><strong><a href="https://ojs.aaai.org/index.php/ICWSM/article/view/14432" target="_blank" rel="noopener noreferrer">De Choudhury et al. (2013)</a></strong><small>Depressão · Twitter; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://ojs.aaai.org/index.php/ICWSM/article/view/14432" target="_blank" rel="noopener noreferrer">De Choudhury et al. (2013)</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Twitter; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>476 usuários (171 CES-D positivos, 305 negativos); 2.157.992 tweets</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>CES-D e histórico autorreferido; sem entrevista diagnóstica independente</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>SVM; LIWC; atributos temporais, sociais e lexicais</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>Acurácia <strong>≈70%</strong>; precisão <strong>0,74</strong> para classe positiva (modelo reportado no artigo)</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Coorte de conveniência; predição em nível de usuário</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-2">
+        <summary><span class="study-index">02</span><span class="study-summary"><strong><a href="https://aclanthology.org/W15-1204/" target="_blank" rel="noopener noreferrer">Coppersmith et al. (2015) — CLPsych</a></strong><small>Depressão; PTSD · Twitter; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://aclanthology.org/W15-1204/" target="_blank" rel="noopener noreferrer">Coppersmith et al. (2015) — CLPsych</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão; PTSD</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Twitter; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>Conjunto da shared task: <strong>1.711 usuários</strong> (treino + teste; página oficial atualizada em 2026).</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Diagnóstico autodeclarado; controles pareados</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Diversos sistemas submetidos a três tarefas binárias</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>Average Precision (AP)</strong> por tarefa e sistema participante; o artigo não define um escore único para as três tarefas (Figura 1).</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Corpus retirado da distribuição em junho de 2026; benchmark histórico</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-3">
+        <summary><span class="study-index">03</span><span class="study-summary"><strong><a href="https://erisk.irlab.org/2017/task.html" target="_blank" rel="noopener noreferrer">eRisk — desafio CLEF (2017)</a></strong><small>Depressão; detecção precoce · Históricos sequenciais do Reddit; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://erisk.irlab.org/2017/task.html" target="_blank" rel="noopener noreferrer">eRisk — desafio CLEF (2017)</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão; detecção precoce</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Históricos sequenciais do Reddit; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>Desafio com 30 submissões de oito instituições; usuários: <strong>não consolidado nesta revisão</strong> na página de resultados</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Rótulos de risco do desafio; não equivalem a entrevista clínica</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Sistemas concorrentes com decisões em etapas temporais</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>Execução <strong>FHDO-BCSGA</strong>: F1 <strong>0,64</strong>; ERDE50 <strong>9,69%</strong></dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Métrica penaliza atraso; não há um único modelo representativo</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-4">
+        <summary><span class="study-index">04</span><span class="study-summary"><strong><a href="https://aclanthology.org/E17-1015/" target="_blank" rel="noopener noreferrer">Benton, Mitchell &amp; Hovy (2017) — Multitask Learning</a></strong><small>Condições de saúde mental; tarefas múltiplas · Textos de redes sociais; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://aclanthology.org/E17-1015/" target="_blank" rel="noopener noreferrer">Benton, Mitchell &amp; Hovy (2017) — Multitask Learning</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Condições de saúde mental; tarefas múltiplas</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Textos de redes sociais; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>Dados sociais rotulados para diferentes condições; volumes específicos não consolidado nesta revisão nesta síntese</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Rótulos dos corpora e atributos demográficos; não equiparar a diagnóstico clínico independente</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Aprendizado multitarefa (MTL); redes neurais e atributos compartilhados</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>Aprendizado multitarefa, <strong>AUC</strong>: ansiedade <strong>0,813</strong>; depressão <strong>0,769</strong>; tentativa de suicídio <strong>0,835</strong> (Tabela 2).</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Transferência entre tarefas é valiosa em cenário de poucos dados; possíveis vieses demográficos</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-5">
+        <summary><span class="study-index">05</span><span class="study-summary"><strong><a href="https://aclanthology.org/D17-1322/" target="_blank" rel="noopener noreferrer">Yates, Cohan &amp; Goharian (2017) — Depression and Self-Harm Risk</a></strong><small>Depressão e risco de autolesão · Fóruns de apoio e fóruns gerais; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://aclanthology.org/D17-1322/" target="_blank" rel="noopener noreferrer">Yates, Cohan &amp; Goharian (2017) — Depression and Self-Harm Risk</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão e risco de autolesão</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Fóruns de apoio e fóruns gerais; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>Posts de fóruns e usuários com autorrelato de depressão; tamanho não consolidado nesta revisão nesta síntese</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Autodeclarações de depressão; identificação de mensagens de risco nos fóruns de apoio</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Classificadores linguísticos para posts e usuários; comparação com baselines</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>F1 = 0,51</strong> para identificação de depressão por usuário (Tabela 2); <strong>F1 = 0,50</strong> para postagens de risco *non-green* (Tabela 3).</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Diferentes unidades de decisão: risco expresso no post e depressão autodeclarada pelo usuário</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-6">
+        <summary><span class="study-index">06</span><span class="study-summary"><strong><a href="https://aclanthology.org/C18-1126/" target="_blank" rel="noopener noreferrer">Cohan et al. (2018) — SMHD</a></strong><small>Multicondição (nove condições) · Reddit; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://aclanthology.org/C18-1126/" target="_blank" rel="noopener noreferrer">Cohan et al. (2018) — SMHD</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Multicondição (nove condições)</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Reddit; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>20.406 usuários com autorrelato e 335.952 controles pareados</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Padrões textuais de autorrelato e seleção de controles</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Extração de diagnósticos declarados; modelos de classificação e análise linguística</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>Precisão macro 95,8%</strong> do *extrator de autodeclarações* (amostra avaliada); <strong>não é F1 dos classificadores</strong> de transtornos.</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Autorrelato; domínio Reddit; dados com acordo de uso</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-7">
+        <summary><span class="study-index">07</span><span class="study-summary"><strong><a href="https://aclanthology.org/W18-0609/" target="_blank" rel="noopener noreferrer">Husseini Orabi et al. (2018) — Deep Learning for Depression Detection</a></strong><small>Depressão · Twitter; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://aclanthology.org/W18-0609/" target="_blank" rel="noopener noreferrer">Husseini Orabi et al. (2018) — Deep Learning for Depression Detection</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Twitter; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>Textos de usuários, com dados de treinamento limitados; volume não rechecado</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Rótulos das coleções de usuários utilizadas; sem inferir entrevista diagnóstica</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Comparação de arquiteturas neurais profundas para classificação por usuário</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>CNNWithMax, <strong>validação cruzada CLPsych</strong>: <strong>F1 86,97%</strong>, <strong>AUC 0,951</strong> (Tabela 2).</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Evidencia a sensibilidade de redes profundas à escassez de dados rotulados</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-8">
+        <summary><span class="study-index">08</span><span class="study-summary"><strong><a href="https://aclanthology.org/W18-5903/" target="_blank" rel="noopener noreferrer">Pirina &amp; Çöltekin (2018) — Effect of Training Data</a></strong><small>Depressão · Reddit e corpora sociais de comparação; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://aclanthology.org/W18-5903/" target="_blank" rel="noopener noreferrer">Pirina &amp; Çöltekin (2018) — Effect of Training Data</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Reddit e corpora sociais de comparação; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>Coleta adicional no Reddit e reuso de dados anteriores; quantidades não consolidado nesta revisão</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Rótulos dependem da fonte social e da constituição dos conjuntos</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Experimentos de classificação textual com diferentes corpora de treino</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>SVM no cenário <strong>DS–BC</strong>: <strong>F1 98,62%</strong> na validação cruzada, mas <strong>56,88%</strong> no teste; cenário <strong>DO–ND</strong>: F1 teste <strong>67,49%</strong> (Tabela 1).</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Escolha do conjunto de treino pode produzir conclusões enganosas e inflar desempenho</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-9">
+        <summary><span class="study-index">09</span><span class="study-summary"><strong><a href="https://doi.org/10.1073/pnas.1802331115" target="_blank" rel="noopener noreferrer">Eichstaedt et al. (2018) — Facebook Language Predicts Depression</a></strong><small>Depressão documentada em prontuário · Postagens de Facebook, inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://doi.org/10.1073/pnas.1802331115" target="_blank" rel="noopener noreferrer">Eichstaedt et al. (2018) — Facebook Language Predicts Depression</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão documentada em prontuário</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Postagens de Facebook, inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>683 pacientes consentidos; 114 com registro de depressão em prontuário</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Códigos diagnósticos em prontuário eletrônico, não entrevista psiquiátrica independente</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Atributos linguísticos LIWC, tópicos LDA e regressão com validação cruzada</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>AUC-ROC 0,69</strong> no histórico; <strong>0,72</strong> em janela de 6 meses para subgrupo com dados suficientes</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Referência vinculada a prontuário e análise temporal; amostra de conveniência e variação na cobertura textual</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-10">
+        <summary><span class="study-index">10</span><span class="study-summary"><strong><a href="https://aclanthology.org/D19-6213/" target="_blank" rel="noopener noreferrer">Turcan &amp; McKeown (2019) — Dreaddit</a></strong><small>Estresse · Reddit; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://aclanthology.org/D19-6213/" target="_blank" rel="noopener noreferrer">Turcan &amp; McKeown (2019) — Dreaddit</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Estresse</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Reddit; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>190 mil posts coletados; <strong>3.553 segmentos</strong> rotulados de 2.929 posts</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Crowdsourcing: percepção de estresse no segmento</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Recursos LIWC, lexicais e contextuais; classificadores tradicionais e neurais</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>F1 no teste</strong>: BERT-base <strong>0,8065</strong>; regressão logística com Word2Vec do domínio + atributos <strong>0,7980</strong> (Tabela 6).</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Estresse textual subjetivo; não é escala ou diagnóstico clínico</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-11">
+        <summary><span class="study-index">11</span><span class="study-summary"><strong><a href="https://doi.org/10.1371/journal.pone.0215476" target="_blank" rel="noopener noreferrer">Merchant et al. (2019) — Predictability of Medical Conditions</a></strong><small>Ansiedade, depressão e outras condições médicas · Status de Facebook; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://doi.org/10.1371/journal.pone.0215476" target="_blank" rel="noopener noreferrer">Merchant et al. (2019) — Predictability of Medical Conditions</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Ansiedade, depressão e outras condições médicas</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Status de Facebook; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>999 pacientes consentidos; cerca de 20 milhões de palavras; 21 grupos de condições</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Condições registradas em prontuário eletrônico</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Modelos de linguagem social combinados com variáveis demográficas</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>AUC-ROC</strong>: ansiedade <strong>0,66</strong>; depressão <strong>0,64</strong> (modelos com linguagem; avaliação por condição); a linguagem melhorou <strong>18 de 21</strong> desfechos vs. dados demográficos.</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Contribuição transversal; sobreposição possível de contexto e população com Eichstaedt 2018, não coorte independente garantida</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-12">
+        <summary><span class="study-index">12</span><span class="study-summary"><strong><a href="https://aclanthology.org/2020.findings-emnlp.337/" target="_blank" rel="noopener noreferrer">Harrigian, Aguirre &amp; Dredze (2020) — Generalization</a></strong><small>Depressão; validade externa de modelos de saúde mental · Textos de múltiplas plataformas sociais; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://aclanthology.org/2020.findings-emnlp.337/" target="_blank" rel="noopener noreferrer">Harrigian, Aguirre &amp; Dredze (2020) — Generalization</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão; validade externa de modelos de saúde mental</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Textos de múltiplas plataformas sociais; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>Conjuntos sociais com rotulagem proxy; tamanhos específicos não consolidado nesta revisão</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Supervisão distante por autorrelato ou proxy de plataforma</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Classificadores de depressão; testes de transferência entre plataformas</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>Na análise de artefatos temporais, a separação desajustada elevou artificialmente o <strong>F1 em 3–22%</strong>, dependendo do corpus (§5.2.1); <strong>não há F1 único</strong> para transferência entre plataformas.</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Demonstra confundidores e sobre-estimação por dados proxy; fundamenta validação externa</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-13">
+        <summary><span class="study-index">13</span><span class="study-summary"><strong><a href="https://aclanthology.org/2022.lrec-1.778/" target="_blank" rel="noopener noreferrer">Ji et al. (2022) — MentalBERT</a></strong><small>Multicondição; estresse e depressão · Posts e fóruns; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://aclanthology.org/2022.lrec-1.778/" target="_blank" rel="noopener noreferrer">Ji et al. (2022) — MentalBERT</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Multicondição; estresse e depressão</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Posts e fóruns; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>Pré-treino em textos de saúde mental; diversos benchmarks, inclusive Dreaddit</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Rótulos herdados de cada conjunto de avaliação</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Pré-treino de domínio: MentalBERT e MentalRoBERTa</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>Em <strong>Dreaddit</strong>: MentalRoBERTa F1 <strong>81,76%</strong>, MentalBERT F1 <strong>80,04%</strong> (Tabela 3)</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Resultado específico de benchmark; transferência ao PT-BR não avaliada</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-14">
+        <summary><span class="study-index">14</span><span class="study-summary"><strong><a href="https://aclanthology.org/2022.ltedi-1.40/" target="_blank" rel="noopener noreferrer">Poświata &amp; Perełkiewicz (2022) — DepRoBERTa</a></strong><small>Sinais textuais de depressão; três níveis · Postagens sociais; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://aclanthology.org/2022.ltedi-1.40/" target="_blank" rel="noopener noreferrer">Poświata &amp; Perełkiewicz (2022) — DepRoBERTa</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Sinais textuais de depressão; três níveis</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Postagens sociais; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>Benchmark DepSign-LT-EDI@ACL2022; volume total não consolidado nesta revisão nesta síntese</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Classes não depressivo, moderado e grave do desafio; rótulo do texto, não diagnóstico clínico</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Fine-tuning BERT/RoBERTa/XLNet, adaptação DepRoBERTa, ensemble</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>Macro-F1 0,583</strong> para o ensemble vencedor da tarefa</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Fornece baseline de transformers e modelo especializado; não comparar com classificação clínica individual</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-15">
+        <summary><span class="study-index">15</span><span class="study-summary"><strong><a href="https://www.sciencedirect.com/science/article/pii/S0747563222003235" target="_blank" rel="noopener noreferrer">Kabir et al. (2023) — DEPTWEET</a></strong><small>Depressão; gravidade expressa no texto · Twitter/X; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://www.sciencedirect.com/science/article/pii/S0747563222003235" target="_blank" rel="noopener noreferrer">Kabir et al. (2023) — DEPTWEET</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão; gravidade expressa no texto</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Twitter/X; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd><strong>40.191 tweets</strong>, quatro categorias</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Anotação supervisionada por especialistas; tipologia inspirada em PHQ-9/DSM-5</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>BERT, DistilBERT e baselines de classificação</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>DistilBERT, <strong>AUC-ROC por classe</strong>: não deprimido <strong>0,789</strong>; leve <strong>0,747</strong>; moderado <strong>0,788</strong>; grave <strong>0,866</strong> (Tabela 5 do manuscrito).</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Gravidade anotada do tweet não é avaliação clínica do autor</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-16">
+        <summary><span class="study-index">16</span><span class="study-summary"><strong><a href="https://arxiv.org/abs/2309.13567" target="_blank" rel="noopener noreferrer">Yang et al. (2024) — MentaLLaMA; preprint 2023</a></strong><small>Multicondição; avaliação interpretável · Redes sociais; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://arxiv.org/abs/2309.13567" target="_blank" rel="noopener noreferrer">Yang et al. (2024) — MentaLLaMA; preprint 2023</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Multicondição; avaliação interpretável</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Redes sociais; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd><strong>105 mil</strong> instâncias de instrução IMHI de dez fontes</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Rótulos existentes e explicações geradas/avaliadas</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>LLaMA 2, instruction tuning, geração de explicações</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>MentaLLaMA-chat-13B: <strong>F1 ponderado 75,79%</strong> em <strong>Dreaddit</strong> (Tabela 2); comparar com MentalRoBERTa <strong>81,76%</strong> no mesmo benchmark.</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Justificativas geradas não garantem fidelidade clínica</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-17">
+        <summary><span class="study-index">17</span><span class="study-summary"><strong><a href="https://link.springer.com/article/10.1007/s10579-022-09633-0" target="_blank" rel="noopener noreferrer">dos Santos, de Oliveira &amp; Paraboni (2024) — SetembroBR; online 2023</a></strong><small>Depressão; ansiedade · Twitter/X; português brasileiro</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://link.springer.com/article/10.1007/s10579-022-09633-0" target="_blank" rel="noopener noreferrer">dos Santos, de Oliveira &amp; Paraboni (2024) — SetembroBR; online 2023</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão; ansiedade</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Twitter/X; português brasileiro</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd><strong>46,8 milhões</strong> de tweets; <strong>18.819 usuários</strong>; 3.163 usuários com autorrelato (3.903 ocorrências parcialmente sobrepostas)</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Autorrelato de diagnóstico/tratamento e marco temporal</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Corpus e comparações de modelos textuais e informações de rede</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>Artigo de apresentação do corpus</strong>: oferece baselines para tarefas específicas; não existe um resultado agregado único do dataset. As métricas dos modelos não são utilizadas sem identificação de tarefa e configuração.</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Dados do mesmo corpus usado no estudo seguinte; não constitui nova coorte</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-18">
+        <summary><span class="study-index">18</span><span class="study-summary"><strong><a href="https://www.linguamatica.com/index.php/linguamatica/pt/article/view/440" target="_blank" rel="noopener noreferrer">Nagamatu &amp; Paraboni (2024)</a></strong><small>Depressão; ansiedade; detecção precoce · Twitter/X; português brasileiro</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://www.linguamatica.com/index.php/linguamatica/pt/article/view/440" target="_blank" rel="noopener noreferrer">Nagamatu &amp; Paraboni (2024)</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão; ansiedade; detecção precoce</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Twitter/X; português brasileiro</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>Reutiliza <strong>SetembroBR</strong>; subconjuntos por condição; não somar usuários como casos independentes</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Autorrelato herdado do corpus de origem</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Modelos tradicionais e abordagem LLM com engenharia de prompts</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>GPT_relev: <strong>F1-latency 0,24</strong> (depressão) e <strong>0,23</strong> (ansiedade); <strong>F1-macro 0,56/0,55</strong>; antecipação de <strong>436/479 dias</strong> (Tabela 5).</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Dependência do mesmo corpus e da proximidade ao momento declarado</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-19">
+        <summary><span class="study-index">19</span><span class="study-summary"><strong><a href="https://aclanthology.org/2024.lrec-main.754/" target="_blank" rel="noopener noreferrer">Mendes &amp; Caseli (2024)</a></strong><small>Sinais de depressão (inclui preocupação/ansiedade) · Facebook de universitários; português brasileiro</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://aclanthology.org/2024.lrec-main.754/" target="_blank" rel="noopener noreferrer">Mendes &amp; Caseli (2024)</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Sinais de depressão (inclui preocupação/ansiedade)</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Facebook de universitários; português brasileiro</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd><strong>780 posts</strong>, <strong>21 sinais</strong>, <strong>2.304 ocorrências positivas</strong></dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Anotação humana dos sinais; não classifica diagnósticos</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Regressão logística, SVM, BERTimbau, MentalBERT, MentalRoBERTa</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>Average Precision</strong>: sono <strong>0,900</strong> (regressão logística); preocupação/ansiedade <strong>0,794</strong> (MentalBERT); tristeza <strong>0,745</strong> (BERTimbau); Tabela 5</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Métrica por sinal; corpus pequeno; não avalia estresse como transtorno</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-20">
+        <summary><span class="study-index">20</span><span class="study-summary"><strong><a href="https://doi.org/10.47626/1516-4446-2024-4058" target="_blank" rel="noopener noreferrer">Viduani et al. (2025) — pronomes/LIWC</a></strong><small>Depressão · Áudio transcrito; português brasileiro</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://doi.org/10.47626/1516-4446-2024-4058" target="_blank" rel="noopener noreferrer">Viduani et al. (2025) — pronomes/LIWC</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Áudio transcrito; português brasileiro</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd><strong>52 jovens</strong>; 13 com depressão maior, 39 controles</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Caracterização clínica + sintomas autorreferidos e avaliados</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>LIWC; frequência de pronomes; testes estatísticos</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>Pronomes de 1ª pessoa singular: <strong>9,15% vs. 8,02%</strong>, <strong>p=0,026</strong>; rho autorrelato <strong>0,366</strong></dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Estudo correlacional; não é experimento de fine-tuning de BERTimbau</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-21">
+        <summary><span class="study-index">21</span><span class="study-summary"><strong><a href="https://doi.org/10.1007/s10579-025-09831-6" target="_blank" rel="noopener noreferrer">Pérez et al. (2025) — DepreSym</a></strong><small>Sinais específicos de depressão e interpretabilidade · Sentenças de conteúdos digitais do desafio eRisk; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://doi.org/10.1007/s10579-025-09831-6" target="_blank" rel="noopener noreferrer">Pérez et al. (2025) — DepreSym</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Sinais específicos de depressão e interpretabilidade</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Sentenças de conteúdos digitais do desafio eRisk; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd><strong>21.580 sentenças</strong> avaliadas quanto a <strong>21 sintomas BDI-II</strong></dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Julgamento de relevância por três avaliadores especialistas, incluindo psicólogo; não diagnóstico do autor</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>LLMs como avaliadores, recuperação de informação lexical/densa e re-ranking</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>Recuperação de sintomas com <strong>ANCE</strong>: <strong>NDCG@10 = 0,746</strong> e <strong>AP@1000 = 0,340</strong> nas consultas baseadas em respostas do BDI-II (Tabela 6). Métricas de busca, não de diagnóstico.</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Valioso para detecção de sinais interpretáveis; dependência do benchmark eRisk e anotações de relevância</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-22">
+        <summary><span class="study-index">22</span><span class="study-summary"><strong><a href="https://doi.org/10.3389/fdgth.2025.1709671" target="_blank" rel="noopener noreferrer">Karpontinis &amp; Soufleri (2025) — DP-CARE</a></strong><small>Estresse textual e privacidade em IA · Reddit / Dreaddit; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://doi.org/10.3389/fdgth.2025.1709671" target="_blank" rel="noopener noreferrer">Karpontinis &amp; Soufleri (2025) — DP-CARE</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Estresse textual e privacidade em IA</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Reddit / Dreaddit; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>Benchmark Dreaddit, 3.553 segmentos rotulados no corpus de referência</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Rótulos humanos de estresse expresso; não avaliação diagnóstica</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Encoder MentalBERT congelado e classificador com DP-AdamW (privacidade diferencial)</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>F1 classe estresse 0,7808</strong>, ε≈3; baseline sem DP F1 0,8058</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Trade-off utilidade/privacidade; o artigo diverge entre resumo e tabela no recall, por isso recall não é reproduzido aqui</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-23">
+        <summary><span class="study-index">23</span><span class="study-summary"><strong><a href="https://doi.org/10.1186/s12889-025-23337-4" target="_blank" rel="noopener noreferrer">Chung et al. (2025) — BERT and BERTopic</a></strong><small>Risco de depressão e relatos de situações estressoras · Mensagens abertas em aplicativo; coreano</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://doi.org/10.1186/s12889-025-23337-4" target="_blank" rel="noopener noreferrer">Chung et al. (2025) — BERT and BERTopic</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Risco de depressão e relatos de situações estressoras</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Mensagens abertas em aplicativo; coreano</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd><strong>1.332 mensagens</strong>, <strong>230 participantes</strong> idosos</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Triagem <strong>PHQ-9 ≥ 10</strong>; não equivale a entrevista clínica estruturada</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>KcBERT e KLUE BERT; BERTopic para temas e evolução temporal</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>KcBERT <strong>F1 global reportado 0,87</strong>; <strong>F1 da classe de risco 0,83</strong></dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Protocolo reporta split por mensagens; examinar possível dependência entre mensagens da mesma pessoa</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-24">
+        <summary><span class="study-index">24</span><span class="study-summary"><strong><a href="https://pubmed.ncbi.nlm.nih.gov/42134742/" target="_blank" rel="noopener noreferrer">Viduani et al. (2026) — estudo experimental GPT-4o</a></strong><small>Depressão · Fala cotidiana transcrita; português brasileiro</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://pubmed.ncbi.nlm.nih.gov/42134742/" target="_blank" rel="noopener noreferrer">Viduani et al. (2026) — estudo experimental GPT-4o</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Fala cotidiana transcrita; português brasileiro</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd><strong>30 adolescentes</strong> (15 com depressão maior, 15 controles); coleta de 14 dias</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Diagnóstico de psiquiatra infantojuvenil com procedimentos padrão-ouro</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>GPT-4o por prompting; comparação com 12 modelos GPT</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>Acurácia <strong>86,6%</strong> (IC95% 70,3–95,6%); sensibilidade <strong>100%</strong>; especificidade <strong>73,3%</strong></dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>n=30 e grupos extremos; não emprega BERTimbau+LIWC ou laudos como texto de entrada</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-25">
+        <summary><span class="study-index">25</span><span class="study-summary"><strong><a href="https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1790533/full" target="_blank" rel="noopener noreferrer">AlSaad, Alshakhs &amp; Thomas (2026)</a></strong><small>Subtipos de depressão; seis classes textuais · Twitter/X; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1790533/full" target="_blank" rel="noopener noreferrer">AlSaad, Alshakhs &amp; Thomas (2026)</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Subtipos de depressão; seis classes textuais</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Twitter/X; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd><strong>14.983 tweets</strong></dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Curadoria/anotação textual; sem confirmação diagnóstica por pessoa</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>LLMs few-shot; encoders fine-tuned (RoBERTa, DeBERTa e outros)</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>RoBERTa-large</strong>: macro-F1 <strong>0,957</strong>, acurácia <strong>0,954</strong> no teste (Tabela 2)</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Taxonomia textual, não avaliação psiquiátrica; um domínio</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-26">
+        <summary><span class="study-index">26</span><span class="study-summary"><strong><a href="https://mental.jmir.org/2026/1/e98925/" target="_blank" rel="noopener noreferrer">Kallstenius et al. (2026)</a></strong><small>Multicondição; depressão, ansiedade, estresse e outras · Reddit e Twitter/X; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://mental.jmir.org/2026/1/e98925/" target="_blank" rel="noopener noreferrer">Kallstenius et al. (2026)</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Multicondição; depressão, ansiedade, estresse e outras</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Reddit e Twitter/X; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd><strong>60.889 textos</strong>; <strong>9 classes</strong>; treino 42.622, validação 6.089, teste 12.178</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Comunidade de origem ou autodeclaração</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>TF-IDF + SVM RBF; GPT-4o-mini base/ajustado; 2 ensembles</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd>Acurácia teste: <strong>0,939</strong> (soft), <strong>0,938</strong> (híbrido), <strong>0,919</strong> (SVM), <strong>0,886</strong> (GPT ajustado)</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Split por post e back-translation pré-split; ausência de avaliação clínica externa</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-27">
+        <summary><span class="study-index">27</span><span class="study-summary"><strong><a href="https://pubmed.ncbi.nlm.nih.gov/41825397/" target="_blank" rel="noopener noreferrer">Viduani et al. (2026) — revisão de escopo</a></strong><small>Depressão; métodos de análise linguística · Literatura internacional; idiomas diversos</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://pubmed.ncbi.nlm.nih.gov/41825397/" target="_blank" rel="noopener noreferrer">Viduani et al. (2026) — revisão de escopo</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Depressão; métodos de análise linguística</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Literatura internacional; idiomas diversos</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd><strong>180 estudos</strong> incluídos de 27.967 registros</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Auditoria da referência diagnóstica nos estudos incluídos</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>Revisão de recursos lexicais, LIWC, PLN, transformers e LLMs</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>20,5%</strong> com instrumento diagnóstico padrão-ouro; <strong>64,2%</strong> das amostras em inglês</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Síntese da evidência, não produz classificador nem F1 próprio</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+      <details class="study-card" id="estudo-28">
+        <summary><span class="study-index">28</span><span class="study-summary"><strong><a href="https://aclanthology.org/2026.healing-1.27/" target="_blank" rel="noopener noreferrer">Alqahtani, Kayi &amp; Diab (2026) — StressRoBERTa</a></strong><small>Estresse crônico autorreportado; transferência de depressão/ansiedade/PTSD · Tweets e posts de redes sociais; inglês</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="study-content">
+          <dl class="study-grid">
+            <div class="study-field"><dt>Referência e Ano</dt><dd><a href="https://aclanthology.org/2026.healing-1.27/" target="_blank" rel="noopener noreferrer">Alqahtani, Kayi &amp; Diab (2026) — StressRoBERTa</a></dd></div>
+            <div class="study-field"><dt>Problema ou Condição Investigada</dt><dd>Estresse crônico autorreportado; transferência de depressão/ansiedade/PTSD</dd></div>
+            <div class="study-field"><dt>Tipo de Texto e Idioma</dt><dd>Tweets e posts de redes sociais; inglês</dd></div>
+            <div class="study-field"><dt>Dataset, Origem e Volumetria</dt><dd>Pré-treino em <strong>108 milhões de palavras</strong> do Stress-SMHD; avaliação SMM4H 2022 e Dreaddit</dd></div>
+            <div class="study-field"><dt>Estratégia de Rotulagem</dt><dd>Histórico de diagnósticos autorreportados para pré-treino; rótulos de estresse dos benchmarks</dd></div>
+            <div class="study-field"><dt>Métodos de IA e Técnicas de PLN</dt><dd>RoBERTa com pré-treino contínuo entre condições e fine-tuning na tarefa de estresse</dd></div>
+            <div class="study-field"><dt>Métricas e Resultados Quantitativos</dt><dd><strong>F1 0,82</strong> no SMM4H 2022 e <strong>0,81</strong> no Dreaddit</dd></div>
+            <div class="study-field"><dt>Limitações Relevantes e Relação com o Projeto</dt><dd>Estudo 2026 diretamente ligado às três condições; resultados por corpus, sem validade clínica externa</dd></div>
+          </dl>
+          <p class="card-foot"><a href="#estudos">↑ Voltar à tabela</a></p>
+        </div>
+      </details>
+    </div>
+  </section>
+  <section class="section" id="sintese" aria-labelledby="summary-heading">
+    <div class="section-heading"><div><p class="section-kicker">Interpretação</p><h2 id="summary-heading">Síntese comparativa e integridade da revisão</h2></div><p>Notas metodológicas extraídas da tabela bibliográfica atualizada.</p></div>
+    <div class="insights">
+      <article class="insight"><span class="insight-index">01</span><div><h3>Nota metodológica</h3><p><strong>Sem repetições:</strong> as 28 entradas possuem 28 fontes bibliográficas distintas. Há estudos com <strong>dados compartilhados</strong> (por exemplo, reutilização de corpus), que devem ser tratados como dependência metodológica.</p></div></article>
+      <article class="insight"><span class="insight-index">02</span><div><h3>Nota metodológica</h3><p><strong>Sobre a escolha de métricas:</strong> AP (Average Precision) é a área sob a curva precisão-revocação em uma convenção de cálculo, não AUC-ROC; <strong>F1</strong> não é acurácia; <strong>ERDE50</strong> inclui custo por atraso.</p></div></article>
+      <article class="insight"><span class="insight-index">03</span><div><h3>Nota metodológica</h3><p><strong>Sobre estudos clínicos:</strong> a escala PHQ-9 isolada mede sintomatologia e não confirma diagnóstico. A entrevista estruturada e a avaliação clínica possuem estatutos distintos.</p></div></article>
+      <article class="insight"><span class="insight-index">04</span><div><h3>Nota metodológica</h3><p><strong>Sobre fontes sob restrição:</strong> foi conferida a existência e a descrição bibliográfica, mas não se transcreveram tabelas de resultados inacessíveis para preencher lacunas artificiais.</p></div></article>
+      <article class="insight"><span class="insight-index">05</span><div><h3>Nota metodológica</h3><p><strong>Sobre acesso aos dados:</strong> a disponibilidade do artigo não concede automaticamente direitos de redistribuição de postagens e prontuários. O dataset CLPsych 2015 foi <a href="https://www.cs.jhu.edu/~mdredze/clpsych-2015-shared-task-evaluation/" target="_blank" rel="noopener noreferrer">retirado de distribuição em junho de 2026</a>. O acesso a SMHD envolve acordo de uso.</p></div></article>
+      <article class="insight"><span class="insight-index">06</span><div><h3>Nota metodológica</h3><p><strong>Atribuição 2026:</strong> os dois trabalhos de Viduani em 2026 são publicações distintas (um estudo experimental de GPT-4o e uma revisão de escopo), não repetição do mesmo paper.</p></div></article>
+    </div>
+  </section>
 </main>
+<footer class="site-footer"><div class="container"><p>Levantamento bibliográfico sobre IA e PLN na análise de indicadores de saúde mental.</p><p>Conteúdo acadêmico de pesquisa. Classificações textuais não constituem diagnósticos clínicos.</p></div></footer>
 </body>
 </html>
