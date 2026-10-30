@@ -45,3 +45,12 @@ Foram acrescentadas **12 publicações únicas** às 16 entradas preexistentes: 
 - **Dados pessoais e postagens reproduzidas:** 0
 
 O [catálogo comparativo](tabela_comparativa_tecnica.md) contém os links de origem para auditorias futuras.
+
+
+## Encerramento editorial (30/10/2026)
+
+- Foi publicada [a versão acadêmica final com referências autor-data/ABNT](../docs/revisao_bibliografica_final_28.md).
+- O catálogo canônico preserva 28 entradas sem duplicações de URLs; a revisão final remete à mesma tabela, em vez de replicar todas as linhas.
+- Foram documentadas diferenças de métrica, a divergência de recall no DP-CARE e a interpretação não clínica de rótulos sociais.
+- A formatação das referências é simplificada e poderá ser alinhada ao regulamento institucional quando houver norma específica.
+- Esta auditoria não certifica reprodução de experimentos nem acesso a todos os dados brutos.
