@@ -10,11 +10,16 @@ Revisão bibliográfica dirigida de técnicas de **Inteligência Artificial e Pr
 
 **Entregas finais formatadas:** o documento acadêmico em DOCX/PDF e as tabelas em XLSX/PDF foram produzidos e verificados na entrega de 30/10/2026. O Markdown permanece como versão navegável no repositório, e as fontes estão na tabela canônica.
 
+## Sites publicados
+
+- [Levantamento bibliográfico](https://fernandomarquesaluno-svg.github.io/depression_poject/levantamento-bibliograf/)
+- [Tabela comparativa — endereço permanente](https://fernandomarquesaluno-svg.github.io/depression_poject/tabelas/comparativo/)
+
 ## Documentação
 
 - [Revisão bibliográfica e análise crítica](docs/revisao_bibliografica.md): seis dimensões da literatura, problemas metodológicos e lacunas no português brasileiro.
 - [Tabela comparativa técnica atual — 17 artigos (2020–2026)](tabelas/tabela_comparativa_tecnica.md): **uma linha por publicação**, com link à fonte, dataset, rótulos, modelos, resultados e limitações.
-- [Visualização HTML/CSS da tabela atualizada — 17 publicações (2020–2026)](tabelas/visualizacao-15-estudos/index.html): versão responsiva da tabela bibliográfica canônica, com 8 dimensões por fonte, fichas expansíveis e notas de integridade. Mantém o mesmo layout da página anterior.
+- [Visualização HTML/CSS da tabela atualizada — 17 publicações (2020–2026)](tabelas/comparativo/index.html): versão responsiva da tabela bibliográfica canônica, com 8 dimensões por fonte, fichas expansíveis e notas de integridade. Mantém o mesmo layout da página anterior.
 - [Registro de verificação](tabelas/registro_de_verificacao.md): procedimento de auditoria, correções e limites da verificação.
 
 ## O que foi verificado
