@@ -1,37 +1,31 @@
 # Indicadores textuais de depressão, ansiedade e estresse
 
-Revisão bibliográfica dirigida de técnicas de **Inteligência Artificial e Processamento de Linguagem Natural (PLN)** para análise de indicadores linguísticos em textos escritos e transcritos.
+Revisão narrativa de técnicas de **inteligência artificial e processamento de linguagem natural (PLN)** aplicadas a textos de redes sociais e registros textuais associados à saúde mental.
 
-**Recorte principal atualizado:** 2020–2026 · **17 publicações distintas** · **Atualização:** 30/10/2026 · **Não é revisão sistemática.**
+**Entregas acadêmicas atuais:** apresentação técnica de um paper publicado em **2026** e tabela comparativa com **33 referências distintas, de 2020 a 2026**. Atualização: **03/11/2026**.
 
-## Documento acadêmico final
+## Entregas e links
 
-- [**Revisão bibliográfica histórica — 28 fontes (2013–2026), análise crítica, metodologia e referências (autor-data/ABNT)**](docs/revisao_bibliografica_final_28.md). Versão em Markdown pronta para consulta e auditoria. Arquivos DOCX/PDF correspondentes foram gerados separadamente para entrega acadêmica.
+- [**Tabela comparativa online — 33 referências, oito dimensões técnicas**](https://fernandomarquesaluno-svg.github.io/depression_poject/tabelas/comparativo/)
+- [**Tabela comparativa canônica em Markdown — 33 referências**](tabelas/tabela_comparativa_tecnica.md)
+- [**Levantamento bibliográfico online**](https://fernandomarquesaluno-svg.github.io/depression_poject/levantamento-bibliografico/)
+- [**Landing page do paper de 2026**](https://fernandomarquesaluno-svg.github.io/depression_poject/)
+- [**Artigo original — Kallstenius et al. (2026), JMIR Mental Health**](https://doi.org/10.2196/98925)
+- [**Registro de verificação metodológica e bibliográfica**](tabelas/registro_de_verificacao.md)
 
-**Entregas finais formatadas:** o documento acadêmico em DOCX/PDF e as tabelas em XLSX/PDF foram produzidos e verificados na entrega de 30/10/2026. O Markdown permanece como versão navegável no repositório, e as fontes estão na tabela canônica.
+## Organização documental
 
-## Sites publicados
+- [Revisão bibliográfica histórica — 28 fontes (2013–2026)](docs/revisao_bibliografica_final_28.md): documento histórico, não a contagem atual da tabela.
+- [Análise crítica em seis dimensões](docs/revisao_bibliografica.md): fontes de texto, rotulagem, tarefas, representações, evolução dos modelos e lacunas em português.
+- [Tabela e fichas técnicas de 33 referências](tabelas/comparativo/index.html): versão HTML responsiva com navegação por publicação.
 
-- [Levantamento bibliográfico](https://fernandomarquesaluno-svg.github.io/depression_poject/levantamento-bibliograf/)
-- [Tabela comparativa — endereço permanente](https://fernandomarquesaluno-svg.github.io/depression_poject/tabelas/comparativo/)
+## Critérios de interpretação
 
-## Documentação
+- Os **33 itens não são 33 experimentos independentes**; incluem artigos experimentais, revisões e literatura acadêmica adicional.
+- Métricas de tarefas/datasets distintos não devem ser comparadas como um ranking.
+- Rótulos de comunidades ou autorrelatos **não são diagnósticos clínicos**.
+- Este levantamento é **narrativo**, não uma revisão sistemática PRISMA.
 
-- [Revisão bibliográfica e análise crítica](docs/revisao_bibliografica.md): seis dimensões da literatura, problemas metodológicos e lacunas no português brasileiro.
-- [Tabela comparativa técnica atual — 17 artigos (2020–2026)](tabelas/tabela_comparativa_tecnica.md): **uma linha por publicação**, com link à fonte, dataset, rótulos, modelos, resultados e limitações.
-- [Visualização HTML/CSS da tabela atualizada — 17 publicações (2020–2026)](tabelas/comparativo/index.html): versão responsiva da tabela bibliográfica canônica, com 8 dimensões por fonte, fichas expansíveis e notas de integridade. Mantém o mesmo layout da página anterior.
-- [Registro de verificação](tabelas/registro_de_verificacao.md): procedimento de auditoria, correções e limites da verificação.
+## Apresentação técnica
 
-## O que foi verificado
-
-As 17 entradas atuais (2020–2026) foram filtradas das 28 referências anteriores e reconciliadas por fonte e identificador; não há duplicação de paper por variação de ano de preprint ou de publicação. Métricas com respaldo identificável foram mantidas. Valores de modelo não suficientemente conferidos são indicados como **N/D**, em vez de números presumidos. O mesmo corpus pode sustentar **mais de um experimento**, mas não equivale a dados independentes.
-
-## Histórico do levantamento e recorte atual
-
-O levantamento histórico continha **28 entradas (2013–2026)**. A **tabela canônica atual** e o site exibem **somente 17 publicações (2020–2026)**, conforme o recorte mais recente solicitado. A revisão histórica com 28 fontes permanece disponível para consulta, mas não é a tabela comparativa vigente. Uma referência e um dataset não são conceitos equivalentes: trabalhos distintos podem usar o mesmo corpus. Verifique rótulos, unidade de análise e métricas antes de comparações.
-
-## Uso responsável
-
-Uma classificação de texto **não constitui diagnóstico clínico**. O repositório não publica postagens pessoais, prontuários, áudios ou transcrições de participantes. Acesso a corpora deve respeitar licença, termos de plataformas, LGPD e análise ética aplicável.
-
-Material acadêmico de revisão narrativa, **não** artigo científico revisado por pares, metanálise ou relatório PRISMA.
+**Kallstenius et al. (2026)** — *Ensemble of Domain-Specific Natural Language Processing and Large Language Models for Detecting Suicidal Ideation and Mental Health Conditions in Social Media Text: Development and Evaluation Study*, **JMIR Mental Health**, DOI **10.2196/98925**. Base com 60.889 postagens, nove classes, comparação de SVM, GPT-4o-mini e ensembles; 93,9% de acurácia na fusão soft neste corpus. Não foi demonstrada validação clínica externa.
