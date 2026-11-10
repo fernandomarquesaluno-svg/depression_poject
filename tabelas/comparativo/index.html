@@ -68,7 +68,7 @@
  <div class="wrap bar-inner">
   <a href="#inicio" class="logo" aria-label="Atlas: ir ao início"><span class="logo-mark" aria-hidden="true">✳</span> ATLAS<span style="color:var(--cyan)">.IA</span></a>
   <nav class="bar-nav" aria-label="Navegação principal">
-   <a href="#conexoes">Conexões</a><a href="#datasets">Datasets</a><a href="#mapa">Mapa</a><a href="#linha">Evolução</a><a href="#estudos">Estudos</a><a href="#comparar">Comparador</a>
+   <a href="#conexoes">Conexões</a><a href="#datasets">Datasets</a><a href="#mapa">Mapa</a><a href="#estudos">Estudos</a><a href="#comparar">Comparador</a>
    <a class="bar-cta" href="../../levantamento-bibliografico/">Revisão completa ↗</a>
   </nav>
  </div>
@@ -141,15 +141,9 @@
    </div>
   </div>
  </section>
- <section class="section" id="linha" aria-labelledby="timeTitle">
-  <div class="wrap">
-   <div class="section-head reveal"><div><span class="kicker">02 / EVOLUÇÃO</span><h2 class="section-title" id="timeTitle">Sete anos.<br>Novos caminhos.</h2></div><p class="section-copy">Uma linha do tempo filtrável, de 2020 a 2026. Cada ano mostra a quantidade de referências do recorte — não o total de pesquisas publicadas no mundo.</p></div>
-   <div class="timeline-line reveal" id="timeline" aria-label="Selecione um ano para filtrar"><div class="loading">Carregando anos…</div></div>
-  </div>
- </section>
  <section class="section" id="padroes" aria-labelledby="patternTitle">
   <div class="wrap">
-   <div class="section-head reveal"><div><span class="kicker">03 / SÍNTESE CRÍTICA</span><h2 class="section-title" id="patternTitle">O que os estudos<br>revelam?</h2></div><p class="section-copy">Quatro leituras metodológicas do levantamento. Os detalhes e os resultados de cada trabalho permanecem nas fichas individuais.</p></div>
+   <div class="section-head reveal"><div><span class="kicker">02 / SÍNTESE CRÍTICA</span><h2 class="section-title" id="patternTitle">O que os estudos<br>revelam?</h2></div><p class="section-copy">Quatro leituras metodológicas do levantamento. Os detalhes e os resultados de cada trabalho permanecem nas fichas individuais.</p></div>
    <div class="insights-grid">
     <article class="panel insight reveal"><span>01 · MODELOS</span><h3>Mais recente não significa melhor.</h3><p>Transformers especializados, classificadores clássicos e LLMs precisam de avaliação em tarefas e protocolos compatíveis.</p></article>
     <article class="panel insight reveal"><span>02 · EVIDÊNCIA</span><h3>Rótulos não são diagnósticos.</h3><p>Autorrelato, anotação de sintomas e diagnóstico clínico possuem significados diferentes.</p></article>
@@ -162,7 +156,7 @@
  <section class="section" id="datasets" aria-labelledby="datasetsTitle">
   <div class="wrap">
    <div class="section-head reveal">
-    <div><span class="kicker">04 / PROVENIÊNCIA CIENTÍFICA</span><h2 class="section-title" id="datasetsTitle">De onde vêm<br><span style="color:var(--cyan)">os dados?</span></h2></div>
+    <div><span class="kicker">03 / PROVENIÊNCIA CIENTÍFICA</span><h2 class="section-title" id="datasetsTitle">De onde vêm<br><span style="color:var(--cyan)">os dados?</span></h2></div>
     <p class="section-copy">As fichas identificam nome do corpus, plataforma específica, links de acesso e restrições. Disponibilidade de artigo, código ou modelo não garante acesso ao dataset.</p>
    </div>
    <div class="science-note reveal"><span class="note-icon">!</span><span><strong>Auditoria documental, não uma reprodução experimental.</strong> “Não confirmado” significa que não foi encontrado comprovante suficiente do acesso ao corpus utilizado; não significa que o dataset não exista. Estudos de revisão não necessariamente possuem dados primários.</span></div>
@@ -291,7 +285,7 @@
 
 "use strict";
 const STATE={all:[],filtered:[],selected:[],filters:{query:"",language:"Todos",condition:"Todas",group:"Todos",year:"Todos",access:"Todos"}};
-const $=(s,root=document)=>root.querySelector(s),$$=(s,root=document)=>[...root.querySelectorAll(s)];
+const $=(s,root=document)=>root.querySelector(s),$=(s,root=document)=>[...root.querySelectorAll(s)];
 const escapeHTML=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const groupOrder=["Clássicos","Transformers","LLMs","Recursos","Revisões","Tese/TCC","Outras"];
 const colors={ "PT-BR":"#ffc785","Inglês":"#7df4db","Misto":"#b7adff","Coreano":"#b7adff","Diversos/NI":"#b7adff"};
@@ -304,15 +298,8 @@ function filterStudies(){
   const q=!f.query||text.includes(f.query.toLocaleLowerCase("pt-BR"));
   return q&&(f.language==="Todos"||s.language===f.language)&&(f.condition==="Todas"||s.conditions.includes(f.condition))&&(f.group==="Todos"||s.group===f.group)&&(f.year==="Todos"||s.year===Number(f.year))&&(f.access==="Todos"||s.datasetAudit?.accessStatus===f.access);
  });
- renderCards();renderMap();renderTimeline();
+ renderCards();renderMap();
  $("#countResults").textContent=STATE.filtered.length+" de "+STATE.all.length+" referências encontradas";
-}
-function renderTimeline(){
- const years=yearData();const max=Math.max(...years.map(x=>x.count),1);
- $("#timeline").innerHTML=years.map(({year,count})=>{
-  const active=STATE.filters.year===String(year);
-  return '<button type="button" class="time-year'+(active?' active':'')+'" data-year="'+year+'" aria-pressed="'+active+'" aria-label="'+year+': '+count+' referências; filtrar ano"><b>'+year+'</b><strong>'+count+'</strong><small>'+((count/max)*100).toFixed(0)+'% do maior ano</small></button>';
- }).join("");
 }
 function renderMap(){
  const width=1100,height=565,ox=170,ex=1045,top=62,row=69;
@@ -405,11 +392,6 @@ function setup(){
   $("#query").value="";["langFilter","groupFilter","conditionFilter","yearFilter","accessFilter"].forEach(key=>$("#"+key).selectedIndex=0);
   filterStudies();
  });
- $("#timeline").addEventListener("click",e=>{
-  const b=e.target.closest("[data-year]");if(!b)return;
-  STATE.filters.year=STATE.filters.year===b.dataset.year?"Todos":b.dataset.year;
-  $("#yearFilter").value=STATE.filters.year;filterStudies();$("#estudos").scrollIntoView({block:"start"});
- });
  $("#studyCards").addEventListener("click",e=>{
   const b=e.target.closest("button[data-action]");if(!b)return;
   if(b.dataset.action==="details")showDetails(b.dataset.id);
@@ -432,11 +414,13 @@ function setup(){
  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#modal").classList.contains("open"))closeModal()});
  $("#downloadData").href="./estudos.json";
  const obs="IntersectionObserver" in window?new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target)}})},{threshold:.08}):null;
- $$(".reveal").forEach(e=>obs?obs.observe(e):e.classList.add("visible"));
+ $(".reveal").forEach(e=>obs?obs.observe(e):e.classList.add("visible"));
 }
 (async function(){
  try{
-  const data=JSON.parse(document.getElementById("studiesEmbedded").textContent);
+  const res=await fetch("./estudos.json",{cache:"no-cache"});
+  if(!res.ok)throw new Error("HTTP "+res.status);
+  const data=await res.json();
   if(!Array.isArray(data.studies)||data.studies.length!==33)throw new Error("Número de referências inesperado.");
   STATE.all=data.studies;
   setup();renderSummary();filterStudies();renderComparison();
