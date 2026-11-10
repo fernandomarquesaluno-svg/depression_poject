@@ -14,15 +14,8 @@ function filterStudies(){
   const q=!f.query||text.includes(f.query.toLocaleLowerCase("pt-BR"));
   return q&&(f.language==="Todos"||s.language===f.language)&&(f.condition==="Todas"||s.conditions.includes(f.condition))&&(f.group==="Todos"||s.group===f.group)&&(f.year==="Todos"||s.year===Number(f.year))&&(f.access==="Todos"||s.datasetAudit?.accessStatus===f.access);
  });
- renderCards();renderMap();renderTimeline();
+ renderCards();renderMap();
  $("#countResults").textContent=STATE.filtered.length+" de "+STATE.all.length+" referências encontradas";
-}
-function renderTimeline(){
- const years=yearData();const max=Math.max(...years.map(x=>x.count),1);
- $("#timeline").innerHTML=years.map(({year,count})=>{
-  const active=STATE.filters.year===String(year);
-  return '<button type="button" class="time-year'+(active?' active':'')+'" data-year="'+year+'" aria-pressed="'+active+'" aria-label="'+year+': '+count+' referências; filtrar ano"><b>'+year+'</b><strong>'+count+'</strong><small>'+((count/max)*100).toFixed(0)+'% do maior ano</small></button>';
- }).join("");
 }
 function renderMap(){
  const width=1100,height=565,ox=170,ex=1045,top=62,row=69;
@@ -114,11 +107,6 @@ function setup(){
   STATE.filters={query:"",language:"Todos",condition:"Todas",group:"Todos",year:"Todos",access:"Todos"};
   $("#query").value="";["langFilter","groupFilter","conditionFilter","yearFilter","accessFilter"].forEach(key=>$("#"+key).selectedIndex=0);
   filterStudies();
- });
- $("#timeline").addEventListener("click",e=>{
-  const b=e.target.closest("[data-year]");if(!b)return;
-  STATE.filters.year=STATE.filters.year===b.dataset.year?"Todos":b.dataset.year;
-  $("#yearFilter").value=STATE.filters.year;filterStudies();$("#estudos").scrollIntoView({block:"start"});
  });
  $("#studyCards").addEventListener("click",e=>{
   const b=e.target.closest("button[data-action]");if(!b)return;
