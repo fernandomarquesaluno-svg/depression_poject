@@ -107,7 +107,7 @@ function renderComparison(){
  if(tax(a).publicationKind!==tax(b).publicationKind)notes.push("**Natureza distinta:** você selecionou tipos de publicação diferentes. Artigo experimental, recurso e revisão não oferecem evidência do mesmo tipo.");
  if(tax(a).primaryTask!==tax(b).primaryTask)notes.push("**Tarefas-alvo distintas:** os números dos dois trabalhos não medem exatamente o mesmo problema.");
  else notes.push("**Mesmo tema de tarefa:** a correspondência temática é inicial e não comprova equivalência de protocolo ou de rótulos.");
- if(tax(a).datasetFamily&&tax(b).datasetFamily&&tax(a).datasetFamily===tax(b).datasetFamily)notes.push("**Reutilização de corpus:** ambas as publicações pertencem à família "+tax(a).datasetFamily+". Confirmar partições e sobreposição de exemplos antes de comparar resultados.");
+ if(tax(a).datasetFamily&&tax(b).datasetFamily&&tax(a).datasetFamily===tax(b).datasetFamily)notes.push("**Reutilização de corpus:** ambas as publicações pertencem à família "+escapeHTML(tax(a).datasetFamily)+". Confirmar partições e sobreposição de exemplos antes de comparar resultados.");
  else notes.push("**Fontes de dados:** não está comprovada identidade de corpus e amostra entre as duas publicações.");
  if(ds(a).sampleUnit&&ds(b).sampleUnit&&ds(a).sampleUnit!==ds(b).sampleUnit)notes.push("**Unidade de análise diferente:** textos, usuários ou entrevistas não são intercambiáveis.");
  if(!ds(a).splitDescription||!ds(b).splitDescription)notes.push("**Validação insuficientemente documentada:** ao menos uma ficha não registra partição ou protocolo auditado.");
@@ -170,6 +170,7 @@ function setup(){
   t.innerHTML='<b>'+escapeHTML(s.title)+'</b> · '+s.year+' · '+escapeHTML(s.language)+'<br><small>Clique no ponto para explorar os dados técnicos.</small>';t.classList.add("visible");
  });
  $("#map").addEventListener("mouseout",e=>{if(e.target.closest(".node"))$("#mapTooltip").classList.remove("visible")});
+ $("#comparePresets").addEventListener("click",e=>{const b=e.target.closest("button[data-a][data-b]");if(!b)return;STATE.selected=[Number(b.dataset.a),Number(b.dataset.b)];renderComparison();renderCards();$("#comparar").scrollIntoView({behavior:"smooth",block:"start"});});
  $("#clearComparison").addEventListener("click",()=>{STATE.selected=[];renderComparison();renderCards()});
  $("#modal").addEventListener("click",e=>{if(e.target.id==="modal"||e.target.classList.contains("close"))closeModal();const b=e.target.closest('[data-action="compare"]');if(b){toggleCompare(b.dataset.id);closeModal()}});
  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#modal").classList.contains("open"))closeModal()});
