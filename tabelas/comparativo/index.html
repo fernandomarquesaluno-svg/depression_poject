@@ -418,9 +418,7 @@ function setup(){
 }
 (async function(){
  try{
-  const res=await fetch("./estudos.json",{cache:"no-cache"});
-  if(!res.ok)throw new Error("HTTP "+res.status);
-  const data=await res.json();
+  const data=JSON.parse(document.getElementById("studiesEmbedded").textContent);
   if(!Array.isArray(data.studies)||data.studies.length!==33)throw new Error("Número de referências inesperado.");
   STATE.all=data.studies;
   setup();renderSummary();filterStudies();renderComparison();
