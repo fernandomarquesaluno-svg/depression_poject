@@ -44,6 +44,69 @@
         "DEPTWEET publica tweet IDs e aceita DUA; classificado como parcial em vez de não confirmado",
         "Chung et al. 2025 solicita autorização ao autor correspondente; classificado como controlado"
       ]
+    },
+    "auditV3": {
+      "date": "2026-11-10",
+      "round": 3,
+      "target": "Oito registros anteriormente sem confirmação de acesso e relações de reutilização de fontes primárias",
+      "reclassified": [
+        {
+          "id": 8,
+          "from": "nao_confirmado",
+          "to": "restrito",
+          "basis": "Origem Amive identificada e distribuição dos textos originais vedada pelo grupo"
+        },
+        {
+          "id": 22,
+          "from": "nao_confirmado",
+          "to": "parcial",
+          "basis": "Criadores originais do MDDL publicam link de dataset; partições de Shah não auditadas"
+        },
+        {
+          "id": 23,
+          "from": "nao_confirmado",
+          "to": "controlado",
+          "basis": "Declaração primária: dados disponíveis mediante solicitação"
+        },
+        {
+          "id": 27,
+          "from": "nao_confirmado",
+          "to": "controlado",
+          "basis": "Página oficial UMD com requerimento de IRB e acordo"
+        }
+      ],
+      "stillUnconfirmed": [
+        9,
+        13,
+        19,
+        21
+      ],
+      "datasetFamilies": {
+        "AMIVE": [
+          8,
+          31
+        ],
+        "IDEA-IDEABOT": [
+          9,
+          13
+        ],
+        "SETEMBROBR": [
+          6,
+          7,
+          20,
+          30
+        ],
+        "UMD-SUICIDALITY": [
+          27
+        ]
+      },
+      "caveats": [
+        "UMD CLPsych 2024 n=125 usuários anotados não implica acesso público.",
+        "Amive 780 postagens originais não implica 780 instâncias efetivas na avaliação Figueiredo 2026.",
+        "MDDL oferece distribuição do corpus-base, não partições exatas do artigo Shah.",
+        "Hussain 2025: data available on request.",
+        "Mao & Han 2025: cinco conjuntos autodenominados públicos mas URLs das versões exatas não confirmadas."
+      ]
     }
   },
   "studies": [
@@ -295,7 +358,7 @@
       "year": 2024,
       "condition": "Sinais de depressão (inclui preocupação/ansiedade)",
       "source": "Facebook de universitários; português brasileiro",
-      "dataset": "780 posts , 21 sinais , 2.304 ocorrências positivas",
+      "dataset": "Amive: 780 postagens públicas de páginas universitárias do Facebook, coletadas de 2012–2021; 21 sinais anotados por quatro especialistas em formação. Dados originais não redistribuídos publicamente pelo grupo devido à sensibilidade.",
       "labeling": "Anotação humana dos sinais; não classifica diagnósticos",
       "methods": "Regressão logística, SVM, BERTimbau, MentalBERT, MentalRoBERTa",
       "results": "Average Precision : sono 0,900 (regressão logística); preocupação/ansiedade 0,794 (MentalBERT); tristeza 0,745 (BERTimbau); Tabela 5",
@@ -313,15 +376,24 @@
       ],
       "pending": [],
       "datasetAudit": {
-        "name": "Corpus de sinais de depressão em postagens universitárias (Mendes & Caseli)",
-        "platform": "Facebook",
-        "accessStatus": "nao_confirmado",
-        "accessEvidence": "O estudo usa 780 posts de universitários; não identifiquei um link oficial para download dos textos e anotações.",
+        "name": "Amive — corpus de 780 postagens universitárias com 21 sinais de depressão",
+        "platform": "Facebook — páginas públicas de segredos universitários",
+        "accessStatus": "restrito",
+        "accessEvidence": "Livro técnico do grupo UFSCar documenta 780 postagens do Facebook (2012–2021), selecionadas e anotadas manualmente em 21 sinais. O repositório oficial do projeto de geração de dados sintéticos afirma que os textos originais do Amive não podem ser distribuídos publicamente devido à sensibilidade.",
         "datasetUrl": null,
-        "evidenceUrl": "https://aclanthology.org/2024.lrec-main.754/",
-        "reuseAndCaveat": "Textos potencialmente sensíveis: não pressupor redistribuição pública.",
+        "evidenceUrl": "https://brasileiraspln.com/livro-pln/3a-edicao/parte-dominios/cap-saude-mental/cap-saude-mental.html",
+        "reuseAndCaveat": "A publicação Mendes & Caseli (2024) avalia os textos anotados do projeto Amive; Figueiredo (2026) estuda síntese do mesmo recurso. Não contar as duas publicações como corpora independentes.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
+        "sampleUnit": "postagem",
+        "sampleSize": "780 postagens selecionadas (2012–2021)",
+        "labelingDetail": "Quatro anotadores de psicologia, psiquiatria ou terapia ocupacional marcaram trechos associados a 21 sinais e um rótulo de postagem indicativa.",
+        "datasetFamily": "AMIVE",
+        "sourceChecks": [
+          "https://brasileiraspln.com/livro-pln/3a-edicao/parte-dominios/cap-saude-mental/cap-saude-mental.html",
+          "https://github.com/LALIC-UFSCar/synthetic-data-mental-health"
+        ],
+        "confidence": "alta — identificação, origem e restrição sustentadas por fontes do grupo de pesquisa"
       }
     },
     {
@@ -347,15 +419,23 @@
       ],
       "pending": [],
       "datasetAudit": {
-        "name": "IDEA-RiSCo — transcrições de respostas por WhatsApp",
-        "platform": "WhatsApp (áudio transcrito)",
+        "name": "IDEA-RiSCo / IDEABot — transcrições de mensagens de voz de adolescentes",
+        "platform": "WhatsApp (IDEABot), respostas em áudio transcritas em português brasileiro",
         "accessStatus": "nao_confirmado",
-        "accessEvidence": "Coleta com 52 jovens via chatbot WhatsApp; a fonte consultada não estabelece acesso aberto às transcrições individuais.",
+        "accessEvidence": "Estudo original do IDEA-RiSCo: 52 participantes (13 MDD e 39 controles), que responderam aos sete dias de perguntas em áudio do IDEABot; cada participante possui sete transcrições, segundo a seção de métodos. A publicação não fornece um link de redistribuição do corpus de transcrições.",
         "datasetUrl": null,
-        "evidenceUrl": "https://rbppsiquiatria.org.br/details/3628/en-US/first-person-pronouns-as-linguistic-markers-of-depression-among-brazilian-youths",
-        "reuseAndCaveat": "A publicação é aberta; a base de falas não foi localizada em repositório público.",
+        "evidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12815307/",
+        "reuseAndCaveat": "O estudo Viduani 2026 utiliza também IDEABot/WhatsApp, mas não foi demonstrado que os mesmos participantes ou transcrições se repetem. Tratar como família de coleta compartilhada, não amostra idêntica.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
+        "sampleUnit": "participante com série de transcrições diárias",
+        "sampleSize": "52 adolescentes; sete transcrições por participante no protocolo descrito",
+        "labelingDetail": "Transtorno depressivo maior identificado por avaliação psiquiátrica; sintomas analisados por MFQ e CDRS-R; indicadores pronominais via LIWC em português.",
+        "datasetFamily": "IDEA-IDEABOT",
+        "sourceChecks": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC12815307/"
+        ],
+        "confidence": "alta para origem e amostragem; acesso aos textos não confirmado"
       }
     },
     {
@@ -468,7 +548,7 @@
       "year": 2026,
       "condition": "Depressão",
       "source": "Fala cotidiana transcrita; português brasileiro",
-      "dataset": "30 adolescentes (15 com depressão maior, 15 controles); coleta de 14 dias",
+      "dataset": "Transcrições de áudios naturalísticos em português de 30 adolescentes (15 com MDD clinicamente confirmado e 15 controles), coletadas em 14 dias via IDEABot/WhatsApp; quantidade de mensagens e acesso aos textos não confirmados.",
       "labeling": "Diagnóstico de psiquiatra infantojuvenil com procedimentos padrão-ouro",
       "methods": "GPT-4o por prompting; comparação com 12 modelos GPT",
       "results": "Acurácia 86,6% (IC95% 70,3–95,6%); sensibilidade 100% ; especificidade 73,3%",
@@ -484,15 +564,24 @@
       ],
       "pending": [],
       "datasetAudit": {
-        "name": "Transcrições de fala cotidiana de adolescentes (Viduani et al. 2026)",
-        "platform": "Falas em áudio / transcrições",
+        "name": "IDEABot / estudo de fala naturalística para detecção de depressão em adolescentes (2026)",
+        "platform": "WhatsApp (IDEABot) com mensagens de voz transcritas em português brasileiro",
         "accessStatus": "nao_confirmado",
-        "accessEvidence": "O estudo relata participantes clínicos e controle; não foi identificada cópia pública verificável das transcrições.",
+        "accessEvidence": "Artigo de prova de conceito descreve 30 adolescentes brasileiros de 16–19 anos, sendo 15 com diagnóstico psiquiátrico confirmado de MDD e 15 controles; 14 dias de coleta por chatbot WhatsApp. A declaração de liberação dos textos individuais não foi encontrada nas fontes acessíveis.",
         "datasetUrl": null,
-        "evidenceUrl": "https://pubmed.ncbi.nlm.nih.gov/42134742/",
-        "reuseAndCaveat": "Consultar declaração de disponibilidade do artigo integral.",
+        "evidenceUrl": "https://www.sciencedirect.com/science/article/pii/S0165032726008086",
+        "reuseAndCaveat": "Compartilha a infraestrutura de coleta IDEABot com Viduani et al. (2025); sobreposição efetiva de pessoas e transcrições não documentada nesta auditoria.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
+        "sampleUnit": "adolescente; mensagens transcritas ao longo de 14 dias",
+        "sampleSize": "30 participantes, 15 MDD e 15 não MDD; volume de mensagens não confirmado",
+        "labelingDetail": "Diagnóstico MDD estabelecido por psiquiatra infantil e adolescente por procedimento de referência; classificação binária por LLM.",
+        "datasetFamily": "IDEA-IDEABOT",
+        "sourceChecks": [
+          "https://www.sciencedirect.com/science/article/pii/S0165032726008086",
+          "https://pubmed.ncbi.nlm.nih.gov/42134742/"
+        ],
+        "confidence": "alta para 30 pessoas e origem; disponibilidade não confirmada"
       }
     },
     {
@@ -745,12 +834,18 @@
         "name": "SetembroBR; SMHD (Self-Reported Mental Health Diagnoses)",
         "platform": "Twitter/X e Reddit",
         "accessStatus": "parcial",
-        "accessEvidence": "SetembroBR foi divulgado publicamente; SMHD segue condições de acesso de seu provedor. Os tamanhos exatos de cada subconjunto na Tabela 2 ainda devem ser conferidos.",
+        "accessEvidence": "O artigo identifica SetembroBR (Twitter/X em PT-BR) e SMHD (Reddit em inglês). O primeiro tem link público de distribuição; o segundo possui solicitação por canal da coleção Georgetown. O tamanho global documentado de SMHD não corresponde necessariamente aos subconjuntos exatos da Tabela 2 deste artigo.",
         "datasetUrl": "https://ivandreparaboni.wixsite.com/research/setembrobr",
         "evidenceUrl": "https://doi.org/10.1109/ACCESS.2025.3583259",
-        "reuseAndCaveat": "Usa até mil tweets recentes por usuário no domínio português; diferenças de unidade impedem soma direta.",
+        "reuseAndCaveat": "Usa Até 1.000 mensagens Twitter/X por usuário; aferir quantidades por classe da Tabela 2 antes de apresentar n do experimento. Não reaproveitar totais globais do SMHD como os efetivamente avaliados.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor",
+        "sourceChecks": [
+          "https://doi.org/10.1109/ACCESS.2025.3583259",
+          "https://ivandreparaboni.wixsite.com/research/setembrobr",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC11607554/"
+        ],
+        "confidence": "alta para corpora e plataformas; tamanhos por partição permanecem pendentes"
       }
     },
     {
@@ -760,7 +855,7 @@
       "year": 2025,
       "condition": "Classificação de sinais depressivos",
       "source": "Postagens de redes sociais; múltiplos benchmarks",
-      "dataset": "Cinco conjuntos de avaliação de mídias sociais relatados no artigo; tamanhos variam conforme corpus.",
+      "dataset": "Cinco bases da Tabela 1: Twitter Depression 3.200 (843/2.357), Multilingual Twitter EN 1.000 (500/500), Identifying Depression: fóruns 1.323 (390/933), Reddit 1.841 (1.293/548), combinado Reddit/fóruns 2.821 (1.340/1.481). A soma não é evidência de unicidade.",
       "labeling": "Rótulos fornecidos por cada benchmark, sem equivalência automática a diagnóstico clínico.",
       "methods": "Tarefa: Classificação de textos com sinais de depressão. Modelos e representações: TextGCN enriquecido com representações emocionais derivadas de modelos de linguagem especializados.",
       "results": "Ganhos relatados frente a configurações de referência; não consolidar resultados de datasets distintos em um F1 único.",
@@ -776,15 +871,23 @@
       ],
       "pending": [],
       "datasetAudit": {
-        "name": "Twitter Depression Dataset; Multilingual Twitter (EN); Identifying Depression (3 conjuntos)",
-        "platform": "Twitter/X; Reddit; fóruns web",
+        "name": "Cinco benchmarks reutilizados: Twitter Depression (3200); Multilingual Twitter EN (1000); Identifying Depression — fóruns (1323), Reddit (1841), conjunto misto (2821)",
+        "platform": "Twitter/X, fóruns web e Reddit — fontes individualizadas na Tabela 1",
         "accessStatus": "nao_confirmado",
-        "accessEvidence": "O artigo lista cinco conjuntos de avaliação descritos como públicos, mas não foi confirmado nesta auditoria um endereço de download direto e único para todos eles.",
+        "accessEvidence": "A Tabela 1 do artigo fornece cinco nomes, plataformas, totais e classes, e os autores os descrevem como publicamente disponíveis; sua declaração de disponibilidade de dados, porém, não oferece cinco links diretos e remete perguntas ao autor correspondente. Nesta auditoria, não foi confirmado o acesso integral às versões usadas.",
         "datasetUrl": null,
         "evidenceUrl": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1612769/full",
-        "reuseAndCaveat": "Volumes: 3.200, 1.000, 1.323, 1.841 e 2.821 posts; conjuntos reutilizados, potencialmente sobrepostos.",
+        "reuseAndCaveat": "As cinco bases somam 10.185 posts em contagens reportadas (3.200+1.000+1.323+1.841+2.821). A soma é de registros declarados e não prova exclusividade entre corpora derivados.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
+        "sampleUnit": "postagem",
+        "sampleSize": "3.200; 1.000; 1.323; 1.841; 2.821 postagens conforme Tabela 1; sobreposição desconhecida",
+        "labelingDetail": "Classificação binária positiva/negativa por benchmark; detalhes originais de rotulagem não unificados entre conjuntos.",
+        "datasetFamily": "FIVE-REUSED-BENCHMARKS",
+        "sourceChecks": [
+          "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1612769/full"
+        ],
+        "confidence": "alta para os cinco totais; acesso reprodutível às versões não confirmado"
       }
     },
     {
@@ -813,15 +916,24 @@
       "provenance": "https://arxiv.org/abs/2409.14794",
       "verifiedOn": "2026-11-10",
       "datasetAudit": {
-        "name": "Shen et al. (IJCAI 2017) — D1/D2/D3 (Twitter)",
+        "name": "MDDL / Shen et al. (IJCAI 2017) — D1, D2 e D3, corpus de Twitter/X",
         "platform": "Twitter/X",
-        "accessStatus": "nao_confirmado",
-        "accessEvidence": "O pré-print descreve 20 mil instâncias para ajuste e 20 mil para teste; link e condições de redistribuição da base original não foram confirmados.",
-        "datasetUrl": null,
-        "evidenceUrl": "https://arxiv.org/abs/2409.14794",
-        "reuseAndCaveat": "Pré-print 2024 vs artigo editorial 2025: garantir concordância do protocolo antes de reutilizar resultado.",
+        "accessStatus": "parcial",
+        "accessEvidence": "Os criadores originais publicam README oficial do MDDL com descrição das bases D1 (autorrelato de diagnóstico), D2 (controles por filtro lexical) e D3 (candidatos ruidosos sem rótulo) e link de download em SharePoint. Não foi comprovado que os arquivos exatos de 20 mil registros para treino e 20 mil para teste do trabalho de Shah 2025 estejam incluídos sem preparação adicional.",
+        "datasetUrl": "https://github.com/sunlightsgy/MDDL",
+        "evidenceUrl": "https://github.com/sunlightsgy/MDDL",
+        "reuseAndCaveat": "Repositório é da fonte original do corpus, não do estudo de Shah. Acesso público anunciado à base original não comprova download atual do SharePoint ou correspondência exata de partições.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
+        "sampleUnit": "postagem/usuário conforme corpus original e recorte editorial",
+        "sampleSize": "Pré-print de Shah: 20.000 instâncias para ajuste e 20.000 para teste; total original de D1/D2/D3 distinto.",
+        "labelingDetail": "D1 autorrelato de diagnóstico; D2 controles baseados em ausência de menção lexical; D3 candidatos não rotulados com termo 'depress'.",
+        "datasetFamily": "MDDL-SHEN2017",
+        "sourceChecks": [
+          "https://github.com/sunlightsgy/MDDL",
+          "https://arxiv.org/abs/2409.14794"
+        ],
+        "confidence": "alta para disponibilização anunciada do MDDL; protocolo exato de Shah requer confirmação"
       }
     },
     {
@@ -851,15 +963,23 @@
       "provenance": "https://www.mdpi.com/2673-2688/6/7/157",
       "verifiedOn": "2026-11-10",
       "datasetAudit": {
-        "name": "Corpus de gravidade textual em quatro níveis de Hussain et al.",
-        "platform": "Reddit",
-        "accessStatus": "nao_confirmado",
-        "accessEvidence": "Foram descritas 9.841 postagens de 6.200 usuários. Não foi identificado um repositório validado com os textos e rótulos usados integralmente.",
+        "name": "Reddit depression severity — corpus anotado por Hussain et al. (2025)",
+        "platform": "Reddit (r/depression; r/SuicideWatch; r/mentalhealth e outros)",
+        "accessStatus": "controlado",
+        "accessEvidence": "A seção Data Availability Statement da publicação diz 'The data is available on request'. Portanto, 9.841 postagens de 6.200 usuários não são descritas como arquivos de download público; requerem solicitação aos autores.",
         "datasetUrl": null,
         "evidenceUrl": "https://www.mdpi.com/2673-2688/6/7/157",
-        "reuseAndCaveat": "Publicação de resultados não prova download público de 9.841 instâncias.",
+        "reuseAndCaveat": "Volume de 9.841 postagens, de 6.200 usuários, com quatro níveis de gravidade textual; não atribuir diagnóstico clínico nem inferir acesso livre aos arquivos.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
+        "sampleUnit": "postagem do Reddit",
+        "sampleSize": "9.841 postagens / 6.200 usuários (2019–2023)",
+        "labelingDetail": "Quatro níveis (mínimo, leve, moderado, grave), consenso entre anotadores e adjudicação; verificar distribuição por classe antes de reproduzir.",
+        "datasetFamily": "HUSSAIN-REDDIT2025",
+        "sourceChecks": [
+          "https://www.mdpi.com/2673-2688/6/7/157"
+        ],
+        "confidence": "alta — declaração de disponibilidade explícita na revista"
       }
     },
     {
@@ -988,15 +1108,24 @@
       ],
       "pending": [],
       "datasetAudit": {
-        "name": "UMD Reddit Suicidality Dataset — CLPsych 2024 (subconjunto de 125 usuários)",
+        "name": "UMD Reddit Suicidality Dataset, Version 2 — recorte CLPsych 2024 (125 usuários)",
         "platform": "Reddit (r/SuicideWatch)",
-        "accessStatus": "nao_confirmado",
-        "accessEvidence": "Tarefa com 125 usuários anotados; o acesso aos textos específicos de competição não foi confirmado como público nesta auditoria.",
-        "datasetUrl": null,
-        "evidenceUrl": "https://aclanthology.org/2024.clpsych-1.15/",
-        "reuseAndCaveat": "Não interpretar rótulo de risco no desafio como diagnóstico clínico.",
+        "accessStatus": "controlado",
+        "accessEvidence": "A página oficial da Universidade de Maryland exige solicitação e comprovante de análise por IRB ou comitê de ética equivalente. Na CLPsych 2024, participantes assinaram acordo de acesso e eliminação dos arquivos ao término da tarefa.",
+        "datasetUrl": "https://psresnik.github.io/umd_reddit_suicidality_dataset.html",
+        "evidenceUrl": "https://psresnik.github.io/umd_reddit_suicidality_dataset.html",
+        "reuseAndCaveat": "A versão da Shared Task 2024 contém 125 usuários de amostra anotada; acesso para estudos posteriores exige novo pedido e revisão ética, não o formulário temporário do evento.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
+        "sampleUnit": "usuário com sequência de postagens",
+        "sampleSize": "125 usuários anotados da tarefa",
+        "labelingDetail": "Risco de suicidabilidade por usuário baseado em anotações de especialistas; sub-tarefas de realce de evidências e sumarização, sem diagnóstico clínico.",
+        "datasetFamily": "UMD-SUICIDALITY",
+        "sourceChecks": [
+          "https://psresnik.github.io/umd_reddit_suicidality_dataset.html",
+          "https://clpsych.org/wp-content/uploads/2023/12/Dataset-application-for-CLPsych-2024.pdf"
+        ],
+        "confidence": "alta — página oficial com requisitos explícitos"
       }
     },
     {
@@ -1115,7 +1244,7 @@
       "year": 2026,
       "condition": "Sintomas de depressão; geração sintética e privacidade",
       "source": "Corpus Amive; português brasileiro",
-      "dataset": "Corpus Amive (UFSCar): postagens anônimas em português brasileiro anotadas por sintomas de depressão, não disponibilizadas integralmente por motivos de privacidade. O trabalho estuda geração de paráfrases sintéticas e avalia o sintoma tristeza/humor deprimido. A volumetria da base original e das partições usadas nos experimentos não foi confirmada no resumo institucional nem no README público do código.",
+      "dataset": "Amive original: 780 postagens de páginas universitárias do Facebook anotadas com sintomas. Dados sensíveis não distribuídos integralmente; Figueiredo (2026) seleciona sentenças para síntese e experimentos binários, cujo volume efetivo permanece não confirmado.",
       "labeling": "Anotações de sintomas provenientes do corpus Amive; foco de avaliação no sintoma tristeza/humor deprimido.",
       "methods": "Tarefa: Paráfrase sintética, similaridade textual e avaliação extrínseca de classificação binária. Modelos e representações: Retrotradução, PEGASUS, BERTScore com BERTimbau; baselines LR, SVM, Naive Bayes e Random Forest.",
       "results": "Utilidade classificatória em geral preservada, mas perda de precisão em transferência sintético→real e alterações de nuances discursivas.",
@@ -1137,15 +1266,25 @@
       "provenance": "https://repositorio.ufscar.br/items/e2916bfc-974c-4b67-b96e-f0d67065827c",
       "verifiedOn": "2026-11-10",
       "datasetAudit": {
-        "name": "Amive (corpus original); versões sintéticas em desenvolvimento",
-        "platform": "Postagens anônimas em rede social; plataforma não identificada",
+        "name": "Amive — corpus original sensível e pipeline de paráfrases sintéticas",
+        "platform": "Facebook — páginas universitárias na origem do corpus Amive",
         "accessStatus": "restrito",
-        "accessEvidence": "O projeto acadêmico explicita que textos originais não podem ser distribuídos publicamente por sensibilidade. O código de paráfrase está público; divulgação efetiva do CSV sintético ainda não confirmada.",
+        "accessEvidence": "Fontes UFSCar documentam o Amive como postagens de páginas universitárias de Facebook; o corpus de origem possui 780 postagens anotadas, mas não foi confirmado que todas tenham entrado nas partições do experimento de síntese. A autora disponibiliza código, não os textos originais.",
         "datasetUrl": null,
         "evidenceUrl": "https://repositorio.ufscar.br/items/e2916bfc-974c-4b67-b96e-f0d67065827c",
-        "reuseAndCaveat": "O repositório público contém o pipeline de geração; não apresenta confirmação de livre distribuição dos textos originais do Amive nem do CSV final sintético.",
+        "reuseAndCaveat": "Mesmo projeto de origem usado por Mendes & Caseli (2024). Para Figueiredo (2026), conferir n de sentenças/instâncias após seleção do sintoma e split de treino/teste; 780 postagens originais não são o total do experimento binário.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor",
+        "sampleUnit": "postagens originais; sentenças selecionadas e paráfrases sintéticas na avaliação",
+        "sampleSize": "780 postagens no corpus original Amive; volume efetivo de sentenças no experimento 2026 não confirmado",
+        "labelingDetail": "Sinais anotados em trechos de postagens; classificação binária do sintoma Tristeza/Humor deprimido na avaliação extrínseca.",
+        "datasetFamily": "AMIVE",
+        "sourceChecks": [
+          "https://repositorio.ufscar.br/items/e2916bfc-974c-4b67-b96e-f0d67065827c",
+          "https://github.com/LALIC-UFSCar/synthetic-data-mental-health",
+          "https://brasileiraspln.com/livro-pln/3a-edicao/parte-dominios/cap-saude-mental/cap-saude-mental.html"
+        ],
+        "confidence": "alta para família e privacidade; tamanho do experimento Figueiredo pendente"
       }
     },
     {
