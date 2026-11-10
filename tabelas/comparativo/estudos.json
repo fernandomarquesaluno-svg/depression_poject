@@ -109,9 +109,9 @@
         "platform": "Reddit",
         "accessStatus": "parcial",
         "accessEvidence": "O checkpoint MentalBERT exige aceite de condições no Hugging Face. Dreaddit tem versões públicas; isso não comprova acesso ao corpus bruto completo de pré-treinamento.",
-        "datasetUrl": "https://huggingface.co/mental/mental-bert-base-uncased",
+        "datasetUrl": null,
         "evidenceUrl": "https://huggingface.co/mental/mental-bert-base-uncased",
-        "reuseAndCaveat": "Distinguir acesso ao modelo do acesso aos textos usados em seu treinamento.",
+        "reuseAndCaveat": "O link de modelo MentalBERT no Hugging Face não é um link de corpus. Dreaddit é benchmark distinto; requer buscar dados nas fontes originais, sem presumir acesso ao corpus de pré-treino.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
       }
@@ -1141,9 +1141,9 @@
         "platform": "Postagens anônimas em rede social; plataforma não identificada",
         "accessStatus": "restrito",
         "accessEvidence": "O projeto acadêmico explicita que textos originais não podem ser distribuídos publicamente por sensibilidade. O código de paráfrase está público; divulgação efetiva do CSV sintético ainda não confirmada.",
-        "datasetUrl": "https://github.com/LALIC-UFSCar/synthetic-data-mental-health",
+        "datasetUrl": null,
         "evidenceUrl": "https://repositorio.ufscar.br/items/e2916bfc-974c-4b67-b96e-f0d67065827c",
-        "reuseAndCaveat": "O README usa exemplos de arquivos CSV; esses caminhos não demonstram disponibilização do corpus original.",
+        "reuseAndCaveat": "O repositório público contém o pipeline de geração; não apresenta confirmação de livre distribuição dos textos originais do Amive nem do CSV final sintético.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
       }
