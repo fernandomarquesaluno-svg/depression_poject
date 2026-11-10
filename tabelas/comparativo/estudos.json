@@ -39,7 +39,11 @@
         "parcial": "Componentes com regimes diferentes; verificar ficha",
         "nao_confirmado": "Ausência de confirmação documental de acesso ao corpus completo",
         "nao_aplica": "Revisão secundária sem novo corpus próprio"
-      }
+      },
+      "additionalChecks": [
+        "DEPTWEET publica tweet IDs e aceita DUA; classificado como parcial em vez de não confirmado",
+        "Chung et al. 2025 solicita autorização ao autor correspondente; classificado como controlado"
+      ]
     }
   },
   "studies": [
@@ -171,11 +175,11 @@
       "datasetAudit": {
         "name": "DEPTWEET",
         "platform": "Twitter/X",
-        "accessStatus": "nao_confirmado",
-        "accessEvidence": "Existe repositório oficial com código e descrição, mas a disponibilização integral dos 40.191 tweets rotulados não foi confirmada nesta revisão.",
+        "accessStatus": "parcial",
+        "accessEvidence": "Repositório dos autores distribui IDs de tweets e rótulos; o texto deve ser reidratado, sujeito à disponibilidade atual no Twitter/X. Como alternativa, os autores solicitam assinatura de acordo de uso (DUA) para fornecer os textos.",
         "datasetUrl": "https://github.com/mohsinulkabir14/DEPTWEET",
         "evidenceUrl": "https://github.com/mohsinulkabir14/DEPTWEET",
-        "reuseAndCaveat": "Código público não implica dados públicos; verificar arquivos ou solicitação aos autores.",
+        "reuseAndCaveat": "Não confundir IDs publicamente distribuídos com disponibilidade integral dos textos. Tweets apagados ou indisponíveis não podem ser recuperados por reidratação.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
       }
@@ -448,11 +452,11 @@
       "datasetAudit": {
         "name": "Mensagens abertas de aplicativo de saúde comunitária (Chung et al.)",
         "platform": "Aplicativo móvel de mensagens (Coreia do Sul)",
-        "accessStatus": "nao_confirmado",
-        "accessEvidence": "O artigo descreve 1.332 mensagens de 230 participantes, mas não confirmei uma distribuição pública dos textos brutos.",
+        "accessStatus": "controlado",
+        "accessEvidence": "A declaração 'Data availability' informa explicitamente que os dados não estão em repositório público para proteger participantes; solicitações devem ser encaminhadas ao autor correspondente.",
         "datasetUrl": null,
-        "evidenceUrl": "https://link.springer.com/article/10.1186/s12889-025-23337-4",
-        "reuseAndCaveat": "Não confundir acesso livre ao artigo com autorização para redistribuir mensagens de participantes.",
+        "evidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12150497/",
+        "reuseAndCaveat": "Dados originais de 1.332 textos e 230 idosos sob proteção de privacidade; artigo integral disponível não implica corpus aberto.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
       }
@@ -555,7 +559,7 @@
         "name": "Mental Health Sentiment Analysis (Kaggle), complementado por quatro subreddits",
         "platform": "Reddit; Twitter/X",
         "accessStatus": "parcial",
-        "accessEvidence": "A seção de disponibilidade declara públicos os corpora-base; a coleção agregada de 60.889 textos e as saídas dos modelos não têm link único confirmado. Saídas por modelo: contato com autor.",
+        "accessEvidence": "O artigo identifica Kaggle Mental Health Sentiment Analysis como corpus-base e Reddit como fonte adicional (r/ADHD, r/adhdwomen, r/autism, r/aspergers); acesso à compilação exata de 60.889 instâncias e saídas de modelos não foi reproduzido nesta auditoria.",
         "datasetUrl": null,
         "evidenceUrl": "https://mental.jmir.org/2026/1/e98925/",
         "reuseAndCaveat": "A coleta ampliada adicionou r/ADHD, r/adhdwomen, r/autism e r/aspergers; separar dataset-base de dados agregados.",
@@ -984,7 +988,7 @@
       ],
       "pending": [],
       "datasetAudit": {
-        "name": "CLPsych Shared Task 2024 — Evidence of Suicidality Risk",
+        "name": "UMD Reddit Suicidality Dataset — CLPsych 2024 (subconjunto de 125 usuários)",
         "platform": "Reddit (r/SuicideWatch)",
         "accessStatus": "nao_confirmado",
         "accessEvidence": "Tarefa com 125 usuários anotados; o acesso aos textos específicos de competição não foi confirmado como público nesta auditoria.",
