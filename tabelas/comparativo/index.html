@@ -285,7 +285,7 @@
 
 "use strict";
 const STATE={all:[],filtered:[],selected:[],filters:{query:"",language:"Todos",condition:"Todas",group:"Todos",year:"Todos",access:"Todos"}};
-const $=(s,root=document)=>root.querySelector(s),$=(s,root=document)=>[...root.querySelectorAll(s)];
+const $=(s,root=document)=>root.querySelector(s),$$=(s,root=document)=>[...root.querySelectorAll(s)];
 const escapeHTML=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const groupOrder=["Clássicos","Transformers","LLMs","Recursos","Revisões","Tese/TCC","Outras"];
 const colors={ "PT-BR":"#ffc785","Inglês":"#7df4db","Misto":"#b7adff","Coreano":"#b7adff","Diversos/NI":"#b7adff"};
@@ -414,7 +414,7 @@ function setup(){
  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#modal").classList.contains("open"))closeModal()});
  $("#downloadData").href="./estudos.json";
  const obs="IntersectionObserver" in window?new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target)}})},{threshold:.08}):null;
- $(".reveal").forEach(e=>obs?obs.observe(e):e.classList.add("visible"));
+ $$(".reveal").forEach(e=>obs?obs.observe(e):e.classList.add("visible"));
 }
 (async function(){
  try{
