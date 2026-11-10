@@ -4,6 +4,8 @@
 
 **Tipo de revisão:** narrativa comparativa, não revisão sistemática nem metanálise própria. Inclui artigos experimentais, artigos de recursos, revisões, uma tese e um TCC. Cada linha representa uma referência, não um novo experimento nem um corpus independente.
 
+**Inventário de datasets, plataformas e acesso:** consulte [Auditoria documental dos 33 estudos](auditoria_datasets_33.md), que diferencia acesso público, parcial, controlado, restrito, não confirmado e não aplicável. O Atlas é a interface visual interativa; esta tabela é somente apêndice técnico.
+
 **Oito dimensões:** referência, condição, fonte/idioma, dataset, rótulos, métodos, resultados e limitações. Para comparações numéricas, é necessário controlar tarefa, classes, dataset, partição, métrica e unidade de análise. Identificação de categoria em texto não é diagnóstico clínico.
 
 | Referência e Ano | Problema ou Condição Investigada | Tipo de Texto e Idioma | Dataset, Origem e Volumetria | Estratégia de Rotulagem | Métodos de IA e Técnicas de PLN | Métricas e Resultados Quantitativos | Limitações Relevantes e Relação com o Projeto |
