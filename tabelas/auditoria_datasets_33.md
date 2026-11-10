@@ -11,7 +11,7 @@
 | Controlado | 7 | mediante solicitação/acordo |
 | Restrito | 3 | corpus não distribuído livremente |
 | Acesso parcial | 9 | modalidades diferentes |
-| Não confirmado | 4 | sem prova suficiente de acesso |
+| Não confirmado | 3 | sem prova suficiente de acesso |
 | Não se aplica | 5 | revisão sem base própria |
 | **Total** | **33** | Cada registro representa uma **publicação**, não um corpus único |
 
@@ -34,6 +34,31 @@
 - **MDDL / Shen et al. (2017) — 22.** D1/D2/D3 têm distribuição anunciada no repositório original. As **20 mil instâncias de treino e 20 mil de teste** descritas pelo pré-print de Shah são um recorte experimental, não a volumetria bruta do MDDL.
 - **UMD Reddit Suicidality — 27.** O conjunto original é reutilizado na CLPsych 2024 com amostra anotada de 125 usuários; os dados requerem aprovação ética para pesquisa posterior.
 - **Hussain 2025 — 23.** Nove mil oitocentas e quarenta e uma postagens vêm de 6.200 usuários, mas os arquivos **não são disponibilizados para download imediato**: é necessário solicitar acesso.
+
+## Rodada 4 — revisão de acesso e correção metodológica (10/11/2026)
+
+**Abordagens técnicas e natureza da publicação devem ser dimensões independentes.** O Atlas agora considera 25 estudos empíricos na rede método–tarefa, três trabalhos predominantemente de apresentação de datasets e cinco estudos de revisão/síntese. A abordagem pode ser múltipla por estudo; a tarefa-alvo principal é registrada separadamente. A rede não indica efeito causal, fluxo temporal nem superioridade entre modelos.
+
+**Quatro fontes com acesso previamente não confirmado foram reavaliadas:**
+
+| ID | Corpus e evidência | Acesso nesta rodada |
+|---|---|---|
+| **09 — Viduani 2025** | IDEA-RiSCo/IDEABot; 52 participantes que completaram 7 dias (13 MDD, 39 controle); diagnóstico K-SADS-PL, MFQ e CDRS-R; avaliação lexical LIWC e correlação estatística. | **Não confirmado para transcrições**; o artigo contém desenho e resultados, não identificador de download de textos. |
+| **13 — Viduani 2026** | IDEABot; 30 adolescentes, 15/15, durante 14 dias; GPT-4o avaliado por participante (acurácia 86,6%, sensibilidade 100%, especificidade 73,3%). | **Não confirmado para transcrições**; artigo aberto não equivale a corpus reutilizável. |
+| **19 — Herculano 2025** | DepreBERTBR contra modelos gerais, quatro níveis (ausente, leve, moderada e grave) no SBBD 2025; artigo de 2024 relacionado avaliava **três** classes. | **Não confirmado**: sem acesso verificável às partições e aos F1 de cada modelo do experimento 2025 na fonte consultada. |
+| **21 — Mao & Han 2025** | Cinco recortes: 3.200 tweets CLPsych 2021 Practice; 1.000 tweets em inglês Cha et al.; 1.323 fóruns, 1.841 Reddit e 2.821 misto Pirina & Çöltekin. Localizados repositórios originais; autores indicam split 80/20. | **Parcial**: origens públicas identificadas; as cinco versões experimentais exatas não foram reproduzidas. O próprio artigo alerta para possível *leakage* transdutivo por nós de teste no grafo. |
+
+**Fontes conferidas:**
+- Viduani 2025: https://pmc.ncbi.nlm.nih.gov/articles/PMC12815307/
+- Viduani 2026: https://www.sciencedirect.com/science/article/pii/S0165032726008086
+- Herculano 2025: https://doi.org/10.5753/sbbd.2025.247283
+- DepreBERTBR 2024 (protocolo distinto, três classes): https://sol.sbc.org.br/index.php/sbbd/article/download/30692/30495/
+- Mao & Han 2025: https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1612769/full
+- CLPsych 2021 practice: https://github.com/seanmacavaney/clpsych2021-shared-task/tree/main/practice-dataset
+- Cha et al.: https://github.com/dxlabskku/Mental-Health
+- Pirina & Çöltekin: https://github.com/Inusette/Identifying-depression
+
+**Consequências de validade:** as classificações por hashtag, léxico e sinais anotados não são diagnósticos médicos; não comparar média de F1 de tarefas, partições ou unidades diferentes. *Leakage* e repetição de corpus devem ser informados na comparação.
 
 ## Fichas técnicas e evidências
 
@@ -200,24 +225,26 @@
 
 ### 09. Viduani et al. (2025) — pronomes/LIWC
 
-**Identificação da fonte:** IDEA-RiSCo / IDEABot — transcrições de mensagens de voz de adolescentes  
-**Origem/plataforma:** WhatsApp (IDEABot), respostas em áudio transcritas em português brasileiro  
-**Regime de acesso:** Não confirmado — sem prova suficiente de acesso  
-**Link para corpus, portal ou solicitação:** Não identificado nesta auditoria  
-**Publicação:** [abrir publicação](https://doi.org/10.47626/1516-4446-2024-4058)  
-**Fonte da verificação:** [abrir evidência](https://pmc.ncbi.nlm.nih.gov/articles/PMC12815307/)  
-**Justificativa do status:** Estudo original do IDEA-RiSCo: 52 participantes (13 MDD e 39 controles), que responderam aos sete dias de perguntas em áudio do IDEABot; cada participante possui sete transcrições, segundo a seção de métodos. A publicação não fornece um link de redistribuição do corpus de transcrições.  
-**Ressalva de uso e reprodutibilidade:** O estudo Viduani 2026 utiliza também IDEABot/WhatsApp, mas não foi demonstrado que os mesmos participantes ou transcrições se repetem. Tratar como família de coleta compartilhada, não amostra idêntica.  
-**Descrição amostral original:** 52 jovens ; 13 com depressão maior, 39 controles  
-**Unidade de análise:** participante com série de transcrições diárias  
-**Volume vinculado ao protocolo:** 52 adolescentes; sete transcrições por participante no protocolo descrito  
-**Família de corpus:** IDEA-IDEABOT  
-**Rotulagem:** Transtorno depressivo maior identificado por avaliação psiquiátrica; sintomas analisados por MFQ e CDRS-R; indicadores pronominais via LIWC em português.  
-**Abordagem de PLN/IA:** LIWC; frequência de pronomes; testes estatísticos  
-**Métricas relatadas:** Pronomes de 1ª pessoa singular: 9,15% vs. 8,02% , p=0,026 ; rho autorrelato 0,366  
-**Limitações:** Estudo correlacional; não é experimento de fine-tuning de BERTimbau  
-**Pendências de métricas/volume:** Sem pendência numérica pré-registrada; isso não certifica replicação  
-**Fontes adicionais desta rodada:** [documento](https://pmc.ncbi.nlm.nih.gov/articles/PMC12815307/)  
+**Identificação da fonte:** IDEA-RiSCo / IDEABot — sete dias de áudio transcrito por participante
+**Origem/plataforma:** WhatsApp (IDEABot), respostas em áudio transcritas em português brasileiro
+**Regime de acesso:** Não confirmado — sem prova suficiente de acesso
+**Link para corpus, portal ou solicitação:** Não identificado nesta auditoria
+**Publicação:** [abrir publicação](https://doi.org/10.47626/1516-4446-2024-4058)
+**Fonte da verificação:** [abrir evidência](https://pmc.ncbi.nlm.nih.gov/articles/PMC12815307/)
+**Justificativa do status:** Texto integral fornece desenho, elegibilidade, exclusão de identificadores na transcrição e análise LIWC. Nenhum link de descarga dos 52 conjuntos de transcrições ou termo de solicitação foi localizado; acesso ao conteúdo textual não confirmado.
+**Ressalva de uso e reprodutibilidade:** O estudo Viduani 2026 utiliza também IDEABot/WhatsApp, mas não foi demonstrado que os mesmos participantes ou transcrições se repetem. Tratar como família de coleta compartilhada, não amostra idêntica.
+**Descrição amostral original:** IDEA-RiSCo / IDEABot: 52 adolescentes analisados (13 MDD, 39 controle) entre 150 recrutados inicialmente; sete dias de transcrições de áudios via WhatsApp; LIWC em português, sem partição treino/teste.
+**Unidade de análise:** adolescente com 7 transcrições ao longo de 7 dias
+**Volume vinculado ao protocolo:** 52 participantes completos, 13 com MDD e 39 controles; 121 realizaram ao menos uma interação
+**Família de corpus:** IDEA-IDEABOT
+**Rotulagem:** K-SADS-PL por psiquiatra; MFQ autorrelato e CDRS-R escala clínica; LIWC de pronomes para análise estatística, não treino de classificador.
+**Abordagem de PLN/IA:** LIWC; frequência de pronomes; testes estatísticos
+**Métricas relatadas:** Uso médio de pronomes singulares: MDD 9,15% vs. não MDD 8,02%, p=0,026; correlação com MFQ rho=0,366, p=0,008. Não é desempenho de classificador.
+**Limitações:** Estudo correlacional; não é experimento de fine-tuning de BERTimbau
+**Pendências de métricas/volume:** Sem pendência numérica pré-registrada; isso não certifica replicação
+**Protocolo/partições:** Não se aplica a partição de treino/teste: estudo observacional comparativo com LIWC, t-tests e correlações.  
+**Métrica por configuração:** Diferença de uso de pronomes singulares 9,15% vs 8,02%, p=0,026; rho=0,366, p=0,008 para MFQ.  
+**Fontes da 4ª rodada:** [fonte primária](https://pmc.ncbi.nlm.nih.gov/articles/PMC12815307/)  
 
 ### 10. Pérez et al. (2025) — DepreSym
 
@@ -281,24 +308,26 @@
 
 ### 13. Viduani et al. (2026) — estudo experimental GPT-4o
 
-**Identificação da fonte:** IDEABot / estudo de fala naturalística para detecção de depressão em adolescentes (2026)  
-**Origem/plataforma:** WhatsApp (IDEABot) com mensagens de voz transcritas em português brasileiro  
-**Regime de acesso:** Não confirmado — sem prova suficiente de acesso  
-**Link para corpus, portal ou solicitação:** Não identificado nesta auditoria  
-**Publicação:** [abrir publicação](https://pubmed.ncbi.nlm.nih.gov/42134742/)  
-**Fonte da verificação:** [abrir evidência](https://www.sciencedirect.com/science/article/pii/S0165032726008086)  
-**Justificativa do status:** Artigo de prova de conceito descreve 30 adolescentes brasileiros de 16–19 anos, sendo 15 com diagnóstico psiquiátrico confirmado de MDD e 15 controles; 14 dias de coleta por chatbot WhatsApp. A declaração de liberação dos textos individuais não foi encontrada nas fontes acessíveis.  
-**Ressalva de uso e reprodutibilidade:** Compartilha a infraestrutura de coleta IDEABot com Viduani et al. (2025); sobreposição efetiva de pessoas e transcrições não documentada nesta auditoria.  
-**Descrição amostral original:** Transcrições de áudios naturalísticos em português de 30 adolescentes (15 com MDD clinicamente confirmado e 15 controles), coletadas em 14 dias via IDEABot/WhatsApp; quantidade de mensagens e acesso aos textos não confirmados.  
-**Unidade de análise:** adolescente; mensagens transcritas ao longo de 14 dias  
-**Volume vinculado ao protocolo:** 30 participantes, 15 MDD e 15 não MDD; volume de mensagens não confirmado  
-**Família de corpus:** IDEA-IDEABOT  
-**Rotulagem:** Diagnóstico MDD estabelecido por psiquiatra infantil e adolescente por procedimento de referência; classificação binária por LLM.  
-**Abordagem de PLN/IA:** GPT-4o por prompting; comparação com 12 modelos GPT  
-**Métricas relatadas:** Acurácia 86,6% (IC95% 70,3–95,6%); sensibilidade 100% ; especificidade 73,3%  
-**Limitações:** n=30 e grupos extremos; não emprega BERTimbau+LIWC ou laudos como texto de entrada  
-**Pendências de métricas/volume:** Sem pendência numérica pré-registrada; isso não certifica replicação  
-**Fontes adicionais desta rodada:** [documento](https://www.sciencedirect.com/science/article/pii/S0165032726008086) · [documento](https://pubmed.ncbi.nlm.nih.gov/42134742/)  
+**Identificação da fonte:** IDEABot / WhatsApp — transcrições diárias de voz de adolescentes
+**Origem/plataforma:** WhatsApp (IDEABot) com mensagens de voz transcritas em português brasileiro
+**Regime de acesso:** Não confirmado — sem prova suficiente de acesso
+**Link para corpus, portal ou solicitação:** Não identificado nesta auditoria
+**Publicação:** [abrir publicação](https://pubmed.ncbi.nlm.nih.gov/42134742/)
+**Fonte da verificação:** [abrir evidência](https://www.sciencedirect.com/science/article/pii/S0165032726008086)
+**Justificativa do status:** O artigo aberto explicita amostra 15/15, período de coleta de 14 dias, tarefa binária por participante e métricas com IC. Não localizei repositório de transcrições nem termo de disponibilidade específica para os dados individuais.
+**Ressalva de uso e reprodutibilidade:** Compartilha a infraestrutura de coleta IDEABot com Viduani et al. (2025); sobreposição efetiva de pessoas e transcrições não documentada nesta auditoria.
+**Descrição amostral original:** IDEABot: 30 adolescentes de 16–19 anos, 15 com MDD confirmado e 15 controles; 14 dias de fala em português, via chatbot WhatsApp; predição binária por participante.
+**Unidade de análise:** adolescente (classificação por participante)
+**Volume vinculado ao protocolo:** 30 adolescentes 16–19 anos (15 MDD confirmados por psiquiatra, 15 controles); 14 dias de coleta
+**Família de corpus:** IDEA-IDEABOT
+**Rotulagem:** Diagnóstico individual de depressão maior validado por psiquiatra infantil e adolescente; avaliação de GPT-4o e 12 modelos adicionais com variação de dias de fala.
+**Abordagem de PLN/IA:** GPT-4o por prompting; comparação com 12 modelos GPT
+**Métricas relatadas:** GPT-4o: acurácia 86,6% (IC95% 70,3–95,6), sensibilidade 100% e especificidade 73,3%; sem diferenças estatisticamente significativas frente a 12 outros GPTs. Amostra de prova de conceito, não validação populacional.
+**Limitações:** n=30 e grupos extremos; não emprega BERTimbau+LIWC ou laudos como texto de entrada
+**Pendências de métricas/volume:** Sem pendência numérica pré-registrada; isso não certifica replicação
+**Protocolo/partições:** Amostra de prova de conceito proposital (15/15); proporção de partição de treinamento não aplicável a prompting zero-shot sem ajuste informado. 14 dias são comprimento da entrada, não 14 folds.  
+**Métrica por configuração:** GPT-4o: acurácia 86,6% (IC95% 70,3–95,6), sensibilidade 100%, especificidade 73,3%; sem superioridade estatística demonstrada frente a 12 alternativas.  
+**Fontes da 4ª rodada:** [fonte primária](https://www.sciencedirect.com/science/article/pii/S0165032726008086) · [fonte primária](https://pubmed.ncbi.nlm.nih.gov/42134742/)  
 
 ### 14. AlSaad, Alshakhs & Thomas (2026)
 
@@ -402,23 +431,27 @@
 
 ### 19. Herculano et al. (2025) — Comparação DepreBERTBR
 
-**Identificação da fonte:** Base de avaliação multiclasse DepreBERTBR (nome formal não confirmado)  
-**Origem/plataforma:** Português brasileiro; plataforma não confirmada para avaliação 2025  
-**Regime de acesso:** Não confirmado — sem prova suficiente de acesso  
-**Link para corpus, portal ou solicitação:** Não identificado nesta auditoria  
-**Publicação:** [abrir publicação](https://doi.org/10.5753/sbbd.2025.247283)  
-**Fonte da verificação:** [abrir evidência](https://doi.org/10.5753/sbbd.2025.247283)  
-**Justificativa do status:** A base e a partição exatas da comparação 2025 não foram verificadas; não tratar os 509.675 posts do DepreRedditBR como sua amostra de teste.  
-**Ressalva de uso e reprodutibilidade:** Também faltam valores exatos de F1 por configuração, exigindo tabelas do artigo completo.  
-**Descrição amostral original:** Estudo comparativo de classificação em quatro classes (ausente, leve, moderada, grave) no português brasileiro. A base de avaliação e sua volumetria específica não foram confirmadas no resumo público do artigo de 2025. Não confundir com as 509.675 instâncias do corpus DepreRedditBR publicado em 2024 (recurso de pré-treinamento), cuja totalidade não foi comprovada como conjunto de avaliação de 2025.  
-**Unidade de análise:** Ainda não sistematizada  
-**Volume vinculado ao protocolo:** Consultar descrição original  
-**Família de corpus:** Ainda não atribuída  
-**Rotulagem:** Quatro classes textuais: ausente, leve, moderada e grave; não são diagnósticos individualizados.  
-**Abordagem de PLN/IA:** Tarefa: Classificação supervisionada multiclasse. Modelos e representações: DepreBERTBR especializado versus modelos de linguagem monolíngues e multilíngues de domínio geral.  
-**Métricas relatadas:** Resumo original: DepreBERTBR obtém F1-score competitivo, comparável a modelos gerais monolíngues e multilíngues. Valores exatos de F1 por modelo/configuração não confirmados sem acesso às tabelas do artigo completo.  
-**Limitações:** A comparação depende das mesmas classes, partições e critérios de rotulagem.  
-**Pendências de métricas/volume:** Dataset; Resultados  
+**Identificação da fonte:** Base multiclasse para comparar DepreBERTBR com encoders gerais (quatro níveis); corpus exato não confirmado
+**Origem/plataforma:** Português brasileiro; plataforma não confirmada para avaliação 2025
+**Regime de acesso:** Não confirmado — sem prova suficiente de acesso
+**Link para corpus, portal ou solicitação:** Não identificado nesta auditoria
+**Publicação:** [abrir publicação](https://doi.org/10.5753/sbbd.2025.247283)
+**Fonte da verificação:** [abrir evidência](https://doi.org/10.5753/sbbd.2025.247283)
+**Justificativa do status:** O resumo oficial do XL SBBD 2025 confirma classificação em 4 classes, mas não identifica na versão aberta consultada o corpus avaliado, a amostra por classe, os folds nem o F1 numérico. O estudo DepreBERTBR de 2024 utiliza 3 classes e NÃO deve ser citado como se fosse o experimento 2025.
+**Ressalva de uso e reprodutibilidade:** Também faltam valores exatos de F1 por configuração, exigindo tabelas do artigo completo.
+**Descrição amostral original:** Estudo comparativo de classificação em quatro classes (ausente, leve, moderada, grave) no português brasileiro. A base de avaliação e sua volumetria específica não foram confirmadas no resumo público do artigo de 2025. Não confundir com as 509.675 instâncias do corpus DepreRedditBR publicado em 2024 (recurso de pré-treinamento), cuja totalidade não foi comprovada como conjunto de avaliação de 2025.
+**Unidade de análise:** texto/postagem; não foi confirmada a unidade específica da avaliação de 2025
+**Volume vinculado ao protocolo:** Não verificado no artigo integral SBBD 2025
+**Família de corpus:** Ainda não atribuída
+**Rotulagem:** Quatro categorias pretendidas: ausente, leve, moderada, grave; método exato de anotação e distribuição por classe não confirmados.
+**Abordagem de PLN/IA:** Tarefa: Classificação supervisionada multiclasse. Modelos e representações: DepreBERTBR especializado versus modelos de linguagem monolíngues e multilíngues de domínio geral.
+**Métricas relatadas:** Resumo original: DepreBERTBR obtém F1-score competitivo, comparável a modelos gerais monolíngues e multilíngues. Valores exatos de F1 por modelo/configuração não confirmados sem acesso às tabelas do artigo completo.
+**Limitações:** A comparação depende das mesmas classes, partições e critérios de rotulagem.
+**Pendências de métricas/volume:** Dataset; Resultados
+
+**Protocolo/partições:** Não confirmado (não atribuir as 10 dobras documentadas em dissertação anterior ao SBBD 2025).  
+**Métrica por configuração:** F1 competitivo relatado no resumo; valores, averaging e configuração ausentes no material consultado.  
+**Fontes da 4ª rodada:** [fonte primária](https://doi.org/10.5753/sbbd.2025.247283) · [fonte primária](https://sol.sbc.org.br/index.php/sbbd/article/download/30692/30495/)  
 
 ### 20. Santos et al. (2025) — Mixture of Experts
 
@@ -443,24 +476,26 @@
 
 ### 21. Mao & Han (2025) — TextGCN com emoção
 
-**Identificação da fonte:** Cinco benchmarks reutilizados: Twitter Depression (3200); Multilingual Twitter EN (1000); Identifying Depression — fóruns (1323), Reddit (1841), conjunto misto (2821)  
-**Origem/plataforma:** Twitter/X, fóruns web e Reddit — fontes individualizadas na Tabela 1  
-**Regime de acesso:** Não confirmado — sem prova suficiente de acesso  
-**Link para corpus, portal ou solicitação:** Não identificado nesta auditoria  
-**Publicação:** [abrir publicação](https://doi.org/10.3389/fpsyg.2025.1612769)  
-**Fonte da verificação:** [abrir evidência](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1612769/full)  
-**Justificativa do status:** A Tabela 1 do artigo fornece cinco nomes, plataformas, totais e classes, e os autores os descrevem como publicamente disponíveis; sua declaração de disponibilidade de dados, porém, não oferece cinco links diretos e remete perguntas ao autor correspondente. Nesta auditoria, não foi confirmado o acesso integral às versões usadas.  
-**Ressalva de uso e reprodutibilidade:** As cinco bases somam 10.185 posts em contagens reportadas (3.200+1.000+1.323+1.841+2.821). A soma é de registros declarados e não prova exclusividade entre corpora derivados.  
-**Descrição amostral original:** Cinco bases da Tabela 1: Twitter Depression 3.200 (843/2.357), Multilingual Twitter EN 1.000 (500/500), Identifying Depression: fóruns 1.323 (390/933), Reddit 1.841 (1.293/548), combinado Reddit/fóruns 2.821 (1.340/1.481). A soma não é evidência de unicidade.  
-**Unidade de análise:** postagem  
-**Volume vinculado ao protocolo:** 3.200; 1.000; 1.323; 1.841; 2.821 postagens conforme Tabela 1; sobreposição desconhecida  
-**Família de corpus:** FIVE-REUSED-BENCHMARKS  
-**Rotulagem:** Classificação binária positiva/negativa por benchmark; detalhes originais de rotulagem não unificados entre conjuntos.  
-**Abordagem de PLN/IA:** Tarefa: Classificação de textos com sinais de depressão. Modelos e representações: TextGCN enriquecido com representações emocionais derivadas de modelos de linguagem especializados.  
-**Métricas relatadas:** Ganhos relatados frente a configurações de referência; não consolidar resultados de datasets distintos em um F1 único.  
-**Limitações:** Dependência de corpus, estratégias de anotação e linguagem.  
-**Pendências de métricas/volume:** Sem pendência numérica pré-registrada; isso não certifica replicação  
-**Fontes adicionais desta rodada:** [documento](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1612769/full)  
+**Identificação da fonte:** Conjuntos 1–5 de Mao & Han: CLPsych 2021 Practice Twitter; Cha et al. Twitter multilíngue (EN); Pirina & Çöltekin Reddit/fóruns
+**Origem/plataforma:** Twitter/X, fóruns web e Reddit — fontes individualizadas na Tabela 1
+**Regime de acesso:** Acesso parcial — modalidades diferentes
+**Link para corpus, portal ou solicitação:** [consultar fonte de acesso](https://github.com/seanmacavaney/clpsych2021-shared-task/tree/main/practice-dataset)
+**Publicação:** [abrir publicação](https://doi.org/10.3389/fpsyg.2025.1612769)
+**Fonte da verificação:** [abrir evidência](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1612769/full)
+**Justificativa do status:** Foram localizadas três fontes originais: o repositório CLPsych 2021 divulga o dataset de prática (alerta de não validação); Cha et al. disponibilizam amostras de Twitter/Everytime no GitHub dxlabskku/Mental-Health; Pirina & Çöltekin disponibilizam código e scripts no GitHub Inusette/Identifying-depression. Não foi comprovado download das cinco versões exatas de Mao & Han.
+**Ressalva de uso e reprodutibilidade:** A fonte CLPsych 2021 adverte que dataset de prática não foi validado. Os autores do TextGCN reconhecem possível vazamento ao incluir nós de teste no grafo. A soma 10.185 não identifica amostras independentes.
+**Descrição amostral original:** Conjuntos 1–5: CLPsych Practice Twitter 3.200; Cha et al. (inglês Twitter) 1.000; Pirina & Çöltekin fóruns 1.323, Reddit 1.841, combinado 2.821. 80/20 treino/teste, com possível vazamento transdutivo reconhecido pelos autores.
+**Unidade de análise:** postagem
+**Volume vinculado ao protocolo:** Cinco amostras de 3.200, 1.000, 1.323, 1.841 e 2.821 posts (Tabela 1); 80/20 treino/teste, K-fold adicional de K não declarado no recorte examinado
+**Família de corpus:** FIVE-REUSED-BENCHMARKS
+**Rotulagem:** Dataset 1: rótulos obtidos por heurísticas de hashtag; Dataset 2: léxico de depressão; Datasets 3–5: rótulos herdados de Pirina & Çöltekin, não diagnóstico clínico.
+**Abordagem de PLN/IA:** Classificação binária pós-texto com TextGCN (duas camadas GCN, dropout 0,5, dimensão oculta 200), enriquecido por embeddings de MentalBERT, MentalRoBERTa e RoBERTaDepressionDetection; validação 80/20 e K-fold adicional.
+**Métricas relatadas:** Ganhos relatados frente a configurações de referência; não consolidar resultados de datasets distintos em um F1 único.
+**Limitações:** Autores reconhecem risco de leakage transdutivo ao incluir nós do teste no grafo; cinco corpora com rotulagens e desequilíbrios distintos. Não confundir CLPsych practice (heurísticas hashtag, não validado) com dados clínicos do desafio principal.
+**Pendências de métricas/volume:** Sem pendência numérica pré-registrada; isso não certifica replicação
+**Protocolo/partições:** 80/20 treino/teste; também K-fold CV mencionado sem K explícito na seção examinada; 200 épocas, early stopping 10, Adam, 2 camadas GCN, dimensão oculta 200 e dropout 0,5.  
+**Métrica por configuração:** Acurácia, precisão, recall e F1 por corpus; não agregar F1 das cinco bases; autores admitem potencial vazamento transdutivo por nós de teste no grafo.  
+**Fontes da 4ª rodada:** [fonte primária](https://github.com/seanmacavaney/clpsych2021-shared-task/tree/main/practice-dataset) · [fonte primária](https://github.com/dxlabskku/Mental-Health) · [fonte primária](https://github.com/Inusette/Identifying-depression) · [fonte primária](https://aclanthology.org/W18-5903/) · [fonte primária](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1612769/full)  
 
 ### 22. Shah et al. (2025) — Fine-tuning de LLMs
 
@@ -708,7 +743,7 @@
 
 ## Evidências que permanecem pendentes
 
-**Quatro estudos têm acesso ao corpus ainda não confirmado:** IDs **09, 13, 19 e 21**. O rótulo significa ausência de prova de disponibilidade da versão experimental, não inexistência do material.
+**Três estudos têm acesso ao corpus ainda não confirmado:** IDs **09, 13 e 19**. O ID **21** é parcial, pois existem repositórios oficiais de corpora-base, mas não foi verificada equivalência com as cinco partições exatas. O rótulo significa ausência de prova de disponibilidade da versão experimental, não inexistência do material.
 
 **Três estudos mantêm lacunas numéricas específicas:** Herculano et al. (2025, ID 19), Santos et al. (2025, ID 20, estatísticas por subconjunto da Tabela 2) e Figueiredo (2026, ID 31, volume efetivo e partições do experimento de síntese). Não preencher com quantidades de outros trabalhos da mesma família de corpus.
 
