@@ -556,13 +556,13 @@
       ],
       "pending": [],
       "datasetAudit": {
-        "name": "Mental Health Sentiment Analysis (Kaggle), complementado por quatro subreddits",
+        "name": "Mental Health Sentiment Analysis (Kaggle; corpus-base), ampliado por publicações de subreddits de TDAH/autismo",
         "platform": "Reddit; Twitter/X",
         "accessStatus": "parcial",
-        "accessEvidence": "O artigo identifica Kaggle Mental Health Sentiment Analysis como corpus-base e Reddit como fonte adicional (r/ADHD, r/adhdwomen, r/autism, r/aspergers); acesso à compilação exata de 60.889 instâncias e saídas de modelos não foi reproduzido nesta auditoria.",
-        "datasetUrl": null,
+        "accessEvidence": "O artigo utiliza o corpus-base Mental Health Sentiment Analysis do Kaggle, com contribuições de r/ADHD, r/adhdwomen, r/autism e r/aspergers. O Kaggle fornece acesso ao corpus-base; não foi identificado download público que reproduza integralmente a compilação e o pré-processamento das 60.889 instâncias do artigo.",
+        "datasetUrl": "https://www.kaggle.com/datasets/suchintikasarkar/sentiment-analysis-for-mental-health/data",
         "evidenceUrl": "https://mental.jmir.org/2026/1/e98925/",
-        "reuseAndCaveat": "A coleta ampliada adicionou r/ADHD, r/adhdwomen, r/autism e r/aspergers; separar dataset-base de dados agregados.",
+        "reuseAndCaveat": "Link confirmado do corpus-base. O dataset agregado/expandido e as saídas do ensemble não devem ser descritos como integralmente públicos apenas com base no Kaggle.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
       }
