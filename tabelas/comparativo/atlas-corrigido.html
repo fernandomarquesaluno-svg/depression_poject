@@ -69,6 +69,13 @@
 .compare-values{gap:22px}
 @media(max-width:720px){.compare-interpret{padding:16px}.compare-values{grid-template-columns:1fr;gap:7px}.compare-values p:nth-child(1):before{content:"A · ";font-weight:900;color:#7df4db}.compare-values p:nth-child(2):before{content:"B · ";font-weight:900;color:#b8a8ff}.compare-values p{padding:10px;border-radius:8px;background:#0d2332}}
 
+
+.compare-presets{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:9px 0 21px}
+.compare-presets span{font-size:.76rem;font-weight:800;color:#9dbac8;letter-spacing:.09em;text-transform:uppercase;margin-right:3px}
+.compare-presets button{background:#1c3c47;color:#c7faef;border:1px solid #4c8e86;border-radius:99px;padding:9px 15px;font-size:.78rem;font-weight:800;line-height:1.4;transition:transform .16s,background .16s}
+.compare-presets button:hover{background:#265c60;transform:translateY(-2px)}
+@media(max-width:700px){.compare-presets span{width:100%}.compare-presets button{width:100%;border-radius:9px;text-align:left}}
+
 </style>
 </head>
 <body>
@@ -206,6 +213,12 @@
    <div class="section-head reveal"><div><span class="kicker">04 / LABORATÓRIO DE COMPARAÇÃO</span><h2 class="section-title" id="compareTitle">Escolha dois.<br>Investigue as diferenças.</h2></div><p class="section-copy">Selecione dois estudos no explorador abaixo. A comparação avalia 18 dimensões, com observações de tarefa-alvo, corpus, unidade amostral, métricas, partições, rótulos, riscos e acesso — sem ranking inventado.</p></div>
    <div class="panel comparator reveal">
     <div class="compare-head"><h3>Comparador de evidências <span style="color:var(--cyan)">↔</span></h3><button type="button" class="small-btn" id="clearComparison">Limpar seleção</button></div>
+    <div class="compare-presets" id="comparePresets" role="group" aria-label="Exemplos de comparação com origem de dados relacionada">
+     <span>Comparações sugeridas</span>
+     <button type="button" data-a="8" data-b="31">Amive: corpus original × dados sintéticos</button>
+     <button type="button" data-a="9" data-b="13">IDEABot: LIWC × GPT-4o</button>
+     <button type="button" data-a="7" data-b="20">SetembroBR: prompts × mixture of experts</button>
+    </div>
     <div class="slots"><div id="slotA" class="slot"></div><div id="slotB" class="slot"></div></div>
     <p class="section-copy" style="margin-top:15px" id="comparePrompt">Escolha duas publicações nos cartões abaixo.</p>
     <div class="compare-details" id="comparisonFields" aria-live="polite"></div>
@@ -402,7 +415,7 @@ function renderComparison(){
  if(tax(a).publicationKind!==tax(b).publicationKind)notes.push("**Natureza distinta:** você selecionou tipos de publicação diferentes. Artigo experimental, recurso e revisão não oferecem evidência do mesmo tipo.");
  if(tax(a).primaryTask!==tax(b).primaryTask)notes.push("**Tarefas-alvo distintas:** os números dos dois trabalhos não medem exatamente o mesmo problema.");
  else notes.push("**Mesmo tema de tarefa:** a correspondência temática é inicial e não comprova equivalência de protocolo ou de rótulos.");
- if(tax(a).datasetFamily&&tax(b).datasetFamily&&tax(a).datasetFamily===tax(b).datasetFamily)notes.push("**Reutilização de corpus:** ambas as publicações pertencem à família "+tax(a).datasetFamily+". Confirmar partições e sobreposição de exemplos antes de comparar resultados.");
+ if(tax(a).datasetFamily&&tax(b).datasetFamily&&tax(a).datasetFamily===tax(b).datasetFamily)notes.push("**Reutilização de corpus:** ambas as publicações pertencem à família "+escapeHTML(tax(a).datasetFamily)+". Confirmar partições e sobreposição de exemplos antes de comparar resultados.");
  else notes.push("**Fontes de dados:** não está comprovada identidade de corpus e amostra entre as duas publicações.");
  if(ds(a).sampleUnit&&ds(b).sampleUnit&&ds(a).sampleUnit!==ds(b).sampleUnit)notes.push("**Unidade de análise diferente:** textos, usuários ou entrevistas não são intercambiáveis.");
  if(!ds(a).splitDescription||!ds(b).splitDescription)notes.push("**Validação insuficientemente documentada:** ao menos uma ficha não registra partição ou protocolo auditado.");
@@ -465,6 +478,7 @@ function setup(){
   t.innerHTML='<b>'+escapeHTML(s.title)+'</b> · '+s.year+' · '+escapeHTML(s.language)+'<br><small>Clique no ponto para explorar os dados técnicos.</small>';t.classList.add("visible");
  });
  $("#map").addEventListener("mouseout",e=>{if(e.target.closest(".node"))$("#mapTooltip").classList.remove("visible")});
+ $("#comparePresets").addEventListener("click",e=>{const b=e.target.closest("button[data-a][data-b]");if(!b)return;STATE.selected=[Number(b.dataset.a),Number(b.dataset.b)];renderComparison();renderCards();$("#comparar").scrollIntoView({behavior:"smooth",block:"start"});});
  $("#clearComparison").addEventListener("click",()=>{STATE.selected=[];renderComparison();renderCards()});
  $("#modal").addEventListener("click",e=>{if(e.target.id==="modal"||e.target.classList.contains("close"))closeModal();const b=e.target.closest('[data-action="compare"]');if(b){toggleCompare(b.dataset.id);closeModal()}});
  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#modal").classList.contains("open"))closeModal()});
