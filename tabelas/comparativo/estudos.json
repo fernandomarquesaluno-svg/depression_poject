@@ -18,6 +18,28 @@
       "pendingFields": 4,
       "method": "Conferência de artigo, tese, preprint e repositório; sem extrapolar métricas ou somar corpora compartilhados.",
       "notes": "Mandal: valor do melhor experimento difere da média em 3 sementes. Santos 2025 tese: valores referem-se a um experimento e não ao resultado final de toda a tese. Shah: volumetria encontrada no pré-print, não auditada na versão do periódico."
+    },
+    "auditV2": {
+      "date": "2026-11-10",
+      "type": "Inventário documental de datasets e sua acessibilidade; não reexecutou 33 experimentos",
+      "fields": [
+        "name",
+        "platform",
+        "accessStatus",
+        "accessEvidence",
+        "datasetUrl",
+        "evidenceUrl",
+        "reuseAndCaveat"
+      ],
+      "rule": "Público no artigo não significa arquivos disponíveis. Em bases mistas status PARCIAL refere-se a componentes em regimes diferentes.",
+      "taxonomy": {
+        "publico": "Dados ou versões oficiais documentadas como públicas",
+        "controlado": "Acesso mediante cadastro, acordo ou aprovação",
+        "restrito": "Arquivos ou textos originais indisponíveis sem autorização",
+        "parcial": "Componentes com regimes diferentes; verificar ficha",
+        "nao_confirmado": "Ausência de confirmação documental de acesso ao corpus completo",
+        "nao_aplica": "Revisão secundária sem novo corpus próprio"
+      }
     }
   },
   "studies": [
@@ -42,7 +64,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "CLPsych 2015; Multi-Task Learning; RSDD; SMHD; Topic-Restricted Text",
+        "platform": "Twitter/X e Reddit",
+        "accessStatus": "controlado",
+        "accessEvidence": "A maior parte das bases exige acordos de uso ou aprovação ética; o repositório descreve uma exceção de acesso para Topic-Restricted Text.",
+        "datasetUrl": "https://github.com/kharrigian/emnlp-2020-mental-health-generalization",
+        "evidenceUrl": "https://github.com/kharrigian/emnlp-2020-mental-health-generalization",
+        "reuseAndCaveat": "Cinco corpora comparados; não existe um único dataset independente criado pelo artigo.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 2,
@@ -66,7 +99,18 @@
         "Depressão",
         "Estresse"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "MentalBERT (corpus Reddit de pré-treinamento); Dreaddit e outros benchmarks",
+        "platform": "Reddit",
+        "accessStatus": "parcial",
+        "accessEvidence": "O checkpoint MentalBERT exige aceite de condições no Hugging Face. Dreaddit tem versões públicas; isso não comprova acesso ao corpus bruto completo de pré-treinamento.",
+        "datasetUrl": "https://huggingface.co/mental/mental-bert-base-uncased",
+        "evidenceUrl": "https://huggingface.co/mental/mental-bert-base-uncased",
+        "reuseAndCaveat": "Distinguir acesso ao modelo do acesso aos textos usados em seu treinamento.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 3,
@@ -89,7 +133,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "DepSign-LT-EDI@ACL 2022; Reddit Depression Corpora",
+        "platform": "Reddit (r/depression; r/SuicideWatch e outros)",
+        "accessStatus": "publico",
+        "accessEvidence": "O repositório dos autores disponibiliza dataset de competição pré-processado e código; o corpus de adaptação de domínio também é documentado.",
+        "datasetUrl": "https://github.com/rafalposwiata/depression-detection-lt-edi-2022",
+        "evidenceUrl": "https://github.com/rafalposwiata/depression-detection-lt-edi-2022",
+        "reuseAndCaveat": "Os 396.968 textos de pré-treino não equivalem ao tamanho do benchmark rotulado.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 4,
@@ -112,7 +167,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "DEPTWEET",
+        "platform": "Twitter/X",
+        "accessStatus": "nao_confirmado",
+        "accessEvidence": "Existe repositório oficial com código e descrição, mas a disponibilização integral dos 40.191 tweets rotulados não foi confirmada nesta revisão.",
+        "datasetUrl": "https://github.com/mohsinulkabir14/DEPTWEET",
+        "evidenceUrl": "https://github.com/mohsinulkabir14/DEPTWEET",
+        "reuseAndCaveat": "Código público não implica dados públicos; verificar arquivos ou solicitação aos autores.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+      }
     },
     {
       "id": 5,
@@ -135,7 +201,18 @@
       "conditions": [
         "Outras/geral"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "IMHI — Interpretable Mental Health Instruction Dataset",
+        "platform": "Reddit; Twitter/X; SMS",
+        "accessStatus": "parcial",
+        "accessEvidence": "Repositório oficial indica quais tarefas/partições foram liberadas; o benchmark agrega dez fontes e nem todas são disponibilizadas como dados brutos.",
+        "datasetUrl": "https://github.com/SteveKGYang/MentalLLaMA",
+        "evidenceUrl": "https://github.com/SteveKGYang/MentalLLaMA",
+        "reuseAndCaveat": "Inclui dez bases subjacentes; evitar contar cada base reutilizada como nova amostra.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 6,
@@ -159,7 +236,18 @@
         "Depressão",
         "Ansiedade"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "SetembroBR",
+        "platform": "Twitter/X",
+        "accessStatus": "publico",
+        "accessEvidence": "A página do grupo responsável informa disponibilização pública e aponta diretamente para a pasta de distribuição.",
+        "datasetUrl": "https://drive.google.com/drive/folders/1MXFRs0u8iF1RNUWABTA0Oz8_Ix1skqZT",
+        "evidenceUrl": "https://ivandreparaboni.wixsite.com/research/setembrobr",
+        "reuseAndCaveat": "Download indicado pelo grupo; verificar licença e formato antes de reutilizar.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 7,
@@ -183,7 +271,18 @@
         "Depressão",
         "Ansiedade"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "SetembroBR (reutilização)",
+        "platform": "Twitter/X",
+        "accessStatus": "publico",
+        "accessEvidence": "Reutiliza corpus SetembroBR, com acesso documentado no site do grupo original.",
+        "datasetUrl": "https://drive.google.com/drive/folders/1MXFRs0u8iF1RNUWABTA0Oz8_Ix1skqZT",
+        "evidenceUrl": "https://ivandreparaboni.wixsite.com/research/setembrobr",
+        "reuseAndCaveat": "Mesmo corpus da referência 6; não contabilizar como base independente.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 8,
@@ -208,7 +307,18 @@
         "Depressão",
         "Ansiedade"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Corpus de sinais de depressão em postagens universitárias (Mendes & Caseli)",
+        "platform": "Facebook",
+        "accessStatus": "nao_confirmado",
+        "accessEvidence": "O estudo usa 780 posts de universitários; não identifiquei um link oficial para download dos textos e anotações.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://aclanthology.org/2024.lrec-main.754/",
+        "reuseAndCaveat": "Textos potencialmente sensíveis: não pressupor redistribuição pública.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+      }
     },
     {
       "id": 9,
@@ -231,7 +341,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "IDEA-RiSCo — transcrições de respostas por WhatsApp",
+        "platform": "WhatsApp (áudio transcrito)",
+        "accessStatus": "nao_confirmado",
+        "accessEvidence": "Coleta com 52 jovens via chatbot WhatsApp; a fonte consultada não estabelece acesso aberto às transcrições individuais.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://rbppsiquiatria.org.br/details/3628/en-US/first-person-pronouns-as-linguistic-markers-of-depression-among-brazilian-youths",
+        "reuseAndCaveat": "A publicação é aberta; a base de falas não foi localizada em repositório público.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+      }
     },
     {
       "id": 10,
@@ -254,7 +375,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "DepreSym / CLEF eRisk 2023 Task 1",
+        "platform": "Reddit",
+        "accessStatus": "parcial",
+        "accessEvidence": "Qrels de relevância podem ser consultados; a coleção textual completa exige acordo de utilização para pesquisa enviado aos organizadores.",
+        "datasetUrl": "https://erisk.irlab.org/depresym_dataset.html",
+        "evidenceUrl": "https://erisk.irlab.org/depresym_dataset.html",
+        "reuseAndCaveat": "21.580 sentenças anotadas; acervo maior de 3.807.115 sentenças não é a mesma amostra.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 11,
@@ -277,7 +409,18 @@
       "conditions": [
         "Estresse"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Dreaddit",
+        "platform": "Reddit",
+        "accessStatus": "publico",
+        "accessEvidence": "Benchmark com 3.553 segmentos rotulados e versões de download publicadas; distinguir os segmentos rotulados do corpus maior coletado.",
+        "datasetUrl": "https://github.com/agircc/agir-dreaddit-experiments",
+        "evidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12739647/",
+        "reuseAndCaveat": "O repositório referenciado é de experimentos públicos com Dreaddit; não substitui a atribuição ao dataset original.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 12,
@@ -301,7 +444,18 @@
         "Depressão",
         "Estresse"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Mensagens abertas de aplicativo de saúde comunitária (Chung et al.)",
+        "platform": "Aplicativo móvel de mensagens (Coreia do Sul)",
+        "accessStatus": "nao_confirmado",
+        "accessEvidence": "O artigo descreve 1.332 mensagens de 230 participantes, mas não confirmei uma distribuição pública dos textos brutos.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://link.springer.com/article/10.1186/s12889-025-23337-4",
+        "reuseAndCaveat": "Não confundir acesso livre ao artigo com autorização para redistribuir mensagens de participantes.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+      }
     },
     {
       "id": 13,
@@ -324,7 +478,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Transcrições de fala cotidiana de adolescentes (Viduani et al. 2026)",
+        "platform": "Falas em áudio / transcrições",
+        "accessStatus": "nao_confirmado",
+        "accessEvidence": "O estudo relata participantes clínicos e controle; não foi identificada cópia pública verificável das transcrições.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://pubmed.ncbi.nlm.nih.gov/42134742/",
+        "reuseAndCaveat": "Consultar declaração de disponibilidade do artigo integral.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+      }
     },
     {
       "id": 14,
@@ -348,7 +513,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Depression Subtype Twitter Dataset (Zenodo 14233292)",
+        "platform": "Twitter/X",
+        "accessStatus": "publico",
+        "accessEvidence": "Os autores declaram que a base de 14.983 tweets em seis categorias está disponível no Zenodo e publicam repositório de código.",
+        "datasetUrl": "https://doi.org/10.5281/zenodo.14233292",
+        "evidenceUrl": "https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1790533/full",
+        "reuseAndCaveat": "Nome descritivo; não afirmar que o arquivo no Zenodo possui exatamente esse título sem abrir o registro.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 15,
@@ -374,7 +550,18 @@
         "Ansiedade",
         "Estresse"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Mental Health Sentiment Analysis (Kaggle), complementado por quatro subreddits",
+        "platform": "Reddit; Twitter/X",
+        "accessStatus": "parcial",
+        "accessEvidence": "A seção de disponibilidade declara públicos os corpora-base; a coleção agregada de 60.889 textos e as saídas dos modelos não têm link único confirmado. Saídas por modelo: contato com autor.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://mental.jmir.org/2026/1/e98925/",
+        "reuseAndCaveat": "A coleta ampliada adicionou r/ADHD, r/adhdwomen, r/autism e r/aspergers; separar dataset-base de dados agregados.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 16,
@@ -399,7 +586,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Não se aplica — revisão de escopo (180 estudos)",
+        "platform": "Literatura científica",
+        "accessStatus": "nao_aplica",
+        "accessEvidence": "Revisão secundária, sem corpus textual próprio que deva ser disponibilizado.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://pubmed.ncbi.nlm.nih.gov/41825397/",
+        "reuseAndCaveat": "Os 180 estudos são referências incluídas, não registros textuais para treinamento.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não se aplica a revisão de literatura"
+      }
     },
     {
       "id": 17,
@@ -424,7 +622,18 @@
         "Ansiedade",
         "Estresse"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Stress-SMHD (pré-treinamento); SMM4H 2022 Task 8; Dreaddit",
+        "platform": "Reddit e Twitter/X",
+        "accessStatus": "parcial",
+        "accessEvidence": "Dreaddit possui cópias públicas; o SMM4H é distribuído via portal da tarefa, com cadastro para participação. Não identifiquei download aberto do Stress-SMHD integral.",
+        "datasetUrl": "https://healthlanguageprocessing.org/smm4h-2022/",
+        "evidenceUrl": "https://aclanthology.org/2026.healing-1.27/",
+        "reuseAndCaveat": "Distinguir 108 milhões de palavras de pré-treinamento das instâncias rotuladas de avaliação.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 18,
@@ -447,7 +656,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "DepreRedditBR",
+        "platform": "Reddit",
+        "accessStatus": "restrito",
+        "accessEvidence": "Registro público no Zenodo, mas arquivos explicitamente marcados como restritos. É preciso acesso concedido pelo depositante.",
+        "datasetUrl": "https://zenodo.org/records/12744841",
+        "evidenceUrl": "https://zenodo.org/records/12744841",
+        "reuseAndCaveat": "Página pública ≠ arquivos públicos. Não prometer download dos textos.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 19,
@@ -476,7 +696,18 @@
       ],
       "audit": "Resumo do SBBD 2025 e artigo de 2024 do DepreRedditBR; informação numérica da amostra de avaliação e F1 da comparação permanece pendente.",
       "provenance": "https://sbc-books.dexl.lncc.br/paper/uma-avaliacao-comparativa-entre-o-deprebertbr-e-modelos-de-linguagem-para-classificacao-de-textos-depressivos",
-      "verifiedOn": "2026-11-10"
+      "verifiedOn": "2026-11-10",
+      "datasetAudit": {
+        "name": "Base de avaliação multiclasse DepreBERTBR (nome formal não confirmado)",
+        "platform": "Português brasileiro; plataforma não confirmada para avaliação 2025",
+        "accessStatus": "nao_confirmado",
+        "accessEvidence": "A base e a partição exatas da comparação 2025 não foram verificadas; não tratar os 509.675 posts do DepreRedditBR como sua amostra de teste.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://doi.org/10.5753/sbbd.2025.247283",
+        "reuseAndCaveat": "Também faltam valores exatos de F1 por configuração, exigindo tabelas do artigo completo.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+      }
     },
     {
       "id": 20,
@@ -505,7 +736,18 @@
       ],
       "audit": "Datasets e recorte de mensagens verificados no texto integral disponibilizado pelos autores; quantitativos da Tabela 2 pendentes.",
       "provenance": "https://doi.org/10.1109/ACCESS.2025.3583259",
-      "verifiedOn": "2026-11-10"
+      "verifiedOn": "2026-11-10",
+      "datasetAudit": {
+        "name": "SetembroBR; SMHD (Self-Reported Mental Health Diagnoses)",
+        "platform": "Twitter/X e Reddit",
+        "accessStatus": "parcial",
+        "accessEvidence": "SetembroBR foi divulgado publicamente; SMHD segue condições de acesso de seu provedor. Os tamanhos exatos de cada subconjunto na Tabela 2 ainda devem ser conferidos.",
+        "datasetUrl": "https://ivandreparaboni.wixsite.com/research/setembrobr",
+        "evidenceUrl": "https://doi.org/10.1109/ACCESS.2025.3583259",
+        "reuseAndCaveat": "Usa até mil tweets recentes por usuário no domínio português; diferenças de unidade impedem soma direta.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 21,
@@ -528,7 +770,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Twitter Depression Dataset; Multilingual Twitter (EN); Identifying Depression (3 conjuntos)",
+        "platform": "Twitter/X; Reddit; fóruns web",
+        "accessStatus": "nao_confirmado",
+        "accessEvidence": "O artigo lista cinco conjuntos de avaliação descritos como públicos, mas não foi confirmado nesta auditoria um endereço de download direto e único para todos eles.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1612769/full",
+        "reuseAndCaveat": "Volumes: 3.200, 1.000, 1.323, 1.841 e 2.821 posts; conjuntos reutilizados, potencialmente sobrepostos.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+      }
     },
     {
       "id": 22,
@@ -554,7 +807,18 @@
       "pending": [],
       "audit": "Volumetria e origem verificadas na versão pré-publicada de autoria coincidente (arXiv:2409.14794, §3.4.1); a edição do periódico de 2025 não foi auditada quanto a eventuais revisões de protocolo.",
       "provenance": "https://arxiv.org/abs/2409.14794",
-      "verifiedOn": "2026-11-10"
+      "verifiedOn": "2026-11-10",
+      "datasetAudit": {
+        "name": "Shen et al. (IJCAI 2017) — D1/D2/D3 (Twitter)",
+        "platform": "Twitter/X",
+        "accessStatus": "nao_confirmado",
+        "accessEvidence": "O pré-print descreve 20 mil instâncias para ajuste e 20 mil para teste; link e condições de redistribuição da base original não foram confirmados.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://arxiv.org/abs/2409.14794",
+        "reuseAndCaveat": "Pré-print 2024 vs artigo editorial 2025: garantir concordância do protocolo antes de reutilizar resultado.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+      }
     },
     {
       "id": 23,
@@ -581,7 +845,18 @@
       "pending": [],
       "audit": "Contagens verificadas na seção de dataset da versão integral da revista AI 2025, 6(7), 157.",
       "provenance": "https://www.mdpi.com/2673-2688/6/7/157",
-      "verifiedOn": "2026-11-10"
+      "verifiedOn": "2026-11-10",
+      "datasetAudit": {
+        "name": "Corpus de gravidade textual em quatro níveis de Hussain et al.",
+        "platform": "Reddit",
+        "accessStatus": "nao_confirmado",
+        "accessEvidence": "Foram descritas 9.841 postagens de 6.200 usuários. Não foi identificado um repositório validado com os textos e rótulos usados integralmente.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://www.mdpi.com/2673-2688/6/7/157",
+        "reuseAndCaveat": "Publicação de resultados não prova download público de 9.841 instâncias.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+      }
     },
     {
       "id": 24,
@@ -604,7 +879,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Não se aplica — revisão metodológica ML/DL",
+        "platform": "Literatura científica",
+        "accessStatus": "nao_aplica",
+        "accessEvidence": "Reúne datasets de terceiros; não informa um único corpus experimental novo.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://doi.org/10.1109/ACCESS.2025.3530862",
+        "reuseAndCaveat": "A avaliação deve comparar cobertura da revisão, não métricas de treino de um corpus inexistente.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não se aplica a revisão de literatura"
+      }
     },
     {
       "id": 25,
@@ -627,7 +913,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "WU3D — Weibo User Depression Detection Dataset",
+        "platform": "Weibo",
+        "accessStatus": "controlado",
+        "accessEvidence": "Apesar de seção metodológica chamar o conjunto de público, a declaração de disponibilidade informa que dados brutos não são públicos, com possível contato aos autores e aprovação ética.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://www.mdpi.com/2079-9292/15/3/598",
+        "reuseAndCaveat": "32.570 usuários, 2.191.910 posts; declaração de acesso prevalece sobre rótulo genérico 'publicamente disponível'.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 26,
@@ -650,7 +947,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Não se aplica — metanálise AI in the Wild",
+        "platform": "Literatura científica",
+        "accessStatus": "nao_aplica",
+        "accessEvidence": "Dados agregados extraídos de 67 estudos; não constitui nova coleção de postagens.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://doi.org/10.1609/aaai.v40i46.41283",
+        "reuseAndCaveat": "Metanálise exige método de síntese próprio; não registrar como dataset primário.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não se aplica a revisão de literatura"
+      }
     },
     {
       "id": 27,
@@ -674,7 +982,18 @@
       "conditions": [
         "Risco suicida"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "CLPsych Shared Task 2024 — Evidence of Suicidality Risk",
+        "platform": "Reddit (r/SuicideWatch)",
+        "accessStatus": "nao_confirmado",
+        "accessEvidence": "Tarefa com 125 usuários anotados; o acesso aos textos específicos de competição não foi confirmado como público nesta auditoria.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://aclanthology.org/2024.clpsych-1.15/",
+        "reuseAndCaveat": "Não interpretar rótulo de risco no desafio como diagnóstico clínico.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+      }
     },
     {
       "id": 28,
@@ -697,7 +1016,18 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "CLEF eRisk 2017 — Early Risk Detection (depressão)",
+        "platform": "Reddit",
+        "accessStatus": "controlado",
+        "accessEvidence": "Datasets da competição foram disponibilizados a participantes registrados. Um artigo posterior tornar código público não significa abrir os textos integrais.",
+        "datasetUrl": "https://erisk.irlab.org/2017/task.html",
+        "evidenceUrl": "https://erisk.irlab.org/2017/task.html",
+        "reuseAndCaveat": "Sequências por usuário: unidade de análise e marco temporal devem ser preservados.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 29,
@@ -723,7 +1053,18 @@
       "pending": [],
       "audit": "Dados e métricas verificados no PDF do artigo na ACL Anthology, Tabelas 1–2, e seção 3 do texto integral arXiv.",
       "provenance": "https://aclanthology.org/2025.clpsych-1.4.pdf",
-      "verifiedOn": "2026-11-10"
+      "verifiedOn": "2026-11-10",
+      "datasetAudit": {
+        "name": "E-DAIC — Extended Distress Analysis Interview Corpus (AVEC 2019)",
+        "platform": "Entrevistas clínico-computacionais (transcrição, áudio e vídeo)",
+        "accessStatus": "controlado",
+        "accessEvidence": "USC ICT distribui E-DAIC mediante solicitação assinada de pesquisadores acadêmicos ou sem fins lucrativos.",
+        "datasetUrl": "https://dcapswoz.ict.usc.edu/",
+        "evidenceUrl": "https://dcapswoz.ict.usc.edu/",
+        "reuseAndCaveat": "275 sessões no protocolo descrito; dados não são corpus de Reddit e não são download aberto.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 30,
@@ -750,7 +1091,18 @@
       "pending": [],
       "audit": "Resultados confirmados no PDF integral da tese USP (Tabela 4, p. 87); não confundir baseline LSTM.BERT com todos os experimentos da tese.",
       "provenance": "https://teses.usp.br/teses/disponiveis/100/100131/tde-12062025-101544/publico/DefesaWesleyFinal.pdf",
-      "verifiedOn": "2026-11-10"
+      "verifiedOn": "2026-11-10",
+      "datasetAudit": {
+        "name": "SetembroBR; corpus Reddit usado na tese",
+        "platform": "Twitter/X e Reddit",
+        "accessStatus": "parcial",
+        "accessEvidence": "SetembroBR possui acesso público indicado pelo grupo. O corpus do domínio Reddit e condições de reprodução exatas na tese não foram confirmados aqui.",
+        "datasetUrl": "https://ivandreparaboni.wixsite.com/research/setembrobr",
+        "evidenceUrl": "https://doi.org/10.11606/T.100.2025.tde-12062025-101544",
+        "reuseAndCaveat": "Evitar confundir métricas de baseline com resultado agregado da tese.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 31,
@@ -779,7 +1131,18 @@
       ],
       "audit": "Corpus e método verificados no repositório institucional UFSCar e README do projeto; tamanho e partições exigem conferência das tabelas do TCC.",
       "provenance": "https://repositorio.ufscar.br/items/e2916bfc-974c-4b67-b96e-f0d67065827c",
-      "verifiedOn": "2026-11-10"
+      "verifiedOn": "2026-11-10",
+      "datasetAudit": {
+        "name": "Amive (corpus original); versões sintéticas em desenvolvimento",
+        "platform": "Postagens anônimas em rede social; plataforma não identificada",
+        "accessStatus": "restrito",
+        "accessEvidence": "O projeto acadêmico explicita que textos originais não podem ser distribuídos publicamente por sensibilidade. O código de paráfrase está público; divulgação efetiva do CSV sintético ainda não confirmada.",
+        "datasetUrl": "https://github.com/LALIC-UFSCar/synthetic-data-mental-health",
+        "evidenceUrl": "https://repositorio.ufscar.br/items/e2916bfc-974c-4b67-b96e-f0d67065827c",
+        "reuseAndCaveat": "O README usa exemplos de arquivos CSV; esses caminhos não demonstram disponibilização do corpus original.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      }
     },
     {
       "id": 32,
@@ -803,7 +1166,18 @@
         "Depressão",
         "Ansiedade"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Não se aplica — revisão entre plataformas",
+        "platform": "Literatura científica",
+        "accessStatus": "nao_aplica",
+        "accessEvidence": "Revisão de estudos, sem base original independente para baixar.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://doi.org/10.1007/s44192-026-00368-w",
+        "reuseAndCaveat": "Usar como evidência secundária e fonte para localizar bases subjacentes.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não se aplica a revisão de literatura"
+      }
     },
     {
       "id": 33,
@@ -826,7 +1200,18 @@
       "conditions": [
         "Outras/geral"
       ],
-      "pending": []
+      "pending": [],
+      "datasetAudit": {
+        "name": "Não se aplica — scoping review sobre LLMs",
+        "platform": "Literatura científica",
+        "accessStatus": "nao_aplica",
+        "accessEvidence": "Inclui 95 trabalhos, não um dataset de postagens rotuladas para experimentar.",
+        "datasetUrl": null,
+        "evidenceUrl": "https://doi.org/10.2196/69284",
+        "reuseAndCaveat": "95 artigos ≠ 95 instâncias ou 95 corpora independentes.",
+        "reviewedOn": "2026-11-10",
+        "accessAssessment": "Não se aplica a revisão de literatura"
+      }
     }
   ]
 }
