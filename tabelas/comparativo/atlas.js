@@ -1,6 +1,6 @@
 
 "use strict";
-const STATE={all:[],filtered:[],selected:[],filters:{query:"",language:"Todos",condition:"Todas",group:"Todos",year:"Todos"}};
+const STATE={all:[],filtered:[],selected:[],filters:{query:"",language:"Todos",condition:"Todas",group:"Todos",year:"Todos",access:"Todos"}};
 const $=(s,root=document)=>root.querySelector(s),$$=(s,root=document)=>[...root.querySelectorAll(s)];
 const escapeHTML=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const groupOrder=["Clássicos","Transformers","LLMs","Recursos","Revisões","Tese/TCC","Outras"];
@@ -12,7 +12,7 @@ function filterStudies(){
  STATE.filtered=STATE.all.filter(s=>{
   const text=[s.title,s.condition,s.source,s.dataset,s.labeling,s.methods,s.results,s.limitations].join(" ").toLocaleLowerCase("pt-BR");
   const q=!f.query||text.includes(f.query.toLocaleLowerCase("pt-BR"));
-  return q&&(f.language==="Todos"||s.language===f.language)&&(f.condition==="Todas"||s.conditions.includes(f.condition))&&(f.group==="Todos"||s.group===f.group)&&(f.year==="Todos"||s.year===Number(f.year));
+  return q&&(f.language==="Todos"||s.language===f.language)&&(f.condition==="Todas"||s.conditions.includes(f.condition))&&(f.group==="Todos"||s.group===f.group)&&(f.year==="Todos"||s.year===Number(f.year))&&(f.access==="Todos"||s.datasetAudit?.accessStatus===f.access);
  });
  renderCards();renderMap();renderTimeline();
  $("#countResults").textContent=STATE.filtered.length+" de "+STATE.all.length+" referências encontradas";
@@ -46,12 +46,13 @@ function renderMap(){
  });
  $("#map").innerHTML=out+'</svg>';
 }
+const accessLabels={publico:"Público",controlado:"Controlado",restrito:"Restrito",parcial:"Acesso parcial",nao_confirmado:"Acesso não confirmado",nao_aplica:"Revisão / N.A."};
 function createTag(t,attention=false){return '<span class="tag'+(attention?' attention':'')+'">'+escapeHTML(t)+'</span>';}
 function renderCards(){
  if(!STATE.filtered.length){$("#studyCards").innerHTML='<div class="empty"><h3>Nenhuma referência encontrada</h3><p>Modifique os filtros para ampliar o recorte.</p></div>';return;}
  $("#studyCards").innerHTML=STATE.filtered.map((s,i)=>{
   const inComparison=STATE.selected.includes(s.id);
-  return '<article class="study" style="animation-delay:'+Math.min(i*24,200)+'ms"><div class="num">ESTUDO '+String(s.id).padStart(2,"0")+' / '+s.year+'</div><h3>'+escapeHTML(s.title)+'</h3><div class="tags">'+createTag(s.language)+createTag(s.group)+(s.pending.length?createTag('Dados a confirmar',true):'')+'</div><p class="context">'+escapeHTML(s.condition)+'</p><div class="study-actions"><button class="small-btn" data-action="details" data-id="'+s.id+'">Ficha técnica</button><button class="small-btn" aria-pressed="'+inComparison+'" data-action="compare" data-id="'+s.id+'">'+(inComparison?'Remover':'Comparar +')+'</button></div></article>';
+  return '<article class="study" style="animation-delay:'+Math.min(i*24,200)+'ms"><div class="num">ESTUDO '+String(s.id).padStart(2,"0")+' / '+s.year+'</div><h3>'+escapeHTML(s.title)+'</h3><div class="tags">'+createTag(s.language)+createTag(s.group)+createTag(accessLabels[s.datasetAudit?.accessStatus]||"Sem auditoria",s.datasetAudit?.accessStatus==="nao_confirmado"||s.datasetAudit?.accessStatus==="restrito")+(s.pending.length?createTag('Volume/métrica pendente',true):'')+'</div><p class="context">'+escapeHTML(s.condition)+'</p><div class="study-actions"><button class="small-btn" data-action="details" data-id="'+s.id+'">Ficha técnica</button><button class="small-btn" aria-pressed="'+inComparison+'" data-action="compare" data-id="'+s.id+'">'+(inComparison?'Remover':'Comparar +')+'</button></div></article>';
  }).join("");
 }
 function showDetails(id){
@@ -59,9 +60,9 @@ function showDetails(id){
  previousFocus=document.activeElement;
  $("#modalTitle").textContent=s.title;
  $("#modalSubtitle").innerHTML=createTag(String(s.year))+createTag(s.language)+createTag(s.type)+(s.pending.length?createTag("Informações não confirmadas",true):"");
- const fields=[["Condição investigada",s.condition],["Tipo de texto e idioma",s.source],["Dataset, origem e volumetria",s.dataset],["Estratégia de rotulagem",s.labeling],["Métodos de IA e PLN",s.methods],["Métricas e resultados",s.results],["Limitações e relação com o projeto",s.limitations]];
+ const fields=[["Condição investigada",s.condition],["Tipo de texto e idioma",s.source],["Dataset e volumetria",s.dataset],["Nome oficial / identificação do dataset",s.datasetAudit?.name||"Não documentado"],["Plataforma ou ambiente de coleta",s.datasetAudit?.platform||"Não documentado"],["Disponibilidade dos dados",accessLabels[s.datasetAudit?.accessStatus]||"Não avaliado"],["Evidência sobre acesso",s.datasetAudit?.accessEvidence||"Não documentado"],["Observação de reutilização e limitações",s.datasetAudit?.reuseAndCaveat||"Não documentado"],["Estratégia de rotulagem",s.labeling],["Métodos de IA e PLN",s.methods],["Métricas e resultados",s.results],["Limitações e relação com o projeto",s.limitations]];
  $("#detailData").innerHTML=fields.map((f,i)=>'<div class="detail-item '+(i>1?'wide':'')+'"><h3>'+escapeHTML(f[0])+'</h3><p>'+escapeHTML(f[1])+'</p></div>').join("");
- $("#detailLinks").innerHTML='<a class="action" target="_blank" rel="noopener noreferrer" href="'+escapeHTML(s.url)+'">Abrir publicação ↗</a><button class="action secondary" data-action="compare" data-id="'+s.id+'">Adicionar à comparação</button>';
+ $("#detailLinks").innerHTML='<a class="action" target="_blank" rel="noopener noreferrer" href="'+escapeHTML(s.url)+'">Abrir publicação ↗</a>'+(s.datasetAudit?.datasetUrl?'<a class="action secondary" target="_blank" rel="noopener noreferrer" href="'+escapeHTML(s.datasetAudit.datasetUrl)+'">Página dos dados / acesso ↗</a>':'')+(s.datasetAudit?.evidenceUrl&&s.datasetAudit.evidenceUrl!==s.datasetAudit.datasetUrl?'<a class="action secondary" target="_blank" rel="noopener noreferrer" href="'+escapeHTML(s.datasetAudit.evidenceUrl)+'">Fonte de verificação ↗</a>':'')+'<button class="action secondary" data-action="compare" data-id="'+s.id+'">Adicionar à comparação</button>';
  $("#modal").classList.add("open");$("#modal").setAttribute("aria-hidden","false");document.body.style.overflow="hidden";$(".close").focus();
 }
 function closeModal(){
@@ -82,8 +83,8 @@ function renderComparison(){
  $("#comparePrompt").textContent=slots.length===2?"Comparação qualitativa entre duas referências.":"Escolha dois estudos nos cartões abaixo.";
  const grid=$("#comparisonFields");
  if(slots.length!==2){grid.innerHTML="";$("#compareNotice").hidden=true;return;}
- const pairs=[["Objeto e problema","condition"],["Origem, fonte e idioma","source"],["Dataset / volumetria","dataset"],["Estratégia de rotulagem","labeling"],["Métodos computacionais","methods"],["Métricas e resultados","results"],["Limitações metodológicas","limitations"]];
- grid.innerHTML=pairs.map(([name,key])=>'<div class="compare-field"><div class="field-name">'+name+'</div><div class="compare-values"><p>'+escapeHTML(slots[0][key])+'</p><p>'+escapeHTML(slots[1][key])+'</p></div></div>').join("");
+ const pairs=[["Objeto e problema","condition"],["Origem, fonte e idioma","source"],["Dataset / volumetria","dataset"],["Estratégia de rotulagem","labeling"],["Métodos computacionais","methods"],["Dataset e acesso","datasetAudit"],["Métricas e resultados","results"],["Limitações metodológicas","limitations"]];
+ grid.innerHTML=pairs.map(([name,key])=>'<div class="compare-field"><div class="field-name">'+name+'</div><div class="compare-values"><p>'+escapeHTML(key==="datasetAudit"?(accessLabels[slots[0].datasetAudit?.accessStatus]||"Não avaliado")+" — "+(slots[0].datasetAudit?.name||"") :slots[0][key])+'</p><p>'+escapeHTML(key==="datasetAudit"?(accessLabels[slots[1].datasetAudit?.accessStatus]||"Não avaliado")+" — "+(slots[1].datasetAudit?.name||"") :slots[1][key])+'</p></div></div>').join("");
  $("#compareNotice").hidden=false;
 }
 function renderSummary(){
@@ -100,17 +101,18 @@ function renderSummary(){
  $("#methodBars").innerHTML=bars.map(b=>'<div class="bar-row"><span>'+escapeHTML(b.name)+'</span><div class="bar-track"><span style="width:'+(b.count/max*100).toFixed(1)+'%"></span></div><b>'+b.count+'</b></div>').join("");
  $("#langFilter").innerHTML='<option value="Todos">Todos os idiomas</option>'+[...new Set(STATE.all.map(x=>x.language))].sort().map(g=>'<option value="'+escapeHTML(g)+'">'+escapeHTML(g)+'</option>').join("");
  $("#yearFilter").innerHTML='<option value="Todos">Todos os anos</option>'+yearData().filter(x=>x.count).map(x=>'<option value="'+x.year+'">'+x.year+'</option>').join("");
+ $("#accessFilter").innerHTML='<option value="Todos">Todos os tipos</option>'+Object.entries(accessLabels).map(([k,v])=>'<option value="'+k+'">'+escapeHTML(v)+'</option>').join("");
  $("#groupFilter").innerHTML='<option value="Todos">Todas as abordagens</option>'+groupOrder.map(g=>'<option value="'+escapeHTML(g)+'">'+escapeHTML(g)+'</option>').join("");
  $("#conditionFilter").innerHTML='<option value="Todas">Todas as condições</option>'+[...new Set(STATE.all.flatMap(s=>s.conditions))].sort().map(g=>'<option value="'+escapeHTML(g)+'">'+escapeHTML(g)+'</option>').join("");
 }
 function setup(){
  $("#query").addEventListener("input",e=>{STATE.filters.query=e.target.value;filterStudies()});
- [["langFilter","language"],["groupFilter","group"],["conditionFilter","condition"],["yearFilter","year"]].forEach(([key,prop])=>{
+ [["langFilter","language"],["groupFilter","group"],["conditionFilter","condition"],["yearFilter","year"],["accessFilter","access"]].forEach(([key,prop])=>{
   $("#"+key).addEventListener("change",e=>{STATE.filters[prop]=e.target.value;filterStudies()});
  });
  $("#clearFilters").addEventListener("click",()=>{
-  STATE.filters={query:"",language:"Todos",condition:"Todas",group:"Todos",year:"Todos"};
-  $("#query").value="";["langFilter","groupFilter","conditionFilter","yearFilter"].forEach(key=>$("#"+key).selectedIndex=0);
+  STATE.filters={query:"",language:"Todos",condition:"Todas",group:"Todos",year:"Todos",access:"Todos"};
+  $("#query").value="";["langFilter","groupFilter","conditionFilter","yearFilter","accessFilter"].forEach(key=>$("#"+key).selectedIndex=0);
   filterStudies();
  });
  $("#timeline").addEventListener("click",e=>{
