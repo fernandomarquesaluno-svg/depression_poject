@@ -1121,7 +1121,8 @@
           "https://ivandreparaboni.wixsite.com/research/setembrobr",
           "https://pmc.ncbi.nlm.nih.gov/articles/PMC11607554/"
         ],
-        "confidence": "alta para corpora e plataformas; tamanhos por partição permanecem pendentes"
+        "confidence": "alta para corpora e plataformas; tamanhos por partição permanecem pendentes",
+        "datasetFamily": "SETEMBROBR"
       },
       "analysisTaxonomy": {
         "publicationKind": "empirico",
@@ -1130,8 +1131,8 @@
           "LLMs",
           "Multimodal/fusão"
         ],
-        "datasetFamily": null,
-        "caveat": "Trabalho avalia depressão e ansiedade, com recursos textuais e de mídia social.",
+        "datasetFamily": "SETEMBROBR",
+        "caveat": "Trabalho avalia depressão e ansiedade, com recursos textuais e de mídia social. Reutiliza SetembroBR e também usa corpus de outro domínio; não implica mesma partição das demais publicações.",
         "auditedOn": "2026-11-10",
         "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
         "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
@@ -1637,7 +1638,8 @@
         "evidenceUrl": "https://doi.org/10.11606/T.100.2025.tde-12062025-101544",
         "reuseAndCaveat": "Evitar confundir métricas de baseline com resultado agregado da tese.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+        "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor",
+        "datasetFamily": "SETEMBROBR"
       },
       "analysisTaxonomy": {
         "publicationKind": "empirico",
@@ -1646,8 +1648,8 @@
           "ML clássico",
           "Transformers"
         ],
-        "datasetFamily": null,
-        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "datasetFamily": "SETEMBROBR",
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência. Reutiliza SetembroBR e também usa corpus de outro domínio; não implica mesma partição das demais publicações.",
         "auditedOn": "2026-11-10",
         "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
         "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
