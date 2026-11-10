@@ -13,8 +13,8 @@ function setPageFilters(group,condition){
  if(!groupSelect)return;
  groupSelect.value=group;conditionSelect.value=condition;
  yearSelect.value="Todos";langSelect.value=get("showPtOnly").checked?"PT-BR":"Todos";query.value="";
- groupSelect.dispatchEvent(new Event("change",{bubbles:true}));
- conditionSelect.dispatchEvent(new Event("change",{bubbles:true}));
+ query.dispatchEvent(new Event("input",{bubbles:true}));
+ [groupSelect,conditionSelect,yearSelect,langSelect].forEach(select=>select.dispatchEvent(new Event("change",{bubbles:true})));
  document.querySelector("#estudos")?.scrollIntoView({behavior:"smooth"});
 }
 function renderNetwork(){
