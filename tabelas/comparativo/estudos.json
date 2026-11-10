@@ -5,7 +5,20 @@
     "kind": "revisão narrativa",
     "scope": "2020–2026",
     "count": 33,
-    "notes": "Rótulos de grupo e idioma são classificação exploratória a partir dos textos das fichas, não medida experimental. Métricas de estudos diferentes não são comparáveis sem protocolo compatível. Em 10/11/2026, volumes dos trabalhos 1 e 3 conferidos nas tabelas/figuras dos artigos originais publicados na ACL Anthology."
+    "notes": "Rótulos de grupo e idioma são classificação exploratória a partir dos textos das fichas, não medida experimental. Métricas de estudos diferentes não são comparáveis sem protocolo compatível. Em 10/11/2026, volumes dos trabalhos 1 e 3 conferidos nas tabelas/figuras dos artigos originais publicados na ACL Anthology.",
+    "review": {
+      "date": "2026-11-10",
+      "checked": 7,
+      "completedSpecificData": 4,
+      "pendingStudies": [
+        19,
+        20,
+        31
+      ],
+      "pendingFields": 4,
+      "method": "Conferência de artigo, tese, preprint e repositório; sem extrapolar métricas ou somar corpora compartilhados.",
+      "notes": "Mandal: valor do melhor experimento difere da média em 3 sementes. Santos 2025 tese: valores referem-se a um experimento e não ao resultado final de toda a tese. Shah: volumetria encontrada no pré-print, não auditada na versão do periódico."
+    }
   },
   "studies": [
     {
@@ -443,10 +456,10 @@
       "year": 2025,
       "condition": "Gravidade expressa em textos depressivos",
       "source": "Textos em português brasileiro",
-      "dataset": "Dados textuais em português brasileiro utilizados para avaliar o DepreBERTBR; volumetria não confirmada no resumo.",
+      "dataset": "Estudo comparativo de classificação em quatro classes (ausente, leve, moderada, grave) no português brasileiro. A base de avaliação e sua volumetria específica não foram confirmadas no resumo público do artigo de 2025. Não confundir com as 509.675 instâncias do corpus DepreRedditBR publicado em 2024 (recurso de pré-treinamento), cuja totalidade não foi comprovada como conjunto de avaliação de 2025.",
       "labeling": "Quatro classes textuais: ausente, leve, moderada e grave; não são diagnósticos individualizados.",
       "methods": "Tarefa: Classificação supervisionada multiclasse. Modelos e representações: DepreBERTBR especializado versus modelos de linguagem monolíngues e multilíngues de domínio geral.",
-      "results": "Os autores relatam F1-score competitivo e semelhante ao dos comparadores; valor único não confirmado no resumo.",
+      "results": "Resumo original: DepreBERTBR obtém F1-score competitivo, comparável a modelos gerais monolíngues e multilíngues. Valores exatos de F1 por modelo/configuração não confirmados sem acesso às tabelas do artigo completo.",
       "limitations": "A comparação depende das mesmas classes, partições e critérios de rotulagem.",
       "language": "PT-BR",
       "type": "Pesquisa",
@@ -460,7 +473,10 @@
       "pending": [
         "Dataset",
         "Resultados"
-      ]
+      ],
+      "audit": "Resumo do SBBD 2025 e artigo de 2024 do DepreRedditBR; informação numérica da amostra de avaliação e F1 da comparação permanece pendente.",
+      "provenance": "https://sbc-books.dexl.lncc.br/paper/uma-avaliacao-comparativa-entre-o-deprebertbr-e-modelos-de-linguagem-para-classificacao-de-textos-depressivos",
+      "verifiedOn": "2026-11-10"
     },
     {
       "id": 20,
@@ -469,7 +485,7 @@
       "year": 2025,
       "condition": "Predição de depressão e ansiedade",
       "source": "Twitter/X em português brasileiro e Reddit em inglês",
-      "dataset": "Dois domínios de mídia social; volumes por plataforma não confirmados no resumo.",
+      "dataset": "Corpora identificados na publicação: SetembroBR (Twitter/X, português brasileiro) e SMHD (Reddit, inglês). Os modelos no Twitter/X consideram até as 1.000 mensagens mais recentes de cada usuário. A Tabela 2 apresenta quantidades por grupo/domínio, mas os números exatos de cada subconjunto não foram transcritos ou confirmados nesta auditoria.",
       "labeling": "Dados dos corpora e avaliação humana por especialistas; não generalizar para diagnóstico clínico confirmado.",
       "methods": "Tarefa: Predição de condições por dados textuais e não textuais; avaliação entre plataformas e idiomas. Modelos e representações: Modelos de linguagem em arquitetura mixture-of-experts (MoE), com atributos textuais e sociais.",
       "results": "Melhorias ante trabalhos anteriores segundo autores, com métricas computacionais e avaliação humana; não utilizar métrica agregada não apresentada.",
@@ -486,7 +502,10 @@
       ],
       "pending": [
         "Dataset"
-      ]
+      ],
+      "audit": "Datasets e recorte de mensagens verificados no texto integral disponibilizado pelos autores; quantitativos da Tabela 2 pendentes.",
+      "provenance": "https://doi.org/10.1109/ACCESS.2025.3583259",
+      "verifiedOn": "2026-11-10"
     },
     {
       "id": 21,
@@ -518,7 +537,7 @@
       "year": 2025,
       "condition": "Detecção textual de depressão",
       "source": "Postagens em redes sociais; idioma não estabelecido com segurança no resumo",
-      "dataset": "Base de depressão reutilizada de estudos anteriores; total não confirmado na síntese.",
+      "dataset": "Twitter/X; reutiliza o corpus de Shen et al. (IJCAI 2017), organizado em D1 (usuários com autorrelato de depressão), D2 (controles operacionais) e D3 (candidatos com rótulos mais ruidosos). O pré-print dos autores (arXiv:2409.14794, §3.4.1) informa 20.000 instâncias rotuladas para ajuste do GPT-3.5 Turbo e outras 20.000 instâncias para teste, sem sobreposição declarada. Não são o total do corpus original; diferenças na versão editorial de 2025 não foram verificadas.",
       "labeling": "Rótulos binários de conteúdo depressivo ou não depressivo da base utilizada.",
       "methods": "Tarefa: Classificação binária de postagens. Modelos e representações: GPT-3.5 Turbo 1106 e LLaMA2-7B ajustados; avaliação zero-shot/few-shot.",
       "results": "No protocolo few-shot relatado: 96,4% de acurácia para GPT-3.5 ajustado e 87,1% para LLaMA2-7B; não comparável diretamente a outros datasets.",
@@ -532,9 +551,10 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": [
-        "Dataset"
-      ]
+      "pending": [],
+      "audit": "Volumetria e origem verificadas na versão pré-publicada de autoria coincidente (arXiv:2409.14794, §3.4.1); a edição do periódico de 2025 não foi auditada quanto a eventuais revisões de protocolo.",
+      "provenance": "https://arxiv.org/abs/2409.14794",
+      "verifiedOn": "2026-11-10"
     },
     {
       "id": 23,
@@ -543,7 +563,7 @@
       "year": 2025,
       "condition": "Gravidade de sinais depressivos",
       "source": "Reddit; textos em inglês",
-      "dataset": "Postagens de Reddit categorizadas em mínimo, leve, moderado e grave; total exato não reproduzido nesta síntese.",
+      "dataset": "9.841 postagens em inglês de 6.200 usuários únicos do Reddit, coletadas de janeiro de 2019 a dezembro de 2023, após filtragem; quatro níveis anotados de gravidade textual (mínimo, leve, moderado, grave). Os usuários contribuem em média com 1,59 postagem. Trata-se de posts de comunidades de saúde mental, não de amostra representativa da população geral.",
       "labeling": "Quatro classes definidas no dataset; não inferir avaliação clínica individual.",
       "methods": "Tarefa: Classificação multiclasse de gravidade textual. Modelos e representações: Dez classificadores clássicos com GloVe/Word2Vec e dez transformers, incluindo MentalBERT.",
       "results": "F1 relatado: MentalBERT 97,31%; XGBoost + GloVe 94,01%, dentro do protocolo do estudo.",
@@ -558,9 +578,10 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": [
-        "Dataset"
-      ]
+      "pending": [],
+      "audit": "Contagens verificadas na seção de dataset da versão integral da revista AI 2025, 6(7), 157.",
+      "provenance": "https://www.mdpi.com/2673-2688/6/7/157",
+      "verifiedOn": "2026-11-10"
     },
     {
       "id": 24,
@@ -685,10 +706,10 @@
       "year": 2025,
       "condition": "Gravidade de depressão em entrevistas",
       "source": "Entrevistas multimodais; inglês",
-      "dataset": "E-DAIC; dados de entrevista com modalidades combinadas.",
+      "dataset": "E-DAIC (AVEC 2019): 275 sessões multimodais de entrevistas em inglês, sendo 163 para treino, 56 para validação e 56 para teste; uma sessão da validação e uma de teste excluídas por arquivos incompletos de vídeo. Textos transcritos, áudio, atributos visuais e escores PHQ-8; não é corpus de postagens de redes sociais.",
       "labeling": "Escores de avaliação de depressão por questionários/entrevistas no benchmark; a predição é de gravidade, não diagnóstico clínico novo.",
       "methods": "Tarefa: Predição ordinal de gravidade e de respostas por pergunta. Modelos e representações: QuestMF (fusão multimodal por questão) e função de perda ImbOLL para desequilíbrio e ordinalidade.",
-      "results": "Desempenho comparável ao estado da arte no E-DAIC, segundo os autores; não reproduzir número sem especificar a métrica e a configuração.",
+      "results": "QuestMF com ImbOLL no E-DAIC, Tabela 1 (melhor execução): CCC = 0,685, RMSE = 5,32, MAE = 4,11. Tabela 2 (média ± desvio-padrão, três sementes): CCC = 0,662 ± 0,022, RMSE = 5,25 ± 0,08, MAE = 3,95 ± 0,13. CCC mede concordância, não acurácia ou F1.",
       "limitations": "Avaliação circunscrita ao benchmark de entrevista, distinta de redes sociais.",
       "language": "Inglês",
       "type": "Pesquisa",
@@ -699,9 +720,10 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": [
-        "Resultados"
-      ]
+      "pending": [],
+      "audit": "Dados e métricas verificados no PDF do artigo na ACL Anthology, Tabelas 1–2, e seção 3 do texto integral arXiv.",
+      "provenance": "https://aclanthology.org/2025.clpsych-1.4.pdf",
+      "verifiedOn": "2026-11-10"
     },
     {
       "id": 30,
@@ -713,7 +735,7 @@
       "dataset": "SetembroBR e corpus de Reddit para transferência entre domínios.",
       "labeling": "Autorrelatos de diagnóstico/tratamento para seleção dos indivíduos; parcela do corpus em português avaliada por especialistas humanos.",
       "methods": "Tarefa: Predição no nível de usuário a partir de timelines; transferência entre domínio e idioma. Modelos e representações: Filtros de relevância, atributos textuais/não textuais e comitês de classificadores.",
-      "results": "A tese descreve avaliação computacional e humana, sem uma métrica numérica única confirmada nesta ficha.",
+      "results": "Exemplo experimental documentado na tese, Tabela 4, p. 87: classificador LSTM.BERT treinado em dados desbalanceados do SetembroBR obteve macro-F1 = 0,63 em depressão e = 0,61 em ansiedade; versões balanceadas obtiveram 0,43 e 0,31, respectivamente. São resultados desse experimento e não um único desempenho consolidado da tese ou do método final.",
       "limitations": "Tese de doutorado, não artigo de periódico; possível sobreposição temática e de recursos com Santos et al. (2025).",
       "language": "Misto",
       "type": "Tese/TCC",
@@ -725,9 +747,10 @@
         "Depressão",
         "Ansiedade"
       ],
-      "pending": [
-        "Resultados"
-      ]
+      "pending": [],
+      "audit": "Resultados confirmados no PDF integral da tese USP (Tabela 4, p. 87); não confundir baseline LSTM.BERT com todos os experimentos da tese.",
+      "provenance": "https://teses.usp.br/teses/disponiveis/100/100131/tde-12062025-101544/publico/DefesaWesleyFinal.pdf",
+      "verifiedOn": "2026-11-10"
     },
     {
       "id": 31,
@@ -736,7 +759,7 @@
       "year": 2026,
       "condition": "Sintomas de depressão; geração sintética e privacidade",
       "source": "Corpus Amive; português brasileiro",
-      "dataset": "Amive: textos anonimizados anotados por sintomas; volume não confirmado no resumo da instituição.",
+      "dataset": "Corpus Amive (UFSCar): postagens anônimas em português brasileiro anotadas por sintomas de depressão, não disponibilizadas integralmente por motivos de privacidade. O trabalho estuda geração de paráfrases sintéticas e avalia o sintoma tristeza/humor deprimido. A volumetria da base original e das partições usadas nos experimentos não foi confirmada no resumo institucional nem no README público do código.",
       "labeling": "Anotações de sintomas provenientes do corpus Amive; foco de avaliação no sintoma tristeza/humor deprimido.",
       "methods": "Tarefa: Paráfrase sintética, similaridade textual e avaliação extrínseca de classificação binária. Modelos e representações: Retrotradução, PEGASUS, BERTScore com BERTimbau; baselines LR, SVM, Naive Bayes e Random Forest.",
       "results": "Utilidade classificatória em geral preservada, mas perda de precisão em transferência sintético→real e alterações de nuances discursivas.",
@@ -753,7 +776,10 @@
       ],
       "pending": [
         "Dataset"
-      ]
+      ],
+      "audit": "Corpus e método verificados no repositório institucional UFSCar e README do projeto; tamanho e partições exigem conferência das tabelas do TCC.",
+      "provenance": "https://repositorio.ufscar.br/items/e2916bfc-974c-4b67-b96e-f0d67065827c",
+      "verifiedOn": "2026-11-10"
     },
     {
       "id": 32,
