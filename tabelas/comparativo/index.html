@@ -10,7 +10,9 @@
  <link rel="canonical" href="https://fernandomarquesaluno-svg.github.io/depression_poject/tabelas/comparativo/">
  <title>Atlas de Evidências | IA, PLN &amp; Saúde Mental — 2020–2026</title>
  <link rel="stylesheet" href="./atlas.css?v=2">
+ <link rel="stylesheet" href="./conexoes.css?v=1">
  <script defer src="./atlas.js?v=2"></script>
+ <script defer src="./conexoes.js?v=1"></script>
 </head>
 <body>
 <a class="skip" href="#estudos">Pular para o explorador de estudos</a>
@@ -19,7 +21,7 @@
  <div class="wrap bar-inner">
   <a href="#inicio" class="logo" aria-label="Atlas: ir ao início"><span class="logo-mark" aria-hidden="true">✳</span> ATLAS<span style="color:var(--cyan)">.IA</span></a>
   <nav class="bar-nav" aria-label="Navegação principal">
-   <a href="#mapa">Mapa</a><a href="#linha">Evolução</a><a href="#estudos">Estudos</a><a href="#comparar">Comparador</a>
+   <a href="#conexoes">Conexões</a><a href="#mapa">Mapa</a><a href="#linha">Evolução</a><a href="#estudos">Estudos</a><a href="#comparar">Comparador</a>
    <a class="bar-cta" href="../../levantamento-bibliografico/">Revisão completa ↗</a>
   </nav>
  </div>
@@ -32,7 +34,7 @@
    <h1 id="heroTitle">A ciência<br>em <em>conexões.</em></h1>
    <p class="hero-sub">Como a inteligência artificial identifica sinais textuais relacionados à depressão, ansiedade e estresse? Explore os trabalhos, suas abordagens e lacunas — sem enfrentar uma parede de texto.</p>
    <div class="hero-actions">
-    <a class="action" href="#mapa">Explorar mapa científico <span aria-hidden="true">↗</span></a>
+    <a class="action" href="#conexoes">Explorar relações científicas <span aria-hidden="true">↗</span></a>
     <a class="action secondary" href="#comparar">Comparar métodos <span aria-hidden="true">⇄</span></a>
    </div>
    <div class="hero-stats" aria-label="Indicadores bibliográficos">
@@ -41,6 +43,39 @@
     <div class="stat"><strong>08</strong><span>dimensões técnicas</span></div>
     <div class="stat"><strong id="ptCount">–</strong><span>fontes exclusivamente PT-BR*</span></div>
    </div>
+  </div>
+ </section>
+
+ <section class="section" id="conexoes" aria-labelledby="connectTitle">
+  <div class="wrap">
+   <div class="section-head reveal">
+    <div><span class="kicker">00 / MAPA DE CONHECIMENTO</span><h2 class="section-title" id="connectTitle">Como as pesquisas<br><span style="color:var(--cyan)">se conectam?</span></h2></div>
+    <p class="section-copy">Uma leitura visual que relaciona os tipos de estudos e métodos aos problemas investigados. A espessura das ligações corresponde ao número de publicações do recorte, não à força da evidência.</p>
+   </div>
+   <div class="connect-wrap reveal">
+    <div class="panel connect-main">
+     <div class="connect-head">
+      <h3>Fluxos de evidências · abordagem ↔ condição</h3>
+      <label for="showPtOnly"><input type="checkbox" id="showPtOnly"> Apenas PT-BR</label>
+     </div>
+     <div class="connection-scroll" id="conexaoViz"><p class="loading">Preparando as conexões…</p></div>
+     <p class="connect-instruction">Passe o cursor sobre uma ligação para ver os estudos associados. Clique em um bloco para filtrar o explorador. Uma referência pode investigar mais de uma condição.</p>
+    </div>
+    <aside class="panel connect-side" aria-label="Leitura da conexão selecionada">
+     <span class="kicker">CONEXÃO SELECIONADA</span>
+     <h3 id="edgeTitle">Investigando relações</h3>
+     <strong class="c-value" id="edgeCount">–</strong>
+     <p class="c-desc" id="connectionDescription">Selecione uma ligação do diagrama.</p>
+     <ul class="c-studies" id="edgeSources"></ul>
+     <button class="c-mini" id="edgeJump" type="button" hidden>Ver estudos relacionados ↗</button>
+    </aside>
+   </div>
+   <div class="c-summary reveal" aria-label="Indicadores do mapa relacional">
+    <div><strong id="cStudiesCount">33</strong><span>publicações consideradas no mapa</span></div>
+    <div><strong id="cRelationsCount">–</strong><span>relações de abordagem e condição</span></div>
+    <div><strong id="cptCount">–</strong><span>referências exclusivamente PT-BR no filtro</span></div>
+   </div>
+   <p class="section-copy" style="margin-top:14px;font-size:.78rem">Categorias geradas a partir das descrições bibliográficas. São agrupamentos exploratórios: revisões, recursos e trabalhos experimentais não representam o mesmo nível de evidência. A rede não mede causalidade, validade clínica ou comparação de modelos.</p>
   </div>
  </section>
  <section class="section" id="mapa" aria-labelledby="mapTitle">
@@ -146,6 +181,23 @@
   <div id="modalSubtitle" class="tags"></div>
   <div id="detailData" class="detail-data"></div>
   <div id="detailLinks" class="detail-links"></div>
+ </div>
+</div>
+<button type="button" class="guided-button" id="openTour" aria-haspopup="dialog"><span aria-hidden="true">◉</span> Modo apresentação</button>
+<div class="tour-layer" id="tourLayer" aria-hidden="true">
+ <div class="tour-panel" id="tourPanel" role="dialog" aria-modal="true" aria-labelledby="tourHeading">
+  <button type="button" class="tour-close" id="tourClose" aria-label="Encerrar apresentação">×</button>
+  <div class="tour-main">
+   <div class="tour-kicker" id="tourTag">APRESENTAÇÃO GUIADA</div>
+   <h2 id="tourHeading">Uma pesquisa em conexões</h2>
+   <p class="tour-sub" id="tourSub"></p>
+   <div class="tour-graphic" id="tourGraphic"></div>
+   <a class="tour-action" id="tourExplore" href="#conexoes">Explorar dados ↗</a>
+  </div>
+  <div class="tour-controls">
+   <div><span id="tourIndexLabel" class="tour-kicker">1 / 6</span><div class="tour-progress" id="tourProgress" aria-hidden="true"></div></div>
+   <div class="tour-nav"><button type="button" class="tour-btn" id="tourPrev">← Anterior</button><button type="button" class="tour-btn primary" id="tourNext">Próximo →</button></div>
+  </div>
  </div>
 </div>
 <div id="appStatus" class="loading" aria-live="polite">Carregando 33 registros do Atlas Científico…</div>
