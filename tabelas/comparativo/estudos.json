@@ -172,6 +172,24 @@
         20,
         31
       ]
+    },
+    "auditV6": {
+      "date": "2026-11-10",
+      "scoped": [
+        9,
+        13,
+        19
+      ],
+      "finding": "Nenhum dos três estudos expõe link público ou termo de disponibilização específico comprovado nesta busca; contatos oficiais identificados para solicitação; um estudo relacionado do IDEA-RiSCo (2024) diz que os seus próprios dados podem ser pedidos.",
+      "numDatasetsPubliclyVerifiedInThisRound": 0,
+      "requestContactsVerified": 3,
+      "authorRequestsSent": 0,
+      "unconfirmedRemain": [
+        9,
+        13,
+        19
+      ],
+      "strictRule": "Não marcar solicitação como acesso concedido, nem aplicar automaticamente política de uma publicação a outra."
     }
   },
   "studies": [
@@ -581,12 +599,12 @@
         "name": "IDEA-RiSCo / IDEABot — sete dias de áudio transcrito por participante",
         "platform": "WhatsApp (IDEABot), respostas em áudio transcritas em português brasileiro",
         "accessStatus": "nao_confirmado",
-        "accessEvidence": "Texto integral fornece desenho, elegibilidade, exclusão de identificadores na transcrição e análise LIWC. Nenhum link de descarga dos 52 conjuntos de transcrições ou termo de solicitação foi localizado; acesso ao conteúdo textual não confirmado.",
+        "accessEvidence": "Texto integral fornece desenho, elegibilidade, exclusão de identificadores na transcrição e análise LIWC. Nenhum link de descarga dos 52 conjuntos de transcrições ou termo de solicitação foi localizado; acesso ao conteúdo textual não confirmado. Contato acadêmico verificado: Christian Kieling; o acesso ao corpus específico depende de confirmação direta.",
         "datasetUrl": null,
         "evidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12815307/",
         "reuseAndCaveat": "O estudo Viduani 2026 utiliza também IDEABot/WhatsApp, mas não foi demonstrado que os mesmos participantes ou transcrições se repetem. Tratar como família de coleta compartilhada, não amostra idêntica.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
+        "accessAssessment": "Corpus específico sem link de distribuição ou política de liberação documentalmente confirmados; canal de contato público identificado. Não presumir disponibilidade.",
         "sampleUnit": "adolescente com 7 transcrições ao longo de 7 dias",
         "sampleSize": "52 participantes completos, 13 com MDD e 39 controles; 121 realizaram ao menos uma interação",
         "labelingDetail": "K-SADS-PL por psiquiatra; MFQ autorrelato e CDRS-R escala clínica; LIWC de pronomes para análise estatística, não treino de classificador.",
@@ -598,7 +616,19 @@
         "sampleProtocol": "50? Não: 150 recrutados no coorte; 132 elegíveis na 3ª onda; 121 tiveram interação; 52 completaram 7 dias e foram incluídos no estudo.",
         "splitDescription": "Não se aplica a partição de treino/teste: estudo observacional comparativo com LIWC, t-tests e correlações.",
         "metricDefinition": "Diferença de uso de pronomes singulares 9,15% vs 8,02%, p=0,026; rho=0,366, p=0,008 para MFQ.",
-        "labelSource": "Diagnóstico de MDD confirmado por entrevista psiquiátrica K-SADS-PL."
+        "labelSource": "Diagnóstico de MDD confirmado por entrevista psiquiátrica K-SADS-PL.",
+        "accessRequest": {
+          "type": "contato_autor",
+          "contactName": "Christian Kieling",
+          "contactEmail": "christian.kieling@hmv.org.br",
+          "contactEvidenceUrl": "https://www.scielo.br/j/rbp/a/sKPPK597vm68xkwqS7RMQPL/?lang=en",
+          "relatedPolicyText": "Um artigo distinto do mesmo projeto IDEA-RiSCo, publicado em 2024, declara dados disponíveis mediante solicitação. Isso não estabelece direito de acesso às transcrições utilizadas em 2025.",
+          "relatedPolicyUrl": "https://www.nature.com/articles/s41398-024-02959-z",
+          "requestSubject": "Consulta acadêmica sobre acesso aos dados — Viduani et al. (2025) / IDEA-RiSCo",
+          "requestBody": "Gostaria de confirmar se existe uma versão anonimizada das transcrições utilizadas em Viduani et al. (2025), disponível para pesquisa, e quais requisitos éticos ou termos de uso se aplicam. Se não for possível fornecer transcrições, há estatísticas agregadas, metadados ou um procedimento de acesso controlado?",
+          "status": "não solicitado; não existe confirmação de concessão de acesso",
+          "reviewedOn": "2026-11-10"
+        }
       },
       "analysisTaxonomy": {
         "publicationKind": "empirico",
@@ -779,12 +809,12 @@
         "name": "IDEABot / WhatsApp — transcrições diárias de voz de adolescentes",
         "platform": "WhatsApp (IDEABot) com mensagens de voz transcritas em português brasileiro",
         "accessStatus": "nao_confirmado",
-        "accessEvidence": "O artigo aberto explicita amostra 15/15, período de coleta de 14 dias, tarefa binária por participante e métricas com IC. Não localizei repositório de transcrições nem termo de disponibilidade específica para os dados individuais.",
+        "accessEvidence": "O artigo aberto explicita amostra 15/15, período de coleta de 14 dias, tarefa binária por participante e métricas com IC. Não localizei repositório de transcrições nem termo de disponibilidade específica para os dados individuais. Contato acadêmico verificado: Anna Viduani; o acesso ao corpus específico depende de confirmação direta.",
         "datasetUrl": null,
         "evidenceUrl": "https://www.sciencedirect.com/science/article/pii/S0165032726008086",
         "reuseAndCaveat": "Compartilha a infraestrutura de coleta IDEABot com Viduani et al. (2025); sobreposição efetiva de pessoas e transcrições não documentada nesta auditoria.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
+        "accessAssessment": "Corpus específico sem link de distribuição ou política de liberação documentalmente confirmados; canal de contato público identificado. Não presumir disponibilidade.",
         "sampleUnit": "adolescente (classificação por participante)",
         "sampleSize": "30 adolescentes 16–19 anos (15 MDD confirmados por psiquiatra, 15 controles); 14 dias de coleta",
         "labelingDetail": "Diagnóstico individual de depressão maior validado por psiquiatra infantil e adolescente; avaliação de GPT-4o e 12 modelos adicionais com variação de dias de fala.",
@@ -796,7 +826,19 @@
         "confidence": "alta para 30 pessoas e origem; disponibilidade não confirmada",
         "splitDescription": "Amostra de prova de conceito proposital (15/15); proporção de partição de treinamento não aplicável a prompting zero-shot sem ajuste informado. 14 dias são comprimento da entrada, não 14 folds.",
         "metricDefinition": "GPT-4o: acurácia 86,6% (IC95% 70,3–95,6), sensibilidade 100%, especificidade 73,3%; sem superioridade estatística demonstrada frente a 12 alternativas.",
-        "labelSource": "Diagnóstico MDD estabelecido por psiquiatra infantil/adolescente."
+        "labelSource": "Diagnóstico MDD estabelecido por psiquiatra infantil/adolescente.",
+        "accessRequest": {
+          "type": "contato_autor",
+          "contactName": "Anna Viduani",
+          "contactEmail": "anna.andrade@hmv.org.br",
+          "contactEvidenceUrl": "https://pubmed.ncbi.nlm.nih.gov/42134742/",
+          "relatedPolicyText": "O estudo experimental de 2026 utiliza IDEABot e transcrições de fala de adolescentes. O artigo da mesma equipe sobre IDEA-RiSCo, de 2024, declara solicitação possível para seus próprios dados, mas essa condição não está comprovada para as transcrições do estudo GPT-4o.",
+          "relatedPolicyUrl": "https://www.nature.com/articles/s41398-024-02959-z",
+          "requestSubject": "Consulta acadêmica sobre disponibilização de transcrições — Viduani et al. (2026)",
+          "requestBody": "Gostaria de confirmar se o conjunto de transcrições anonimizadas usado na classificação GPT-4o em Viduani et al. (2026) pode ser acessado sob acordo de pesquisa, ou se existem dados derivados e protocolos publicamente compartilháveis. Poderia informar as condições e eventuais exigências do comitê de ética?",
+          "status": "não solicitado; não existe confirmação de concessão de acesso",
+          "reviewedOn": "2026-11-10"
+        }
       },
       "analysisTaxonomy": {
         "publicationKind": "empirico",
@@ -1079,12 +1121,12 @@
         "name": "Base multiclasse para comparar DepreBERTBR com encoders gerais (quatro níveis); corpus exato não confirmado",
         "platform": "Português brasileiro; plataforma não confirmada para avaliação 2025",
         "accessStatus": "nao_confirmado",
-        "accessEvidence": "Confirmado no registro bibliográfico do SBBD 2025 e resumo SBC Books: modelo DepreBERTBR comparado a modelos gerais em 4 classes. Texto integral e tabelas de n, partições e F1 não acessíveis de forma verificável nesta rodada; o registro ResearchGate oferece somente solicitação aos autores.",
+        "accessEvidence": "Confirmado no registro bibliográfico do SBBD 2025 e resumo SBC Books: modelo DepreBERTBR comparado a modelos gerais em 4 classes. Texto integral e tabelas de n, partições e F1 não acessíveis de forma verificável nesta rodada; o registro ResearchGate oferece somente solicitação aos autores. Contato acadêmico verificado: Ayrton Herculano; o acesso ao corpus específico depende de confirmação direta.",
         "datasetUrl": null,
         "evidenceUrl": "https://sbc-books.dexl.lncc.br/paper/uma-avaliacao-comparativa-entre-o-deprebertbr-e-modelos-de-linguagem-para-classificacao-de-textos-depressivos",
         "reuseAndCaveat": "Também faltam valores exatos de F1 por configuração, exigindo tabelas do artigo completo.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
+        "accessAssessment": "Corpus específico sem link de distribuição ou política de liberação documentalmente confirmados; canal de contato público identificado. Não presumir disponibilidade.",
         "sampleUnit": "texto/postagem; não foi confirmada a unidade específica da avaliação de 2025",
         "sampleSize": "NÃO CONFIRMADO na versão do resumo acessível do SBBD 2025",
         "labelingDetail": "Quatro categorias pretendidas: ausente, leve, moderada, grave; método exato de anotação e distribuição por classe não confirmados.",
@@ -1096,7 +1138,19 @@
         "splitDescription": "Não documentado nas fontes acessíveis nesta revisão. Não atribuir as 10 dobras ou partições de trabalhos relacionados.",
         "metricDefinition": "F1-score citado sem número, sem média especificada; não declarar resultado quantitativo nem comparar percentuais.",
         "labelSource": "Classes textuais: ausente, leve, moderada e grave; método de rotulagem e proporções de classes ainda sem verificação no artigo integral.",
-        "verificationLevel": "Protocolo da tarefa confirmado no resumo; contagens e escores por modelo pendentes"
+        "verificationLevel": "Protocolo da tarefa confirmado no resumo; contagens e escores por modelo pendentes",
+        "accessRequest": {
+          "type": "contato_autor",
+          "contactName": "Ayrton Herculano",
+          "contactEmail": "ayrton.herculano@academico.ifpb.edu.br",
+          "contactEvidenceUrl": "https://sbc-books.dexl.lncc.br/paper/uma-avaliacao-comparativa-entre-o-deprebertbr-e-modelos-de-linguagem-para-classificacao-de-textos-depressivos",
+          "relatedPolicyText": "O registro oficial do SBBD 2025 identifica pesquisadores e o protocolo em quatro classes, mas não disponibiliza nas fontes acessadas o corpus exato de avaliação nem termo de obtenção. O DepreRedditBR 2024 não deve ser presumido como conjunto experimental de 2025.",
+          "relatedPolicyUrl": "https://sbc-books.dexl.lncc.br/paper/uma-avaliacao-comparativa-entre-o-deprebertbr-e-modelos-de-linguagem-para-classificacao-de-textos-depressivos",
+          "requestSubject": "Consulta acadêmica sobre dataset de avaliação — Herculano et al. (SBBD 2025)",
+          "requestBody": "Gostaria de confirmar o nome oficial, procedência e disponibilidade do conjunto de avaliação em quatro classes usado no artigo SBBD 2025, incluindo número de exemplos por classe, divisão treino/validação/teste e resultados F1 por configuração. Existe repositório, DOI dos dados ou processo de solicitação?",
+          "status": "não solicitado; não existe confirmação de concessão de acesso",
+          "reviewedOn": "2026-11-10"
+        }
       },
       "analysisTaxonomy": {
         "publicationKind": "empirico",
