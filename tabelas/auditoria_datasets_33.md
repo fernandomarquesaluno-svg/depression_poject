@@ -263,13 +263,13 @@ Cada ficha declara **qual dataset ou recurso** foi usado (quando identificável)
 
 **Publicação:** [abrir artigo / tese](https://mental.jmir.org/2026/1/e98925/)  
 **Categoria:** Pesquisa · 2026 · Inglês  
-**Dataset / recurso:** Mental Health Sentiment Analysis (Kaggle), complementado por quatro subreddits  
+**Dataset / recurso:** Mental Health Sentiment Analysis (Kaggle; corpus-base), ampliado por publicações de subreddits de TDAH/autismo
 **Plataforma de origem:** Reddit; Twitter/X  
 **Acesso ao corpus:** **Parcial / componentes diferentes**  
-**Portal de dados, IDs ou solicitação:** Não identificado ou não confirmado  
+**Portal de dados, IDs ou solicitação:** [acessar](https://www.kaggle.com/datasets/suchintikasarkar/sentiment-analysis-for-mental-health/data)
 **Fonte da verificação:** [consultar fonte](https://mental.jmir.org/2026/1/e98925/)  
-**Evidência:** O artigo identifica Kaggle Mental Health Sentiment Analysis como corpus-base e Reddit como fonte adicional (r/ADHD, r/adhdwomen, r/autism, r/aspergers); acesso à compilação exata de 60.889 instâncias e saídas de modelos não foi reproduzido nesta auditoria.  
-**Ressalva técnica:** A coleta ampliada adicionou r/ADHD, r/adhdwomen, r/autism e r/aspergers; separar dataset-base de dados agregados.  
+**Evidência:** O artigo utiliza o corpus-base Mental Health Sentiment Analysis do Kaggle, com contribuições de r/ADHD, r/adhdwomen, r/autism e r/aspergers. O Kaggle fornece acesso ao corpus-base; não foi identificado download público que reproduza integralmente a compilação e o pré-processamento das 60.889 instâncias do artigo.
+**Ressalva técnica:** Link confirmado do corpus-base. O dataset agregado/expandido e as saídas do ensemble não devem ser descritos como integralmente públicos apenas com base no Kaggle.
 **Volume e amostra descritos:** 60.889 textos ; 9 classes ; treino 42.622, validação 6.089, teste 12.178  
 **Rotulagem:** Comunidade de origem ou autodeclaração  
 **Abordagem:** TF-IDF + SVM RBF; GPT-4o-mini base/ajustado; 2 ensembles  
