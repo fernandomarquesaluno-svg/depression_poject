@@ -35,6 +35,22 @@
 - **UMD Reddit Suicidality — 27.** O conjunto original é reutilizado na CLPsych 2024 com amostra anotada de 125 usuários; os dados requerem aprovação ética para pesquisa posterior.
 - **Hussain 2025 — 23.** Nove mil oitocentas e quarenta e uma postagens vêm de 6.200 usuários, mas os arquivos **não são disponibilizados para download imediato**: é necessário solicitar acesso.
 
+## Rodada 6 — validação de acesso e canais de solicitação (10/11/2026)
+
+**Resultado:** a pesquisa documental encontrou **três contatos institucionais identificados**, mas **nenhum comprovante de liberação pública do dataset experimental específico** para as referências 09, 13 e 19. Não se classificou como público ou controlado com base apenas na existência de e-mail de autor.
+
+| Ref. | Responsável e contato publicado | Fonte de verificação | Evidência sobre disponibilização |
+|---|---|---|---|
+| 09 — Viduani et al. 2025 | Christian Kieling — christian.kieling@hmv.org.br | [SciELO, artigo original](https://www.scielo.br/j/rbp/a/sKPPK597vm68xkwqS7RMQPL/?lang=en) | Consentimento e ética foram documentados; transcrições específicas não possuem portal público localizado. |
+| 13 — Viduani et al. 2026 | Anna Viduani — anna.andrade@hmv.org.br | [PubMed, artigo original](https://pubmed.ncbi.nlm.nih.gov/42134742/) | Transcrições IDEABot 14 dias, 30 participantes; não há comprovação de distribuição da amostra exata. |
+| 19 — Herculano et al. 2025 | Ayrton Herculano — ayrton.herculano@academico.ifpb.edu.br | [SBC Books, submissão/registro](https://sbc-books.dexl.lncc.br/paper/uma-avaliacao-comparativa-entre-o-deprebertbr-e-modelos-de-linguagem-para-classificacao-de-textos-depressivos) | Resumo confirma tarefa em 4 classes, mas não informa o conjunto de avaliação e seus meios de acesso. |
+
+**Evidência de estudo correlato, sem transferência indevida de políticas:** um artigo de 2024 com dados do [IDEA-RiSCo](https://www.nature.com/articles/s41398-024-02959-z) declara fornecimento sob solicitação. Essa declaração vale para os dados daquele estudo, não certificando liberação de fala/transcrições de 2025 ou 2026.
+
+**Ação disponibilizada no Atlas:** links `mailto:` com texto de solicitação de versão anonimizada, metadados, licença, protocolo de aprovação ética, partições e resultados reproduzíveis, quando cabíveis. **Nenhum e-mail foi enviado automaticamente.** Os três registros seguem com status **não confirmado para o acesso ao corpus específico** até resposta documental ou termo público.
+
+**Justificativa acadêmica:** não reduzir artificialmente três pendências a zero. A diferença entre “autor identificável”, “artigo de acesso aberto”, “dados correlatos sob solicitação” e “dataset disponibilizado” deve permanecer rastreável e auditável.
+
 ## Rodada 5 — verificação das três lacunas numéricas (10/11/2026)
 
 Esta rodada confrontou os registros anteriores com **resumo oficial do SBBD 2025**, **texto integral do artigo IEEE Access 2025 de Santos et al.** disponibilizado publicamente e **resumo institucional do TCC 2026 UFSCar**, além do repositório de código Amive.
