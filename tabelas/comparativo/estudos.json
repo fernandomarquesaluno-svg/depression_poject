@@ -5,7 +5,7 @@
     "kind": "revisão narrativa",
     "scope": "2020–2026",
     "count": 33,
-    "notes": "Rótulos de grupo e idioma são classificação exploratória a partir dos textos das fichas, não medida experimental. Métricas de estudos diferentes não são comparáveis sem protocolo compatível."
+    "notes": "Rótulos de grupo e idioma são classificação exploratória a partir dos textos das fichas, não medida experimental. Métricas de estudos diferentes não são comparáveis sem protocolo compatível. Em 10/11/2026, volumes dos trabalhos 1 e 3 conferidos nas tabelas/figuras dos artigos originais publicados na ACL Anthology."
   },
   "studies": [
     {
@@ -15,7 +15,7 @@
       "year": 2020,
       "condition": "Depressão; validade externa de modelos de saúde mental",
       "source": "Textos de múltiplas plataformas sociais; inglês",
-      "dataset": "Conjuntos sociais com rotulagem proxy; tamanhos específicos não consolidado nesta revisão",
+      "dataset": "Cinco corpora de usuários: CLPsych (477 depressão / 477 controle), Multi-Task Learning (1.400 / 1.400), RSDD (9.210 / 107.274), SMHD (14.139 / 127.251) e Topic-Restricted Text (6.853 / 7.016). Valores por grupo reportados na Tabela 1 do artigo.",
       "labeling": "Supervisão distante por autorrelato ou proxy de plataforma",
       "methods": "Classificadores de depressão; testes de transferência entre plataformas",
       "results": "Na análise de artefatos temporais, a separação desajustada elevou artificialmente o F1 em 3–22% , dependendo do corpus (§5.2.1); não há F1 único para transferência entre plataformas.",
@@ -29,9 +29,7 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": [
-        "Dataset"
-      ]
+      "pending": []
     },
     {
       "id": 2,
@@ -64,7 +62,7 @@
       "year": 2022,
       "condition": "Sinais textuais de depressão; três níveis",
       "source": "Postagens sociais; inglês",
-      "dataset": "Benchmark DepSign-LT-EDI@ACL2022; volume total não consolidado nesta revisão nesta síntese",
+      "dataset": "Reddit — DepSign-LT-EDI@ACL2022. Partição original: treino 8.891, desenvolvimento 4.496, teste 3.245 posts; após remoção de duplicatas e redivisão: treino 6.006, desenvolvimento 1.000, teste 3.245. Pré-treino adicional do DepRoBERTa com 396.968 posts (Figura 1; §4.2).",
       "labeling": "Classes não depressivo, moderado e grave do desafio; rótulo do texto, não diagnóstico clínico",
       "methods": "Fine-tuning BERT/RoBERTa/XLNet, adaptação DepRoBERTa, ensemble",
       "results": "Macro-F1 0,583 para o ensemble vencedor da tarefa",
@@ -78,9 +76,7 @@
       "conditions": [
         "Depressão"
       ],
-      "pending": [
-        "Dataset"
-      ]
+      "pending": []
     },
     {
       "id": 4,
