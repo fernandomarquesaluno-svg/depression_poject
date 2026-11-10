@@ -12,7 +12,7 @@ function setPageFilters(group,condition){
  const groupSelect=get("groupFilter"),conditionSelect=get("conditionFilter"),yearSelect=get("yearFilter"),langSelect=get("langFilter"),query=get("query");
  if(!groupSelect)return;
  groupSelect.value=group;conditionSelect.value=condition;
- yearSelect.value="Todos";langSelect.value="Todos";query.value="";
+ yearSelect.value="Todos";langSelect.value=get("showPtOnly").checked?"PT-BR":"Todos";query.value="";
  groupSelect.dispatchEvent(new Event("change",{bubbles:true}));
  conditionSelect.dispatchEvent(new Event("change",{bubbles:true}));
  document.querySelector("#estudos")?.scrollIntoView({behavior:"smooth"});
@@ -65,7 +65,7 @@ function showEdge(e,defaultView=false){
  const nodes=document.querySelectorAll(".c-link");
  nodes.forEach(n=>{
   const edge=edges[Number(n.dataset.e)],match=edge===e;
-  n.classList.toggle("active",match);n.classList.toggle("dim",!match);
+  n.classList.toggle("active",match);n.classList.toggle("dim",!match&&!defaultView);
  });
  const full=filtered.filter(s=>e.ids.includes(s.id));
  get("edgeTitle").textContent=e.group+" ↔ "+e.condition;
