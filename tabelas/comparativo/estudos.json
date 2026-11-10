@@ -141,6 +141,37 @@
         19
       ],
       "note": "21 passou a parcial porque três repositórios originais foram encontrados, mas suas cinco partições exatas não foram reproduzidas. 9,13 e 19 seguem sem acesso ao corpus experimental confirmado. Métricas são específicas a cada estudo."
+    },
+    "auditV5": {
+      "date": "2026-11-10",
+      "focusedIds": [
+        19,
+        20,
+        31
+      ],
+      "findings": [
+        {
+          "id": 19,
+          "verified": "Quatro classes e comparabilidade qualitativa",
+          "stillMissing": "Corpus de teste e F1 por modelo"
+        },
+        {
+          "id": 20,
+          "verified": "Razões 7:1 e 9:1; médias 1.443 e 162 posts; filtro 1.000 tweets, split original; teste humano n=100",
+          "stillMissing": "Totais da Tabela 2 por corpus/classe/split"
+        },
+        {
+          "id": 31,
+          "verified": "Amive 780 postagens de origem e quatro condições de treino/teste sintético-real",
+          "stillMissing": "N de sentenças e divisões efetivas da avaliação 2026"
+        }
+      ],
+      "extractionStatus": "Conferência da página original e textos publicamente acessíveis; Tabela 2 do IEEE está como imagem e TCC PDF da UFSCar indisponível por interface consultada; sem valores inventados.",
+      "remainingNumeric": [
+        19,
+        20,
+        31
+      ]
     }
   },
   "studies": [
@@ -1023,10 +1054,10 @@
       "year": 2025,
       "condition": "Gravidade expressa em textos depressivos",
       "source": "Textos em português brasileiro",
-      "dataset": "Estudo comparativo de classificação em quatro classes (ausente, leve, moderada, grave) no português brasileiro. A base de avaliação e sua volumetria específica não foram confirmadas no resumo público do artigo de 2025. Não confundir com as 509.675 instâncias do corpus DepreRedditBR publicado em 2024 (recurso de pré-treinamento), cuja totalidade não foi comprovada como conjunto de avaliação de 2025.",
+      "dataset": "Tarefa de classificação de textos em português brasileiro em quatro categorias (ausente, leve, moderada, grave). Resumo da publicação 2025 acessível em SBC Books/ResearchGate; amostra efetiva, corpus de avaliação, partições e distribuição por classe NÃO foram comprovados. Os 509.675 registros DepreRedditBR (2024) são base de pré-treinamento, não n confirmado da avaliação de 2025.",
       "labeling": "Quatro classes textuais: ausente, leve, moderada e grave; não são diagnósticos individualizados.",
       "methods": "Tarefa: Classificação supervisionada multiclasse. Modelos e representações: DepreBERTBR especializado versus modelos de linguagem monolíngues e multilíngues de domínio geral.",
-      "results": "Resumo original: DepreBERTBR obtém F1-score competitivo, comparável a modelos gerais monolíngues e multilíngues. Valores exatos de F1 por modelo/configuração não confirmados sem acesso às tabelas do artigo completo.",
+      "results": "Resumo do SBBD 2025: DepreBERTBR competitivo e com F1 comparável a modelos gerais monolíngues/multilíngues. O resumo não apresenta F1 por modelo, média macro/micro/ponderada ou IC; sem acesso confirmado às tabelas integrais, não atribuir números.",
       "limitations": "A comparação depende das mesmas classes, partições e critérios de rotulagem.",
       "language": "PT-BR",
       "type": "Pesquisa",
@@ -1038,8 +1069,8 @@
         "Depressão"
       ],
       "pending": [
-        "Dataset",
-        "Resultados"
+        "Dataset: amostra e partições de avaliação",
+        "Resultados: F1 por modelo/averaging"
       ],
       "audit": "Resumo do SBBD 2025 e artigo de 2024 do DepreRedditBR; informação numérica da amostra de avaliação e F1 da comparação permanece pendente.",
       "provenance": "https://sbc-books.dexl.lncc.br/paper/uma-avaliacao-comparativa-entre-o-deprebertbr-e-modelos-de-linguagem-para-classificacao-de-textos-depressivos",
@@ -1048,22 +1079,24 @@
         "name": "Base multiclasse para comparar DepreBERTBR com encoders gerais (quatro níveis); corpus exato não confirmado",
         "platform": "Português brasileiro; plataforma não confirmada para avaliação 2025",
         "accessStatus": "nao_confirmado",
-        "accessEvidence": "O resumo oficial do XL SBBD 2025 confirma classificação em 4 classes, mas não identifica na versão aberta consultada o corpus avaliado, a amostra por classe, os folds nem o F1 numérico. O estudo DepreBERTBR de 2024 utiliza 3 classes e NÃO deve ser citado como se fosse o experimento 2025.",
+        "accessEvidence": "Confirmado no registro bibliográfico do SBBD 2025 e resumo SBC Books: modelo DepreBERTBR comparado a modelos gerais em 4 classes. Texto integral e tabelas de n, partições e F1 não acessíveis de forma verificável nesta rodada; o registro ResearchGate oferece somente solicitação aos autores.",
         "datasetUrl": null,
-        "evidenceUrl": "https://doi.org/10.5753/sbbd.2025.247283",
+        "evidenceUrl": "https://sbc-books.dexl.lncc.br/paper/uma-avaliacao-comparativa-entre-o-deprebertbr-e-modelos-de-linguagem-para-classificacao-de-textos-depressivos",
         "reuseAndCaveat": "Também faltam valores exatos de F1 por configuração, exigindo tabelas do artigo completo.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
         "sampleUnit": "texto/postagem; não foi confirmada a unidade específica da avaliação de 2025",
-        "sampleSize": "Não verificado no artigo integral SBBD 2025",
+        "sampleSize": "NÃO CONFIRMADO na versão do resumo acessível do SBBD 2025",
         "labelingDetail": "Quatro categorias pretendidas: ausente, leve, moderada, grave; método exato de anotação e distribuição por classe não confirmados.",
         "sourceChecks": [
-          "https://doi.org/10.5753/sbbd.2025.247283",
-          "https://sol.sbc.org.br/index.php/sbbd/article/download/30692/30495/"
+          "https://sbc-books.dexl.lncc.br/paper/uma-avaliacao-comparativa-entre-o-deprebertbr-e-modelos-de-linguagem-para-classificacao-de-textos-depressivos",
+          "https://www.researchgate.net/publication/396745117_Uma_Avaliacao_Comparativa_entre_o_DepreBERTBR_e_Modelos_de_Linguagem_para_Classificacao_de_Textos_Depressivos",
+          "https://doi.org/10.5753/sbbd.2025.247283"
         ],
-        "splitDescription": "Não confirmado (não atribuir as 10 dobras documentadas em dissertação anterior ao SBBD 2025).",
-        "metricDefinition": "F1 competitivo relatado no resumo; valores, averaging e configuração ausentes no material consultado.",
-        "labelSource": "Classes de intensidade textual baseadas em categorias inspiradas por BDI; anotadores e origem dos rótulos de 2025 não verificados."
+        "splitDescription": "Não documentado nas fontes acessíveis nesta revisão. Não atribuir as 10 dobras ou partições de trabalhos relacionados.",
+        "metricDefinition": "F1-score citado sem número, sem média especificada; não declarar resultado quantitativo nem comparar percentuais.",
+        "labelSource": "Classes textuais: ausente, leve, moderada e grave; método de rotulagem e proporções de classes ainda sem verificação no artigo integral.",
+        "verificationLevel": "Protocolo da tarefa confirmado no resumo; contagens e escores por modelo pendentes"
       },
       "analysisTaxonomy": {
         "publicationKind": "empirico",
@@ -1085,10 +1118,10 @@
       "year": 2025,
       "condition": "Predição de depressão e ansiedade",
       "source": "Twitter/X em português brasileiro e Reddit em inglês",
-      "dataset": "Corpora identificados na publicação: SetembroBR (Twitter/X, português brasileiro) e SMHD (Reddit, inglês). Os modelos no Twitter/X consideram até as 1.000 mensagens mais recentes de cada usuário. A Tabela 2 apresenta quantidades por grupo/domínio, mas os números exatos de cada subconjunto não foram transcritos ou confirmados nesta auditoria.",
+      "dataset": "SetembroBR (Twitter/X, PT-BR) e SMHD (Reddit, inglês). Tabela 2: aproximadamente 7 controles por usuário diagnosticado no SetembroBR e 9 por 1 no SMHD. Para classe positiva de depressão, média original relatada de 1.443 tweets por usuário vs. 162 posts Reddit; tamanho médio 12 vs. 42 palavras, respectivamente. Experimento limita SetembroBR aos últimos 1.000 tweets por usuário; controla SMHD por seleção aleatória da classe negativa para atingir 9:1. Totais absolutos de usuários/partições da Tabela 2 não confirmados.",
       "labeling": "Dados dos corpora e avaliação humana por especialistas; não generalizar para diagnóstico clínico confirmado.",
       "methods": "Tarefa: Predição de condições por dados textuais e não textuais; avaliação entre plataformas e idiomas. Modelos e representações: Modelos de linguagem em arquitetura mixture-of-experts (MoE), com atributos textuais e sociais.",
-      "results": "Melhorias ante trabalhos anteriores segundo autores, com métricas computacionais e avaliação humana; não utilizar métrica agregada não apresentada.",
+      "results": "Avalia precisão, recall e F1 na porção de teste de cada corpus; aplica McNemar em pares comparáveis. GPT.H versus BERT melhora significativamente na tarefa de depressão (χ=15, p<0,001) e ansiedade (χ=43, p<0,001) no Twitter/X; efeito de adicionar menções não textuais é significativo para depressão, não ansiedade. Estudo humano usa 100 timelines do teste (25 TP/TN/FP/FN), totalizando 172.517 tweets.",
       "limitations": "Heterogeneidade de domínio, idioma e rotulagem afeta a transferência.",
       "language": "Misto",
       "type": "Pesquisa",
@@ -1101,7 +1134,7 @@
         "Ansiedade"
       ],
       "pending": [
-        "Dataset"
+        "Dataset: contagens absolutas por classe e split da Tabela 2"
       ],
       "audit": "Datasets e recorte de mensagens verificados no texto integral disponibilizado pelos autores; quantitativos da Tabela 2 pendentes.",
       "provenance": "https://doi.org/10.1109/ACCESS.2025.3583259",
@@ -1110,19 +1143,24 @@
         "name": "SetembroBR; SMHD (Self-Reported Mental Health Diagnoses)",
         "platform": "Twitter/X e Reddit",
         "accessStatus": "parcial",
-        "accessEvidence": "O artigo identifica SetembroBR (Twitter/X em PT-BR) e SMHD (Reddit em inglês). O primeiro tem link público de distribuição; o segundo possui solicitação por canal da coleção Georgetown. O tamanho global documentado de SMHD não corresponde necessariamente aos subconjuntos exatos da Tabela 2 deste artigo.",
+        "accessEvidence": "Corpora SetembroBR e SMHD identificados no texto integral do IEEE Access (Santos et al. 2025, §III-D); acesso público ao SetembroBR, SMHD com condições de acesso; totais de cada classe/partição aparecem na Tabela 2 em figura não extraída nesta auditoria.",
         "datasetUrl": "https://ivandreparaboni.wixsite.com/research/setembrobr",
         "evidenceUrl": "https://doi.org/10.1109/ACCESS.2025.3583259",
-        "reuseAndCaveat": "Usa Até 1.000 mensagens Twitter/X por usuário; aferir quantidades por classe da Tabela 2 antes de apresentar n do experimento. Não reaproveitar totais globais do SMHD como os efetivamente avaliados.",
+        "reuseAndCaveat": "Médias originais 1.443/162 postagens por usuário não são n do treinamento; limite operacional de até 1.000 tweets por usuário e reamostragem SMHD alteram a efetiva entrada. Avaliação humana separada de 100 timelines (172.517 tweets) não é o tamanho da amostra total de treino/teste.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor",
         "sourceChecks": [
-          "https://doi.org/10.1109/ACCESS.2025.3583259",
-          "https://ivandreparaboni.wixsite.com/research/setembrobr",
-          "https://pmc.ncbi.nlm.nih.gov/articles/PMC11607554/"
+          "https://www.researchgate.net/publication/393042738_Mixture_of_Experts_for_Depression_and_Anxiety_Disorder_Prediction_From_Textual_and_Non-Textual_Social_Media_Data",
+          "https://www.researchgate.net/figure/Twitter-X-top-and-Reddit-bottom-domains-descriptive-statistics_tbl1_393042738",
+          "https://doi.org/10.1109/ACCESS.2025.3583259"
         ],
         "confidence": "alta para corpora e plataformas; tamanhos por partição permanecem pendentes",
-        "datasetFamily": "SETEMBROBR"
+        "datasetFamily": "SETEMBROBR",
+        "sampleUnit": "usuário (timeline), com múltiplas postagens de texto",
+        "sampleSize": "Razão controle/positivo: 7:1 SetembroBR; 9:1 SMHD. Média na classe positiva depressão: 1.443 tweets por usuário no corpus e 162 posts por usuário Reddit. N absolutos por classe/partição ainda não lidos na Tabela 2.",
+        "splitDescription": "Divisão treino/teste original de cada corpus; SetembroBR limitado a 1.000 tweets mais recentes por usuário para modelagem; controles SMHD reamostrados aleatoriamente visando razão 9:1; proporções numéricas das partições não recuperadas.",
+        "metricDefinition": "Precisão, recall e F1 no teste; significância por McNemar quando há previsões comparáveis. GPT.H contra BERT: χ=15 (depressão), χ=43 (ansiedade), ambos p<0,001; não confundir estatística χ com escore F1.",
+        "verificationLevel": "Métricas, ratios, protocolo e tamanho da validação humana confirmados no texto integral; totais da Tabela 2 por amostra permanecem pendentes"
       },
       "analysisTaxonomy": {
         "publicationKind": "empirico",
@@ -1662,10 +1700,10 @@
       "year": 2026,
       "condition": "Sintomas de depressão; geração sintética e privacidade",
       "source": "Corpus Amive; português brasileiro",
-      "dataset": "Amive original: 780 postagens de páginas universitárias do Facebook anotadas com sintomas. Dados sensíveis não distribuídos integralmente; Figueiredo (2026) seleciona sentenças para síntese e experimentos binários, cujo volume efetivo permanece não confirmado.",
+      "dataset": "Amive: corpus de origem de 780 postagens anônimas de páginas universitárias do Facebook (não disponível integralmente por privacidade), com 21 sinais anotados no projeto original. Figueiredo (TCC UFSCar, 2026) seleciona sentenças e gera paráfrases para o sintoma Tristeza/Humor deprimido. N efetivo de sentenças retidas, sintéticas e de teste NÃO consta no resumo institucional acessível; 780 postagens não é n do experimento.",
       "labeling": "Anotações de sintomas provenientes do corpus Amive; foco de avaliação no sintoma tristeza/humor deprimido.",
       "methods": "Tarefa: Paráfrase sintética, similaridade textual e avaliação extrínseca de classificação binária. Modelos e representações: Retrotradução, PEGASUS, BERTScore com BERTimbau; baselines LR, SVM, Naive Bayes e Random Forest.",
-      "results": "Utilidade classificatória em geral preservada, mas perda de precisão em transferência sintético→real e alterações de nuances discursivas.",
+      "results": "Resumo institucional do TCC: avaliação intrínseca da diversidade lexical, POS e exemplos; avaliação extrínseca com regressão logística, SVM, Naive Bayes e Random Forest em quatro combinações treino/teste (original→original, sintético→sintético, sintético→original, original→sintético). Preserva parte da utilidade/recall, mas a precisão cai em sintético→original; sem métricas numéricas verificadas nesta rodada.",
       "limitations": "Trabalho de conclusão de curso, não artigo revisado por pares; apenas parte dos sintomas foi estudada.",
       "language": "PT-BR",
       "type": "Tese/TCC",
@@ -1678,7 +1716,7 @@
         "Depressão"
       ],
       "pending": [
-        "Dataset"
+        "Dataset: número de sentenças por classe, originais/sintéticas e por split"
       ],
       "audit": "Corpus e método verificados no repositório institucional UFSCar e README do projeto; tamanho e partições exigem conferência das tabelas do TCC.",
       "provenance": "https://repositorio.ufscar.br/items/e2916bfc-974c-4b67-b96e-f0d67065827c",
@@ -1687,22 +1725,26 @@
         "name": "Amive — corpus original sensível e pipeline de paráfrases sintéticas",
         "platform": "Facebook — páginas universitárias na origem do corpus Amive",
         "accessStatus": "restrito",
-        "accessEvidence": "Fontes UFSCar documentam o Amive como postagens de páginas universitárias de Facebook; o corpus de origem possui 780 postagens anotadas, mas não foi confirmado que todas tenham entrado nas partições do experimento de síntese. A autora disponibiliza código, não os textos originais.",
+        "accessEvidence": "TCC de Figueiredo está catalogado no repositório oficial UFSCar com arquivo TCC_Vitoria.pdf, licença da obra CC BY-NC 4.0 e GitHub para o pipeline. Texto original Amive não é redistribuído; contagens do experimento dependem de consulta às tabelas do PDF integral, que não pôde ser acessado nesta rodada.",
         "datasetUrl": null,
         "evidenceUrl": "https://repositorio.ufscar.br/items/e2916bfc-974c-4b67-b96e-f0d67065827c",
         "reuseAndCaveat": "Mesmo projeto de origem usado por Mendes & Caseli (2024). Para Figueiredo (2026), conferir n de sentenças/instâncias após seleção do sintoma e split de treino/teste; 780 postagens originais não são o total do experimento binário.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor",
-        "sampleUnit": "postagens originais; sentenças selecionadas e paráfrases sintéticas na avaliação",
-        "sampleSize": "780 postagens no corpus original Amive; volume efetivo de sentenças no experimento 2026 não confirmado",
+        "sampleUnit": "sentenças selecionadas por sintoma e paráfrases geradas; 780 postagens é total da base de origem, não da avaliação",
+        "sampleSize": "Corpus original: 780 postagens com 21 sinais anotados. N efetivo de sentenças originais, sintéticas, positivas/negativas e de splits no estudo 2026 NÃO confirmado.",
         "labelingDetail": "Sinais anotados em trechos de postagens; classificação binária do sintoma Tristeza/Humor deprimido na avaliação extrínseca.",
         "datasetFamily": "AMIVE",
         "sourceChecks": [
           "https://repositorio.ufscar.br/items/e2916bfc-974c-4b67-b96e-f0d67065827c",
+          "https://repositorio.ufscar.br/items/e2916bfc-974c-4b67-b96e-f0d67065827c/full",
           "https://github.com/LALIC-UFSCar/synthetic-data-mental-health",
           "https://brasileiraspln.com/livro-pln/3a-edicao/parte-dominios/cap-saude-mental/cap-saude-mental.html"
         ],
-        "confidence": "alta para família e privacidade; tamanho do experimento Figueiredo pendente"
+        "confidence": "alta para família e privacidade; tamanho do experimento Figueiredo pendente",
+        "splitDescription": "Quatro cenários (treino→teste): original→original; sintético→sintético; sintético→original; original→sintético. Os tamanhos de partição e estratégia de separação por postagem/autor não foram verificados no resumo.",
+        "metricDefinition": "Classificação binária Tristeza/Humor deprimido: precisão, recall, F1 e acurácia; intrínsecas: diversidade lexical, POS e análises qualitativas; valores numéricos exatos dos ensaios não confirmados.",
+        "verificationLevel": "Tarefa, regimes de dados e quatro cenários confirmados; tamanho do experimento TCC não confirmado"
       },
       "analysisTaxonomy": {
         "publicationKind": "empirico",
