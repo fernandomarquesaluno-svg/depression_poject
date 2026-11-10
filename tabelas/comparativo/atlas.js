@@ -90,7 +90,7 @@ function renderSummary(){
  const pt=STATE.all.filter(s=>s.language==="PT-BR").length;
  const mixed=STATE.all.filter(s=>s.language==="Misto").length;
  const pending=STATE.all.filter(s=>s.pending.length).length;
- $("#heroCount").textContent=STATE.all.length;$("#countDatasets").textContent=STATE.all.filter(s=>s.type==="Dataset/recurso").length;
+ $("#heroCount").textContent=STATE.all.length;
  $("#pendingCount").textContent=pending;
  $("#ptCount").textContent=pt;
  $("#insightPt").textContent=pt+" referências identificadas como exclusivamente PT-BR, além de "+mixed+" com fontes mistas PT/EN. A distribuição é bibliográfica, não amostral.";
