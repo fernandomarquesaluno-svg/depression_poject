@@ -107,6 +107,40 @@
         "Hussain 2025: data available on request.",
         "Mao & Han 2025: cinco conjuntos autodenominados públicos mas URLs das versões exatas não confirmadas."
       ]
+    },
+    "auditV4": {
+      "date": "2026-11-10",
+      "scope": "Reclassificação independente de tipo de publicação, método técnico e tarefa principal; auditoria de acesso em 4 estudos; metadados de comparação experimental",
+      "primaryGroups": [
+        "Depressão",
+        "Depressão e ansiedade",
+        "Estresse",
+        "Risco suicida",
+        "Múltiplas condições"
+      ],
+      "methodGroups": [
+        "Análise lexical",
+        "ML clássico",
+        "Transformers",
+        "LLMs",
+        "Grafos/GNNs",
+        "Multimodal/fusão"
+      ],
+      "empiricalCount": 25,
+      "resourceCount": 3,
+      "reviewCount": 5,
+      "affectedStudies": [
+        9,
+        13,
+        19,
+        21
+      ],
+      "accessUnconfirmed": [
+        9,
+        13,
+        19
+      ],
+      "note": "21 passou a parcial porque três repositórios originais foram encontrados, mas suas cinco partições exatas não foram reproduzidas. 9,13 e 19 seguem sem acesso ao corpus experimental confirmado. Métricas são específicas a cada estudo."
     }
   },
   "studies": [
@@ -142,6 +176,18 @@
         "reuseAndCaveat": "Cinco corpora comparados; não existe um único dataset independente criado pelo artigo.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "ML clássico"
+        ],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -177,6 +223,18 @@
         "reuseAndCaveat": "O link de modelo MentalBERT no Hugging Face não é um link de corpus. Dreaddit é benchmark distinto; requer buscar dados nas fontes originais, sem presumir acesso ao corpus de pré-treino.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Múltiplas condições",
+        "methodFamilies": [
+          "Transformers"
+        ],
+        "datasetFamily": null,
+        "caveat": "Modelo pré-treinado avaliado em múltiplos benchmarks; depressão e estresse são tarefas de avaliação distintas.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -211,6 +269,18 @@
         "reuseAndCaveat": "Os 396.968 textos de pré-treino não equivalem ao tamanho do benchmark rotulado.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "Transformers"
+        ],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -245,6 +315,16 @@
         "reuseAndCaveat": "Não confundir IDs publicamente distribuídos com disponibilidade integral dos textos. Tweets apagados ou indisponíveis não podem ser recuperados por reidratação.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "recurso",
+        "primaryTask": "Depressão",
+        "methodFamilies": [],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -279,6 +359,18 @@
         "reuseAndCaveat": "Inclui dez bases subjacentes; evitar contar cada base reutilizada como nova amostra.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Múltiplas condições",
+        "methodFamilies": [
+          "LLMs"
+        ],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -314,6 +406,16 @@
         "reuseAndCaveat": "Download indicado pelo grupo; verificar licença e formato antes de reutilizar.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "recurso",
+        "primaryTask": "Depressão e ansiedade",
+        "methodFamilies": [],
+        "datasetFamily": "SETEMBROBR",
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -349,6 +451,19 @@
         "reuseAndCaveat": "Mesmo corpus da referência 6; não contabilizar como base independente.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão e ansiedade",
+        "methodFamilies": [
+          "ML clássico",
+          "LLMs"
+        ],
+        "datasetFamily": "SETEMBROBR",
+        "caveat": "Propõe detecção precoce de depressão e ansiedade, duas tarefas previstas.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -394,6 +509,19 @@
           "https://github.com/LALIC-UFSCar/synthetic-data-mental-health"
         ],
         "confidence": "alta — identificação, origem e restrição sustentadas por fontes do grupo de pesquisa"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "ML clássico",
+          "Transformers"
+        ],
+        "datasetFamily": "AMIVE",
+        "caveat": "Ansiedade é um dos sinais anotados no contexto de depressão; não é classificador independente de transtorno de ansiedade.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -403,10 +531,10 @@
       "year": 2025,
       "condition": "Depressão",
       "source": "Áudio transcrito; português brasileiro",
-      "dataset": "52 jovens ; 13 com depressão maior, 39 controles",
+      "dataset": "IDEA-RiSCo / IDEABot: 52 adolescentes analisados (13 MDD, 39 controle) entre 150 recrutados inicialmente; sete dias de transcrições de áudios via WhatsApp; LIWC em português, sem partição treino/teste.",
       "labeling": "Caracterização clínica + sintomas autorreferidos e avaliados",
       "methods": "LIWC; frequência de pronomes; testes estatísticos",
-      "results": "Pronomes de 1ª pessoa singular: 9,15% vs. 8,02% , p=0,026 ; rho autorrelato 0,366",
+      "results": "Uso médio de pronomes singulares: MDD 9,15% vs. não MDD 8,02%, p=0,026; correlação com MFQ rho=0,366, p=0,008. Não é desempenho de classificador.",
       "limitations": "Estudo correlacional; não é experimento de fine-tuning de BERTimbau",
       "language": "PT-BR",
       "type": "Pesquisa",
@@ -419,23 +547,39 @@
       ],
       "pending": [],
       "datasetAudit": {
-        "name": "IDEA-RiSCo / IDEABot — transcrições de mensagens de voz de adolescentes",
+        "name": "IDEA-RiSCo / IDEABot — sete dias de áudio transcrito por participante",
         "platform": "WhatsApp (IDEABot), respostas em áudio transcritas em português brasileiro",
         "accessStatus": "nao_confirmado",
-        "accessEvidence": "Estudo original do IDEA-RiSCo: 52 participantes (13 MDD e 39 controles), que responderam aos sete dias de perguntas em áudio do IDEABot; cada participante possui sete transcrições, segundo a seção de métodos. A publicação não fornece um link de redistribuição do corpus de transcrições.",
+        "accessEvidence": "Texto integral fornece desenho, elegibilidade, exclusão de identificadores na transcrição e análise LIWC. Nenhum link de descarga dos 52 conjuntos de transcrições ou termo de solicitação foi localizado; acesso ao conteúdo textual não confirmado.",
         "datasetUrl": null,
         "evidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12815307/",
         "reuseAndCaveat": "O estudo Viduani 2026 utiliza também IDEABot/WhatsApp, mas não foi demonstrado que os mesmos participantes ou transcrições se repetem. Tratar como família de coleta compartilhada, não amostra idêntica.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
-        "sampleUnit": "participante com série de transcrições diárias",
-        "sampleSize": "52 adolescentes; sete transcrições por participante no protocolo descrito",
-        "labelingDetail": "Transtorno depressivo maior identificado por avaliação psiquiátrica; sintomas analisados por MFQ e CDRS-R; indicadores pronominais via LIWC em português.",
+        "sampleUnit": "adolescente com 7 transcrições ao longo de 7 dias",
+        "sampleSize": "52 participantes completos, 13 com MDD e 39 controles; 121 realizaram ao menos uma interação",
+        "labelingDetail": "K-SADS-PL por psiquiatra; MFQ autorrelato e CDRS-R escala clínica; LIWC de pronomes para análise estatística, não treino de classificador.",
         "datasetFamily": "IDEA-IDEABOT",
         "sourceChecks": [
           "https://pmc.ncbi.nlm.nih.gov/articles/PMC12815307/"
         ],
-        "confidence": "alta para origem e amostragem; acesso aos textos não confirmado"
+        "confidence": "alta para origem e amostragem; acesso aos textos não confirmado",
+        "sampleProtocol": "50? Não: 150 recrutados no coorte; 132 elegíveis na 3ª onda; 121 tiveram interação; 52 completaram 7 dias e foram incluídos no estudo.",
+        "splitDescription": "Não se aplica a partição de treino/teste: estudo observacional comparativo com LIWC, t-tests e correlações.",
+        "metricDefinition": "Diferença de uso de pronomes singulares 9,15% vs 8,02%, p=0,026; rho=0,366, p=0,008 para MFQ.",
+        "labelSource": "Diagnóstico de MDD confirmado por entrevista psiquiátrica K-SADS-PL."
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "Análise lexical"
+        ],
+        "datasetFamily": "IDEA-IDEABOT",
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -470,6 +614,19 @@
         "reuseAndCaveat": "21.580 sentenças anotadas; acervo maior de 3.807.115 sentenças não é a mesma amostra.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "Análise lexical",
+          "LLMs"
+        ],
+        "datasetFamily": null,
+        "caveat": "LLMs e recuperação de informação avaliam sintomas de depressão; não correspondem a diagnóstico clínico.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -504,6 +661,18 @@
         "reuseAndCaveat": "O repositório referenciado é de experimentos públicos com Dreaddit; não substitui a atribuição ao dataset original.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Estresse",
+        "methodFamilies": [
+          "Transformers"
+        ],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -539,6 +708,18 @@
         "reuseAndCaveat": "Dados originais de 1.332 textos e 230 idosos sob proteção de privacidade; artigo integral disponível não implica corpus aberto.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "Transformers"
+        ],
+        "datasetFamily": null,
+        "caveat": "Relatos de estressores são fontes de atributos para análise de depressão, não tarefa independente de classificar estresse.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -548,10 +729,10 @@
       "year": 2026,
       "condition": "Depressão",
       "source": "Fala cotidiana transcrita; português brasileiro",
-      "dataset": "Transcrições de áudios naturalísticos em português de 30 adolescentes (15 com MDD clinicamente confirmado e 15 controles), coletadas em 14 dias via IDEABot/WhatsApp; quantidade de mensagens e acesso aos textos não confirmados.",
+      "dataset": "IDEABot: 30 adolescentes de 16–19 anos, 15 com MDD confirmado e 15 controles; 14 dias de fala em português, via chatbot WhatsApp; predição binária por participante.",
       "labeling": "Diagnóstico de psiquiatra infantojuvenil com procedimentos padrão-ouro",
       "methods": "GPT-4o por prompting; comparação com 12 modelos GPT",
-      "results": "Acurácia 86,6% (IC95% 70,3–95,6%); sensibilidade 100% ; especificidade 73,3%",
+      "results": "GPT-4o: acurácia 86,6% (IC95% 70,3–95,6), sensibilidade 100% e especificidade 73,3%; sem diferenças estatisticamente significativas frente a 12 outros GPTs. Amostra de prova de conceito, não validação populacional.",
       "limitations": "n=30 e grupos extremos; não emprega BERTimbau+LIWC ou laudos como texto de entrada",
       "language": "PT-BR",
       "type": "Pesquisa",
@@ -564,24 +745,39 @@
       ],
       "pending": [],
       "datasetAudit": {
-        "name": "IDEABot / estudo de fala naturalística para detecção de depressão em adolescentes (2026)",
+        "name": "IDEABot / WhatsApp — transcrições diárias de voz de adolescentes",
         "platform": "WhatsApp (IDEABot) com mensagens de voz transcritas em português brasileiro",
         "accessStatus": "nao_confirmado",
-        "accessEvidence": "Artigo de prova de conceito descreve 30 adolescentes brasileiros de 16–19 anos, sendo 15 com diagnóstico psiquiátrico confirmado de MDD e 15 controles; 14 dias de coleta por chatbot WhatsApp. A declaração de liberação dos textos individuais não foi encontrada nas fontes acessíveis.",
+        "accessEvidence": "O artigo aberto explicita amostra 15/15, período de coleta de 14 dias, tarefa binária por participante e métricas com IC. Não localizei repositório de transcrições nem termo de disponibilidade específica para os dados individuais.",
         "datasetUrl": null,
         "evidenceUrl": "https://www.sciencedirect.com/science/article/pii/S0165032726008086",
         "reuseAndCaveat": "Compartilha a infraestrutura de coleta IDEABot com Viduani et al. (2025); sobreposição efetiva de pessoas e transcrições não documentada nesta auditoria.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
-        "sampleUnit": "adolescente; mensagens transcritas ao longo de 14 dias",
-        "sampleSize": "30 participantes, 15 MDD e 15 não MDD; volume de mensagens não confirmado",
-        "labelingDetail": "Diagnóstico MDD estabelecido por psiquiatra infantil e adolescente por procedimento de referência; classificação binária por LLM.",
+        "sampleUnit": "adolescente (classificação por participante)",
+        "sampleSize": "30 adolescentes 16–19 anos (15 MDD confirmados por psiquiatra, 15 controles); 14 dias de coleta",
+        "labelingDetail": "Diagnóstico individual de depressão maior validado por psiquiatra infantil e adolescente; avaliação de GPT-4o e 12 modelos adicionais com variação de dias de fala.",
         "datasetFamily": "IDEA-IDEABOT",
         "sourceChecks": [
           "https://www.sciencedirect.com/science/article/pii/S0165032726008086",
           "https://pubmed.ncbi.nlm.nih.gov/42134742/"
         ],
-        "confidence": "alta para 30 pessoas e origem; disponibilidade não confirmada"
+        "confidence": "alta para 30 pessoas e origem; disponibilidade não confirmada",
+        "splitDescription": "Amostra de prova de conceito proposital (15/15); proporção de partição de treinamento não aplicável a prompting zero-shot sem ajuste informado. 14 dias são comprimento da entrada, não 14 folds.",
+        "metricDefinition": "GPT-4o: acurácia 86,6% (IC95% 70,3–95,6), sensibilidade 100%, especificidade 73,3%; sem superioridade estatística demonstrada frente a 12 alternativas.",
+        "labelSource": "Diagnóstico MDD estabelecido por psiquiatra infantil/adolescente."
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "LLMs"
+        ],
+        "datasetFamily": "IDEA-IDEABOT",
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -617,6 +813,19 @@
         "reuseAndCaveat": "Nome descritivo; não afirmar que o arquivo no Zenodo possui exatamente esse título sem abrir o registro.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "Transformers",
+          "LLMs"
+        ],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -654,6 +863,19 @@
         "reuseAndCaveat": "Link confirmado do corpus-base. O dataset agregado/expandido e as saídas do ensemble não devem ser descritos como integralmente públicos apenas com base no Kaggle.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Múltiplas condições",
+        "methodFamilies": [
+          "ML clássico",
+          "LLMs"
+        ],
+        "datasetFamily": null,
+        "caveat": "Ensemble multiclasse com diferentes categorias relacionadas à saúde mental, não apenas três diagnósticos.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -690,6 +912,16 @@
         "reuseAndCaveat": "Os 180 estudos são referências incluídas, não registros textuais para treinamento.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não se aplica a revisão de literatura"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "sintese",
+        "primaryTask": "Depressão",
+        "methodFamilies": [],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -726,6 +958,18 @@
         "reuseAndCaveat": "Distinguir 108 milhões de palavras de pré-treinamento das instâncias rotuladas de avaliação.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Estresse",
+        "methodFamilies": [
+          "Transformers"
+        ],
+        "datasetFamily": null,
+        "caveat": "Alvo de avaliação é estresse; depressão, ansiedade e TEPT alimentam transferência de domínio, sem constituir tarefas-alvo separadas.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -760,6 +1004,16 @@
         "reuseAndCaveat": "Página pública ≠ arquivos públicos. Não prometer download dos textos.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "recurso",
+        "primaryTask": "Depressão",
+        "methodFamilies": [],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -791,15 +1045,37 @@
       "provenance": "https://sbc-books.dexl.lncc.br/paper/uma-avaliacao-comparativa-entre-o-deprebertbr-e-modelos-de-linguagem-para-classificacao-de-textos-depressivos",
       "verifiedOn": "2026-11-10",
       "datasetAudit": {
-        "name": "Base de avaliação multiclasse DepreBERTBR (nome formal não confirmado)",
+        "name": "Base multiclasse para comparar DepreBERTBR com encoders gerais (quatro níveis); corpus exato não confirmado",
         "platform": "Português brasileiro; plataforma não confirmada para avaliação 2025",
         "accessStatus": "nao_confirmado",
-        "accessEvidence": "A base e a partição exatas da comparação 2025 não foram verificadas; não tratar os 509.675 posts do DepreRedditBR como sua amostra de teste.",
+        "accessEvidence": "O resumo oficial do XL SBBD 2025 confirma classificação em 4 classes, mas não identifica na versão aberta consultada o corpus avaliado, a amostra por classe, os folds nem o F1 numérico. O estudo DepreBERTBR de 2024 utiliza 3 classes e NÃO deve ser citado como se fosse o experimento 2025.",
         "datasetUrl": null,
         "evidenceUrl": "https://doi.org/10.5753/sbbd.2025.247283",
         "reuseAndCaveat": "Também faltam valores exatos de F1 por configuração, exigindo tabelas do artigo completo.",
         "reviewedOn": "2026-11-10",
-        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico"
+        "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
+        "sampleUnit": "texto/postagem; não foi confirmada a unidade específica da avaliação de 2025",
+        "sampleSize": "Não verificado no artigo integral SBBD 2025",
+        "labelingDetail": "Quatro categorias pretendidas: ausente, leve, moderada, grave; método exato de anotação e distribuição por classe não confirmados.",
+        "sourceChecks": [
+          "https://doi.org/10.5753/sbbd.2025.247283",
+          "https://sol.sbc.org.br/index.php/sbbd/article/download/30692/30495/"
+        ],
+        "splitDescription": "Não confirmado (não atribuir as 10 dobras documentadas em dissertação anterior ao SBBD 2025).",
+        "metricDefinition": "F1 competitivo relatado no resumo; valores, averaging e configuração ausentes no material consultado.",
+        "labelSource": "Classes de intensidade textual baseadas em categorias inspiradas por BDI; anotadores e origem dos rótulos de 2025 não verificados."
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "Transformers"
+        ],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -846,6 +1122,19 @@
           "https://pmc.ncbi.nlm.nih.gov/articles/PMC11607554/"
         ],
         "confidence": "alta para corpora e plataformas; tamanhos por partição permanecem pendentes"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão e ansiedade",
+        "methodFamilies": [
+          "LLMs",
+          "Multimodal/fusão"
+        ],
+        "datasetFamily": null,
+        "caveat": "Trabalho avalia depressão e ansiedade, com recursos textuais e de mídia social.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -855,11 +1144,11 @@
       "year": 2025,
       "condition": "Classificação de sinais depressivos",
       "source": "Postagens de redes sociais; múltiplos benchmarks",
-      "dataset": "Cinco bases da Tabela 1: Twitter Depression 3.200 (843/2.357), Multilingual Twitter EN 1.000 (500/500), Identifying Depression: fóruns 1.323 (390/933), Reddit 1.841 (1.293/548), combinado Reddit/fóruns 2.821 (1.340/1.481). A soma não é evidência de unicidade.",
+      "dataset": "Conjuntos 1–5: CLPsych Practice Twitter 3.200; Cha et al. (inglês Twitter) 1.000; Pirina & Çöltekin fóruns 1.323, Reddit 1.841, combinado 2.821. 80/20 treino/teste, com possível vazamento transdutivo reconhecido pelos autores.",
       "labeling": "Rótulos fornecidos por cada benchmark, sem equivalência automática a diagnóstico clínico.",
-      "methods": "Tarefa: Classificação de textos com sinais de depressão. Modelos e representações: TextGCN enriquecido com representações emocionais derivadas de modelos de linguagem especializados.",
+      "methods": "Classificação binária pós-texto com TextGCN (duas camadas GCN, dropout 0,5, dimensão oculta 200), enriquecido por embeddings de MentalBERT, MentalRoBERTa e RoBERTaDepressionDetection; validação 80/20 e K-fold adicional.",
       "results": "Ganhos relatados frente a configurações de referência; não consolidar resultados de datasets distintos em um F1 único.",
-      "limitations": "Dependência de corpus, estratégias de anotação e linguagem.",
+      "limitations": "Autores reconhecem risco de leakage transdutivo ao incluir nós do teste no grafo; cinco corpora com rotulagens e desequilíbrios distintos. Não confundir CLPsych practice (heurísticas hashtag, não validado) com dados clínicos do desafio principal.",
       "language": "Diversos/NI",
       "type": "Pesquisa",
       "group": "Clássicos",
@@ -871,23 +1160,43 @@
       ],
       "pending": [],
       "datasetAudit": {
-        "name": "Cinco benchmarks reutilizados: Twitter Depression (3200); Multilingual Twitter EN (1000); Identifying Depression — fóruns (1323), Reddit (1841), conjunto misto (2821)",
+        "name": "Conjuntos 1–5 de Mao & Han: CLPsych 2021 Practice Twitter; Cha et al. Twitter multilíngue (EN); Pirina & Çöltekin Reddit/fóruns",
         "platform": "Twitter/X, fóruns web e Reddit — fontes individualizadas na Tabela 1",
-        "accessStatus": "nao_confirmado",
-        "accessEvidence": "A Tabela 1 do artigo fornece cinco nomes, plataformas, totais e classes, e os autores os descrevem como publicamente disponíveis; sua declaração de disponibilidade de dados, porém, não oferece cinco links diretos e remete perguntas ao autor correspondente. Nesta auditoria, não foi confirmado o acesso integral às versões usadas.",
-        "datasetUrl": null,
+        "accessStatus": "parcial",
+        "accessEvidence": "Foram localizadas três fontes originais: o repositório CLPsych 2021 divulga o dataset de prática (alerta de não validação); Cha et al. disponibilizam amostras de Twitter/Everytime no GitHub dxlabskku/Mental-Health; Pirina & Çöltekin disponibilizam código e scripts no GitHub Inusette/Identifying-depression. Não foi comprovado download das cinco versões exatas de Mao & Han.",
+        "datasetUrl": "https://github.com/seanmacavaney/clpsych2021-shared-task/tree/main/practice-dataset",
         "evidenceUrl": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1612769/full",
-        "reuseAndCaveat": "As cinco bases somam 10.185 posts em contagens reportadas (3.200+1.000+1.323+1.841+2.821). A soma é de registros declarados e não prova exclusividade entre corpora derivados.",
+        "reuseAndCaveat": "A fonte CLPsych 2021 adverte que dataset de prática não foi validado. Os autores do TextGCN reconhecem possível vazamento ao incluir nós de teste no grafo. A soma 10.185 não identifica amostras independentes.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não confirmado quanto ao acesso ao corpus específico",
         "sampleUnit": "postagem",
-        "sampleSize": "3.200; 1.000; 1.323; 1.841; 2.821 postagens conforme Tabela 1; sobreposição desconhecida",
-        "labelingDetail": "Classificação binária positiva/negativa por benchmark; detalhes originais de rotulagem não unificados entre conjuntos.",
+        "sampleSize": "Cinco amostras de 3.200, 1.000, 1.323, 1.841 e 2.821 posts (Tabela 1); 80/20 treino/teste, K-fold adicional de K não declarado no recorte examinado",
+        "labelingDetail": "Dataset 1: rótulos obtidos por heurísticas de hashtag; Dataset 2: léxico de depressão; Datasets 3–5: rótulos herdados de Pirina & Çöltekin, não diagnóstico clínico.",
         "datasetFamily": "FIVE-REUSED-BENCHMARKS",
         "sourceChecks": [
+          "https://github.com/seanmacavaney/clpsych2021-shared-task/tree/main/practice-dataset",
+          "https://github.com/dxlabskku/Mental-Health",
+          "https://github.com/Inusette/Identifying-depression",
+          "https://aclanthology.org/W18-5903/",
           "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1612769/full"
         ],
-        "confidence": "alta para os cinco totais; acesso reprodutível às versões não confirmado"
+        "confidence": "alta para os cinco totais; acesso reprodutível às versões não confirmado",
+        "splitDescription": "80/20 treino/teste; também K-fold CV mencionado sem K explícito na seção examinada; 200 épocas, early stopping 10, Adam, 2 camadas GCN, dimensão oculta 200 e dropout 0,5.",
+        "metricDefinition": "Acurácia, precisão, recall e F1 por corpus; não agregar F1 das cinco bases; autores admitem potencial vazamento transdutivo por nós de teste no grafo.",
+        "labelSource": "Heurísticas de hashtag, léxico e classes herdadas de fontes diferentes, conforme Dataset 1–5."
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "Grafos/GNNs",
+          "Transformers"
+        ],
+        "datasetFamily": "FIVE-REUSED-BENCHMARKS",
+        "caveat": "Arquitetura principal é rede neural em grafo TextGCN com embeddings de modelos pré-treinados; não é algoritmo clássico.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -934,6 +1243,18 @@
           "https://arxiv.org/abs/2409.14794"
         ],
         "confidence": "alta para disponibilização anunciada do MDDL; protocolo exato de Shah requer confirmação"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "LLMs"
+        ],
+        "datasetFamily": "MDDL-SHEN2017",
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -980,6 +1301,19 @@
           "https://www.mdpi.com/2673-2688/6/7/157"
         ],
         "confidence": "alta — declaração de disponibilidade explícita na revista"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "ML clássico",
+          "Transformers"
+        ],
+        "datasetFamily": "HUSSAIN-REDDIT2025",
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -1014,6 +1348,16 @@
         "reuseAndCaveat": "A avaliação deve comparar cobertura da revisão, não métricas de treino de um corpus inexistente.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não se aplica a revisão de literatura"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "sintese",
+        "primaryTask": "Depressão",
+        "methodFamilies": [],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -1048,6 +1392,18 @@
         "reuseAndCaveat": "32.570 usuários, 2.191.910 posts; declaração de acesso prevalece sobre rótulo genérico 'publicamente disponível'.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "Transformers"
+        ],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -1082,6 +1438,16 @@
         "reuseAndCaveat": "Metanálise exige método de síntese próprio; não registrar como dataset primário.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não se aplica a revisão de literatura"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "sintese",
+        "primaryTask": "Depressão",
+        "methodFamilies": [],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -1126,6 +1492,19 @@
           "https://clpsych.org/wp-content/uploads/2023/12/Dataset-application-for-CLPsych-2024.pdf"
         ],
         "confidence": "alta — página oficial com requisitos explícitos"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Risco suicida",
+        "methodFamilies": [
+          "Transformers",
+          "LLMs"
+        ],
+        "datasetFamily": "UMD-SUICIDALITY",
+        "caveat": "Risco de suicidabilidade avaliado por extratos e resumos de evidências; não agregar automaticamente aos estudos de depressão.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -1160,6 +1539,18 @@
         "reuseAndCaveat": "Sequências por usuário: unidade de análise e marco temporal devem ser preservados.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "LLMs"
+        ],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -1197,6 +1588,18 @@
         "reuseAndCaveat": "275 sessões no protocolo descrito; dados não são corpus de Reddit e não são download aberto.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "Multimodal/fusão"
+        ],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -1235,6 +1638,19 @@
         "reuseAndCaveat": "Evitar confundir métricas de baseline com resultado agregado da tese.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Classificação baseada na fonte vinculada; conferir condições atuais do provedor"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão e ansiedade",
+        "methodFamilies": [
+          "ML clássico",
+          "Transformers"
+        ],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -1285,6 +1701,19 @@
           "https://brasileiraspln.com/livro-pln/3a-edicao/parte-dominios/cap-saude-mental/cap-saude-mental.html"
         ],
         "confidence": "alta para família e privacidade; tamanho do experimento Figueiredo pendente"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "empirico",
+        "primaryTask": "Depressão",
+        "methodFamilies": [
+          "ML clássico",
+          "Transformers"
+        ],
+        "datasetFamily": "AMIVE",
+        "caveat": "PEGASUS e BERTimbau operam no pipeline de síntese e seleção; os baselines de classificação são LR/SVM/NB/RF.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -1320,6 +1749,16 @@
         "reuseAndCaveat": "Usar como evidência secundária e fonte para localizar bases subjacentes.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não se aplica a revisão de literatura"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "sintese",
+        "primaryTask": "Múltiplas condições",
+        "methodFamilies": [],
+        "datasetFamily": null,
+        "caveat": "Tarefa-alvo e métodos categorizados a partir do artigo e da síntese técnica; a ligação não representa força de evidência.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     },
     {
@@ -1354,6 +1793,16 @@
         "reuseAndCaveat": "95 artigos ≠ 95 instâncias ou 95 corpora independentes.",
         "reviewedOn": "2026-11-10",
         "accessAssessment": "Não se aplica a revisão de literatura"
+      },
+      "analysisTaxonomy": {
+        "publicationKind": "sintese",
+        "primaryTask": "Múltiplas condições",
+        "methodFamilies": [],
+        "datasetFamily": null,
+        "caveat": "Scoping review de aplicações de LLMs; literatura secundária, não experimento direto com uma coleção de postagens.",
+        "auditedOn": "2026-11-10",
+        "methodScope": "Famílias efetivamente utilizadas na publicação, inclusive baselines explicitamente comparados; não indica qual venceu.",
+        "linkBasis": "Associação por tarefa principal verificada na síntese; pode requerer nova conferência para artigos sem tabela integral."
       }
     }
   ]
