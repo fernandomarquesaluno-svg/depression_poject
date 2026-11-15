@@ -140,6 +140,8 @@ function renderSummary(){
  $("#conditionFilter").innerHTML='<option value="Todas">Todas as condições</option>'+[...new Set(STATE.all.flatMap(s=>s.conditions))].sort().map(g=>'<option value="'+escapeHTML(g)+'">'+escapeHTML(g)+'</option>').join("");
 }
 function setup(){
+ window.openAtlasStudyDetails=showDetails;
+ window.addAtlasComparison=toggleCompare;
  window.setAtlasStudySubset=ids=>{
   STATE.networkIds=[...new Set(ids.map(Number))].filter(Number.isFinite);
   STATE.filters={query:"",language:"Todos",condition:"Todas",group:"Todos",year:"Todos",access:"Todos"};

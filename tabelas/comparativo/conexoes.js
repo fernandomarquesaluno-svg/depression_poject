@@ -5,7 +5,7 @@ const C=["Depressão","Depressão e ansiedade","Estresse","Risco suicida","Múlt
 const COLOR={"Análise lexical":"#ffc785","ML clássico":"#8cd2f0","Transformers":"#70dff0","LLMs":"#b8a8ff","Grafos/GNNs":"#f5add3","Multimodal/fusão":"#8cf0c2"};
 const get=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
-let studies=[],filtered=[],edges=[],activeEdge=null,tourIndex=0,tourOpener=null;
+let studies=[],filtered=[],edges=[],activeSelection=null,activeIds=[],tourIndex=0,tourOpener=null;
 const short=s=>s.length>67?s.slice(0,66)+"…":s;
 const eligible=s=>s.analysisTaxonomy?.publicationKind==="empirico";
 function setPageFilters(ids){
@@ -15,7 +15,7 @@ function setPageFilters(ids){
 function renderNetwork(){
  const ptOnly=get("showPtOnly").checked;
  filtered=studies.filter(s=>eligible(s)&&(!ptOnly||s.language==="PT-BR"));
- edges=[];activeEdge=null;
+ edges=[];activeSelection=null;activeIds=[];
  const gc=G.map(g=>filtered.filter(s=>s.analysisTaxonomy.methodFamilies.includes(g)).length);
  const cc=C.map(c=>filtered.filter(s=>s.analysisTaxonomy.primaryTask===c).length);
  const gl=i=>68+i*84,cl=i=>104+i*93;
@@ -37,8 +37,7 @@ function renderNetwork(){
  });
  svg.push('<text x="154" y="560" text-anchor="middle" class="c-cap">MÉTODOS UTILIZADOS</text><text x="955" y="560" text-anchor="middle" class="c-cap">TAREFA-ALVO PRINCIPAL</text></svg>');
  get("conexaoViz").innerHTML=svg.join("");
- const strongest=edges.reduce((a,b)=>!a||b.count>a.count?b:a,null);
- if(strongest)showEdge(strongest,true);else showNoEdge();
+ showNoEdge();
  get("cptCount").textContent=filtered.filter(s=>s.language==="PT-BR").length;
  get("cStudiesCount").textContent=filtered.length;
  get("cRelationsCount").textContent=edges.length;
@@ -46,30 +45,49 @@ function renderNetwork(){
  const cap=get("connectAssociations");if(cap)cap.textContent=nAssoc;
 }
 function showNoEdge(){
- get("connectionDescription").textContent="Nenhuma associação técnica neste recorte.";
- get("edgeTitle").textContent="Sem associações";get("edgeCount").textContent="0";get("edgeSources").innerHTML="";
- get("edgeJump").hidden=true;
+ get("connectionDescription").textContent=edges.length?"Clique em uma condição, método ou ligação para destacar as relações e listar os estudos correspondentes.":"Nenhuma associação técnica neste recorte.";
+ get("edgeTitle").textContent="Selecione uma categoria";get("edgeCount").textContent="—";get("edgeSources").innerHTML="";
+ get("edgeJump").hidden=true;get("clearConnectionSelection").hidden=true;
 }
-function showEdge(e,quiet=false){
- activeEdge=e;
+function markNetwork(selection){
  get("conexaoViz").querySelectorAll(".c-link").forEach(n=>{
-  const is=edges[Number(n.dataset.e)]===e;
-  n.classList.toggle("active",is);n.classList.toggle("dim",!quiet&&!is);
+  const e=edges[Number(n.dataset.e)];
+  const is=selection.kind==="edge"?e===selection.edge:selection.kind==="condition"?e.condition===selection.value:e.group===selection.value;
+  n.classList.toggle("active",is);n.classList.toggle("dim",!is);n.setAttribute("aria-pressed",String(is));
  });
- const full=filtered.filter(s=>e.ids.includes(s.id));
- get("edgeTitle").textContent=e.group+" ↔ "+e.condition;
- get("edgeCount").textContent=e.count+(e.count===1?" estudo":" estudos");
- get("connectionDescription").textContent="Trabalhos que utilizaram esta família técnica para a tarefa principal indicada. Uma publicação pode comparar diversos métodos. A ligação não mede qualidade, causalidade, desempenho nem independência amostral.";
- get("edgeSources").innerHTML=full.slice(0,5).map(s=>'<li><span style="color:#9bc5d0">'+s.year+'</span> · '+esc(short(s.title))+'</li>').join("")+(full.length>5?'<li>+ '+(full.length-5)+' outros</li>':'');
- get("edgeJump").hidden=false;
+ get("conexaoViz").querySelectorAll(".c-hub").forEach(h=>{
+  const related=edges.some(e=>(selection.kind==="edge"?e===selection.edge:selection.kind==="condition"?e.condition===selection.value:e.group===selection.value)&&((h.dataset.g&&e.group===h.dataset.g)||(h.dataset.c&&e.condition===h.dataset.c)));
+  const selected=(selection.kind==="condition"&&h.dataset.c===selection.value)||(selection.kind==="group"&&h.dataset.g===selection.value);
+  h.classList.toggle("selected",selected);h.classList.toggle("related",related&&!selected);h.classList.toggle("dim",!related);
+  h.setAttribute("aria-pressed",String(selected));
+ });
+}
+function selectNetwork(selection){
+ activeSelection=selection;
+ const relatedEdges=edges.filter(e=>selection.kind==="edge"?e===selection.edge:selection.kind==="condition"?e.condition===selection.value:e.group===selection.value);
+ activeIds=[...new Set(relatedEdges.flatMap(e=>e.ids))];
+ markNetwork(selection);
+ const title=selection.kind==="edge"?selection.edge.group+" ↔ "+selection.edge.condition:selection.value;
+ const full=filtered.filter(s=>activeIds.includes(s.id));
+ get("edgeTitle").textContent=title;
+ get("edgeCount").textContent=full.length+(full.length===1?" estudo":" estudos");
+ get("connectionDescription").textContent=selection.kind==="edge"?"Estudos que usam esta família técnica na tarefa principal indicada.":"Todas as ligações dessa categoria estão destacadas. As publicações abaixo representam as associações do fluxo; um estudo pode usar mais de uma abordagem.";
+ get("edgeSources").innerHTML=full.map(s=>'<li><button type="button" class="c-study-link" data-study="'+s.id+'"><span>'+s.year+' · </span>'+esc(short(s.title))+'</button></li>').join("");
+ get("edgeJump").hidden=!full.length;get("clearConnectionSelection").hidden=false;
+}
+function clearNetworkSelection(){
+ activeSelection=null;activeIds=[];
+ get("conexaoViz").querySelectorAll(".c-link,.c-hub").forEach(n=>{n.classList.remove("active","dim","selected","related");n.setAttribute("aria-pressed","false")});
+ showNoEdge();
 }
 function onNetworkActivate(target){
  const p=target.closest(".c-link");
- if(p){const e=edges[Number(p.dataset.e)];if(e)showEdge(e);return;}
+ if(p){const e=edges[Number(p.dataset.e)];if(e)selectNetwork({kind:"edge",edge:e});return;}
  const hub=target.closest(".c-hub");if(!hub)return;
  const g=hub.dataset.g,c=hub.dataset.c;
- const set=filtered.filter(s=>(!g||s.analysisTaxonomy.methodFamilies.includes(g))&&(!c||s.analysisTaxonomy.primaryTask===c));
- setPageFilters(set.map(s=>s.id));
+ const selection=g?{kind:"group",value:g}:{kind:"condition",value:c};
+ if(activeSelection?.kind===selection.kind&&activeSelection.value===selection.value)clearNetworkSelection();
+ else selectNetwork(selection);
 }
 function countGroup(g){return studies.filter(s=>eligible(s)&&s.analysisTaxonomy.methodFamilies.includes(g)).length;}
 function countCondition(c){return studies.filter(s=>eligible(s)&&s.analysisTaxonomy.primaryTask===c).length;}
@@ -140,8 +158,9 @@ async function init(){
   get("showPtOnly").addEventListener("change",renderNetwork);
   get("conexaoViz").addEventListener("click",ev=>onNetworkActivate(ev.target));
   get("conexaoViz").addEventListener("keydown",ev=>{if((ev.key==="Enter"||ev.key===" ")&&(ev.target.closest(".c-link,.c-hub"))){ev.preventDefault();onNetworkActivate(ev.target)}});
-  get("conexaoViz").addEventListener("mouseover",ev=>{const path=ev.target.closest(".c-link");if(path)showEdge(edges[Number(path.dataset.e)],false)});
-  get("edgeJump").addEventListener("click",()=>{if(activeEdge)setPageFilters(activeEdge.ids)});
+  get("edgeJump").addEventListener("click",()=>{if(activeIds.length)setPageFilters(activeIds)});
+  get("clearConnectionSelection").addEventListener("click",clearNetworkSelection);
+  get("edgeSources").addEventListener("click",ev=>{const b=ev.target.closest("[data-study]");if(b&&typeof window.openAtlasStudyDetails==="function")window.openAtlasStudyDetails(Number(b.dataset.study));});
  }catch(e){get("conexaoViz").innerHTML='<p class="loading">Não foi possível carregar as relações. Consulte as fichas dos estudos.</p>';get("connectionDescription").textContent="Mapa indisponível";get("openTour").hidden=true;console.error("Mapa de métodos:",e)}
 }
 init();
