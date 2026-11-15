@@ -1,0 +1,58 @@
+/* Camada visual do Atlas — gráficos derivados da base bibliográfica. */
+#atlasScrollProgress{position:fixed;z-index:100;inset:0 auto auto 0;width:100%;height:3px;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,#5be9d7,#91a8ff,#f3a8e3);box-shadow:0 0 18px #66f5df99;pointer-events:none}
+body{background-image:radial-gradient(circle at 86% 9%,#2646702a,transparent 31%),radial-gradient(circle at 0 54%,#1e6e6620,transparent 29%)}
+.hero{isolation:isolate}
+.hero:after{content:"";position:absolute;z-index:0;right:-12%;top:-16%;width:min(850px,85vw);aspect-ratio:1;background:radial-gradient(circle,#45daca15 0,#8c8bff10 37%,transparent 72%);filter:blur(20px);pointer-events:none;animation:atlasAura 12s ease-in-out infinite alternate}
+@keyframes atlasAura{from{transform:translate3d(-2%,0,0) scale(.93)}to{transform:translate3d(3%,4%,0) scale(1.12)}}
+.hero-sparkles{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.hero-sparkles span{position:absolute;width:var(--s);height:var(--s);top:var(--y);left:var(--x);border-radius:50%;background:#89ffe1;opacity:.6;box-shadow:0 0 10px 2px #58eddd80;animation:atlasFloat var(--d) ease-in-out infinite alternate}
+.hero-sparkles span:nth-child(3n){background:#b8a8ff;box-shadow:0 0 13px #b8a8ffa9}
+@keyframes atlasFloat{0%{opacity:.15;transform:translate3d(-7px,8px,0) scale(.7)}100%{opacity:.85;transform:translate3d(13px,-13px,0) scale(1.2)}}
+.hero h1 em{background-size:170% 170%;animation:atlasShimmer 9s ease-in-out infinite alternate}
+@keyframes atlasShimmer{from{background-position:0 50%}to{background-position:100% 50%}}
+.hero .decor{opacity:.84;filter:drop-shadow(0 0 25px #4acfc629)}
+.hero .action:first-child{background:linear-gradient(110deg,#1b5e5d,#1d586a);box-shadow:0 0 25px #56e9cd1a}
+.hero .action:first-child:hover{box-shadow:0 0 35px #56e9cd42}
+.topbar .bar-nav a:not(.bar-cta){position:relative}
+.topbar .bar-nav a:not(.bar-cta):after{content:"";position:absolute;left:0;right:100%;height:2px;bottom:-8px;background:var(--cyan);transition:right .25s}
+.topbar .bar-nav a:not(.bar-cta):hover:after,.topbar .bar-nav a[aria-current="location"]:after{right:0}
+.panel{transition:border-color .28s,box-shadow .28s}
+.insight:hover,.viz-panel:hover,.study:hover,.data-panel:hover{border-color:#518f97;box-shadow:0 18px 55px #030e2380}
+.reveal{filter:blur(3px);transform:translateY(26px) scale(.992);transition:opacity .75s cubic-bezier(.2,.8,.2,1),transform .75s cubic-bezier(.2,.8,.2,1),filter .75s}
+.reveal.visible{filter:blur(0);transform:none}
+.method-insight{margin-top:27px;padding:clamp(21px,3vw,35px);background:radial-gradient(ellipse at 85% 0,#21526b66,transparent 58%),linear-gradient(125deg,#112638,#142133 70%);border-color:#417685}
+.method-insight-head{display:flex;gap:28px;align-items:flex-start;justify-content:space-between;margin-bottom:22px}
+.method-insight-head h3{font-size:clamp(1.28rem,2.5vw,1.95rem);letter-spacing:-.035em;line-height:1.22;margin:9px 0}
+.method-insight-head p{font-size:.86rem;color:#bad3df;margin:0;line-height:1.6;max-width:720px}
+.method-insight-metric{flex-shrink:0;text-align:right;min-width:144px;border-left:1px solid #386773;padding-left:18px}
+.method-insight-metric strong{display:block;font-size:2.35rem;line-height:1;color:#82f1de;font-weight:900;letter-spacing:-.06em}
+.method-insight-metric span{font-size:.72rem;color:#b1d0d8}
+.method-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:23px}
+.method-filters button{font-size:.78rem;font-weight:800;color:#c6e3ec;border:1px solid #3d697c;background:#10283a;border-radius:99px;padding:8px 13px;cursor:pointer;transition:transform .18s,background .18s,border-color .18s}
+.method-filters button:hover,.method-filters button:focus-visible{border-color:#8deedf;transform:translateY(-2px)}
+.method-filters button[aria-pressed="true"]{background:#8bf4dd;border-color:#8bf4dd;color:#07343b}
+.method-bars{display:grid;gap:10px}
+.method-bar{display:grid;grid-template-columns:185px minmax(0,1fr) 44px;align-items:center;gap:16px;border:1px solid #2d4e65;background:#0e2437ad;border-radius:11px;color:#e4f6f9;padding:10px 13px;text-align:left;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.method-bar:hover,.method-bar:focus-visible{border-color:var(--methodColor);background:#153447;transform:translateX(4px)}
+.method-bar-label{font-size:.83rem;font-weight:780}
+.method-bar-track{height:16px;border-radius:999px;overflow:hidden;background:#1b384d}
+.method-bar-fill{width:0;height:100%;border-radius:999px;display:block;background:linear-gradient(90deg,color-mix(in srgb,var(--methodColor) 50%,#387b91),var(--methodColor));box-shadow:0 0 18px color-mix(in srgb,var(--methodColor) 25%,transparent);transition:width 1s cubic-bezier(.2,.9,.3,1)}
+.method-insight.ready .method-bar-fill{width:var(--pct)}
+.method-bar-count{text-align:right;color:var(--methodColor);font-weight:900;font-size:1rem;font-variant-numeric:tabular-nums}
+.method-bar:disabled{cursor:default;opacity:.42}.method-bar:disabled:hover{transform:none;border-color:#2d4e65;background:#0e2437ad}
+.method-caveat{margin:19px 0 0;border-top:1px solid #34576c;padding-top:15px;color:#a9c4d2;font-size:.75rem;line-height:1.6}
+.access-donut-panel{display:flex;gap:14px;align-items:center;margin:16px 0 20px;padding:15px;background:#0d2334;border:1px solid #34596d;border-radius:14px}
+.access-donut{position:relative;width:145px;height:145px;aspect-ratio:1;flex-shrink:0;border-radius:50%;background:conic-gradient(#78f0d3 0% 100%);box-shadow:0 0 24px #4be5d020;animation:atlasDonutReveal 1.1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes atlasDonutReveal{from{transform:scale(.78) rotate(-70deg);opacity:.1}to{transform:scale(1) rotate(0);opacity:1}}
+.access-donut-core{position:absolute;inset:25px;border-radius:50%;background:#0e2537;display:grid;place-content:center;text-align:center;box-shadow:inset 0 0 0 1px #2a5064}
+.access-donut-core strong{font-size:1.8rem;color:#e9fffd;line-height:1}
+.access-donut-core span{font-size:.64rem;color:#abc4d1}
+.access-donut-list{flex:1;display:grid;gap:5px;min-width:0}
+.access-donut-list button{display:flex;gap:7px;align-items:center;width:100%;border:0;background:none;color:#c8e1e9;font-size:.71rem;text-align:left;padding:3px;border-radius:5px;cursor:pointer}
+.access-donut-list button:hover,.access-donut-list button:focus-visible{background:#24445a;color:#fff}
+.access-donut-list i{width:9px;height:9px;border-radius:3px;flex-shrink:0;background:var(--accessColor)}
+.access-donut-list b{margin-left:auto;color:#f4fdff;font-variant-numeric:tabular-nums}
+@media(max-width:1050px){.access-donut-panel{flex-wrap:wrap}.access-donut-list{min-width:150px}}
+@media(max-width:690px){.hero-sparkles span:nth-child(n+11){display:none}.method-insight-head{flex-direction:column;gap:13px}.method-insight-metric{text-align:left;border:0;border-top:1px solid #386773;padding:11px 0 0;display:flex;align-items:center;gap:9px}.method-insight-metric strong{font-size:1.9rem}.method-bar{grid-template-columns:115px minmax(0,1fr) 24px;gap:8px;padding:11px 9px}.method-bar-label{font-size:.72rem}.method-bar-track{height:12px}.method-bar-count{font-size:.86rem}.access-donut-panel{flex-direction:row}.access-donut{width:125px;height:125px}.access-donut-core{inset:22px}}
+@media(max-width:390px){.access-donut-panel{flex-direction:column;align-items:stretch}.access-donut{align-self:center}.method-bar{grid-template-columns:100px minmax(0,1fr) 20px}}
+@media(prefers-reduced-motion:reduce){#atlasScrollProgress,.hero:after,.hero-sparkles span,.hero h1 em,.access-donut{animation:none!important}.reveal{filter:none!important;transform:none!important}.method-bar-fill{transition:none!important}.method-filters button,.method-bar{transition:none!important}}

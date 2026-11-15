@@ -6,7 +6,7 @@
  <meta name="theme-color" content="#080f1d">
  <meta name="description" content="Atlas científico interativo: 33 estudos sobre IA, PLN e indicadores textuais de depressão, ansiedade e estresse (2020–2026). Explore métodos, idiomas, datasets e evidências.">
  <meta property="og:title" content="Atlas de Evidências | IA e Saúde Mental">
- <meta property="og:description" content="33 referências, mapa visual, linha do tempo, filtros e comparação técnica interativa.">
+ <meta property="og:description" content="33 referências, fluxograma interativo, gráficos de métodos e datasets, filtros e comparação técnica.">
  <link rel="canonical" href="https://fernandomarquesaluno-svg.github.io/depression_poject/tabelas/comparativo/">
  <title>Atlas de Evidências | IA, PLN &amp; Saúde Mental — 2020–2026</title>
  
@@ -90,8 +90,10 @@
 
 </style>
 <link rel="stylesheet" href="./prioridades.css">
+<link rel="stylesheet" href="./visualizacoes.css">
 </head>
 <body>
+<div id="atlasScrollProgress" aria-hidden="true"></div>
 <div role="region" aria-label="Matriz científica para apresentação" style="position:relative;z-index:35;background:#0b3642;border-bottom:2px solid #7df4db;color:#edfffb;padding:13px 18px;text-align:center;font:800 15px/1.5 system-ui,sans-serif">
   A matriz técnica com 33 estudos, filtros de datasets, plataformas e acesso já está disponível.
   <a href="./matriz-cientifica-33.html" style="display:inline-block;color:#061d22;background:#89f5de;padding:9px 17px;border-radius:9px;margin-left:12px;text-decoration:none;font-weight:900">Abrir matriz científica interativa ↗</a>
@@ -110,6 +112,7 @@
 <main>
  <section class="hero" id="inicio" aria-labelledby="heroTitle">
   <div class="decor" aria-hidden="true"></div>
+  <div class="hero-sparkles" id="heroSparkles" aria-hidden="true"></div>
   <div class="wrap">
    <span class="overline">VISUALIZAÇÃO DE EVIDÊNCIAS · 2020—2026</span>
    <h1 id="heroTitle">A ciência<br>em <em>conexões.</em></h1>
@@ -159,6 +162,12 @@
     <div><strong id="cptCount">–</strong><span>estudos empíricos exclusivamente PT-BR no recorte</span></div>
    </div>
    <p class="section-copy" style="margin-top:14px;font-size:.78rem">Categorias geradas a partir das descrições bibliográficas. O gráfico não inclui revisões nem artigos que apenas apresentam corpora; eles continuam na biblioteca e no mapa de publicações. Uma pesquisa pode empregar métodos distintos, por isso o total de associações pode superar o número de estudos. A rede não é uma análise de citações, causalidade ou desempenho.</p>
+   <div class="panel method-insight reveal" id="methodInsights" aria-labelledby="methodInsightTitle">
+    <div class="method-insight-head"><div><span class="kicker">GRÁFICO INTERATIVO · ESTUDOS EMPÍRICOS</span><h3 id="methodInsightTitle">Quais métodos aparecem em cada condição?</h3><p>Explore a frequência das famílias técnicas e clique em uma barra para abrir os estudos correspondentes.</p></div><div class="method-insight-metric" id="methodInsightTotal" aria-live="polite"></div></div>
+    <div class="method-filters" id="methodConditionFilters" role="group" aria-label="Selecionar condição investigada"></div>
+    <div class="method-bars" id="methodBars" aria-label="Frequência das famílias de métodos"><p class="loading">Preparando gráfico de métodos…</p></div>
+    <p class="method-caveat">Contagem de publicações por família efetivamente utilizada, incluindo baselines. Uma publicação pode ocupar mais de uma barra e tratar múltiplas condições. Frequência bibliográfica não representa desempenho ou qualidade.</p>
+   </div>
   </div>
  </section>
  <section class="section" id="mapa" aria-labelledby="mapTitle">
@@ -206,6 +215,7 @@
     </div>
     <aside class="panel data-panel">
      <h3>Qualidade da documentação</h3>
+     <div id="accessDonutChart" class="access-donut-panel" aria-label="Gráfico de disponibilidade dos datasets"></div>
      <div class="access-summary"><strong id="auditedCount">33</strong><span>fichas com origem, corpus e justificativa de acesso</span></div>
      <div class="access-summary"><strong id="auditedWithLink">–</strong><span>links de portal de dados ou de solicitação vinculados</span></div>
      <div class="access-summary"><strong id="auditAccessUnconfirmed" style="color:#ffc785">–</strong><span>corpora sem política ou link de acesso comprovado; contato dos responsáveis localizado</span></div>
@@ -765,4 +775,5 @@ init();
 
 </script>
 <script src="./prioridades.js"></script>
+<script src="./visualizacoes.js"></script>
 </body></html>

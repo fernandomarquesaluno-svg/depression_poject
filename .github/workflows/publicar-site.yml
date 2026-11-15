@@ -46,6 +46,7 @@ jobs:
           cp levantamento-bibliografico/index.html public/levantamento-bibliografico/
           cp tabelas/comparativo/index.html public/tabelas/comparativo/
           cp tabelas/comparativo/prioridades.js tabelas/comparativo/prioridades.css public/tabelas/comparativo/
+          cp tabelas/comparativo/visualizacoes.js tabelas/comparativo/visualizacoes.css public/tabelas/comparativo/
           cp tabelas/visualizacao-15-estudos/index.html public/tabelas/visualizacao-15-estudos/
           touch public/.nojekyll
           echo "As 4 paginas e o CSS estao presentes no artefato."
