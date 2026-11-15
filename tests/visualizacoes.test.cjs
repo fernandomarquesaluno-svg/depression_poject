@@ -26,3 +26,16 @@ test('gráfico de acesso cobre as 33 referências sem inferir liberação de dat
  assert.equal(result.find(r=>r.key==='nao_confirmado').count,3);
  assert.ok(Math.abs(result.reduce((sum,r)=>sum+r.percentage,0)-100)<0.0001);
 });
+
+test('interface oferece três ações iniciais e mantém análises avançadas opcionais',()=>{
+ const html=readFileSync(join(__dirname,'../tabelas/comparativo/index.html'),'utf8');
+ const js=readFileSync(join(__dirname,'../tabelas/comparativo/atlas.js'),'utf8');
+ assert.match(html,/Três caminhos para explorar o Atlas/);
+ assert.equal((html.match(/class="preview-tile"/g)||[]).length,3);
+ for(const id of ['pairwiseDetails','methodInsights','mapa','accessBars'])assert.match(html,new RegExp('id="'+id+'"'));
+ assert.match(html,/<details class="atlas-more pairwise-details reveal" id="pairwiseDetails">/);
+ assert.match(html,/<details class="atlas-more atlas-map-more reveal">/);
+ assert.match(html,/Ver gráfico de métodos por condição/);
+ assert.match(js,/if\(STATE\.selected\.length\)\$\("#pairwiseDetails"\)\.open=true/);
+ assert.doesNotMatch(html,/role="region" aria-label="Matriz científica para apresentação"/);
+});

@@ -71,6 +71,7 @@ function toggleCompare(id){
  id=Number(id);if(STATE.selected.includes(id)){STATE.selected=STATE.selected.filter(x=>x!==id);}else{
  if(STATE.selected.length>=2)STATE.selected.shift();STATE.selected.push(id);
  }
+ if(STATE.selected.length)$("#pairwiseDetails").open=true;
  renderComparison();renderCards();
 }
 function renderComparison(){
@@ -174,7 +175,7 @@ function setup(){
   t.innerHTML='<b>'+escapeHTML(s.title)+'</b> · '+s.year+' · '+escapeHTML(s.language)+'<br><small>Clique no ponto para explorar os dados técnicos.</small>';t.classList.add("visible");
  });
  $("#map").addEventListener("mouseout",e=>{if(e.target.closest(".node"))$("#mapTooltip").classList.remove("visible")});
- $("#comparePresets").addEventListener("click",e=>{const b=e.target.closest("button[data-a][data-b]");if(!b)return;STATE.selected=[Number(b.dataset.a),Number(b.dataset.b)];renderComparison();renderCards();$("#comparar").scrollIntoView({behavior:"smooth",block:"start"});});
+ $("#comparePresets").addEventListener("click",e=>{const b=e.target.closest("button[data-a][data-b]");if(!b)return;STATE.selected=[Number(b.dataset.a),Number(b.dataset.b)];$("#pairwiseDetails").open=true;renderComparison();renderCards();$("#pairwiseDetails").scrollIntoView({behavior:"smooth",block:"start"});});
  $("#clearComparison").addEventListener("click",()=>{STATE.selected=[];renderComparison();renderCards()});
  $("#modal").addEventListener("click",e=>{if(e.target.id==="modal"||e.target.classList.contains("close"))closeModal();const b=e.target.closest('[data-action="compare"]');if(b){toggleCompare(b.dataset.id);closeModal()}});
  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#modal").classList.contains("open"))closeModal()});
