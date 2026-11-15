@@ -226,8 +226,17 @@
   <div class="wrap">
    <div class="section-head reveal"><div><span class="kicker">04 / LABORATÓRIO DE COMPARAÇÃO</span><h2 class="section-title" id="compareTitle">Defina prioridades.<br>Investigue as diferenças.</h2></div><p class="section-copy">Primeiro, escolha características e atribua pesos para ordenar as referências por aderência ao seu interesse. Depois, compare dois estudos em 18 dimensões metodológicas. A pontuação não representa desempenho dos modelos.</p></div>
    <div class="panel priority-panel reveal" id="priorityPanel" aria-labelledby="priorityTitle">
-    <div class="priority-header"><div><span class="kicker">RECOMENDADOR TRANSPARENTE</span><h3 id="priorityTitle">Quais estudos combinam com sua pesquisa?</h3><p>Marque as características desejadas, defina a importância de cada uma (1 a 5) e veja a ordenação calculada a partir das fichas auditadas.</p></div><button type="button" class="small-btn" id="priorityReset">Restaurar exemplo</button></div>
-    <div class="priority-controls" id="priorityControls" role="group" aria-label="Preferências e pesos para ordenar estudos"></div>
+    <div class="priority-header"><div><span class="kicker">ENCONTRE ESTUDOS EM SEGUNDOS</span><h3 id="priorityTitle">O que você procura?</h3><p>Escolha um perfil pronto para ver os trabalhos mais aderentes. Se precisar, personalize os critérios e os pesos.</p></div></div>
+    <div class="priority-presets" id="priorityPresets" role="group" aria-label="Perfis rápidos de pesquisa">
+     <button type="button" data-preset="llm">Depressão + LLMs</button>
+     <button type="button" data-preset="br">Pesquisas em português</button>
+     <button type="button" data-preset="open">Datasets acessíveis</button>
+    </div>
+    <p id="priorityProfileSummary" class="priority-profile-summary" aria-live="polite"></p>
+    <details class="priority-advanced" id="priorityAdvanced"><summary>Personalizar critérios e pesos <span>6 opções · pesos de 1 a 5</span></summary>
+     <div class="priority-controls" id="priorityControls" role="group" aria-label="Preferências e pesos para ordenar estudos"></div>
+     <button type="button" class="small-btn priority-reset" id="priorityReset">Restaurar perfil inicial</button>
+    </details>
     <div class="priority-meta"><p id="priorityExplanation" aria-live="polite"></p><button class="small-btn" id="priorityShowAll" type="button" hidden>Mostrar todas as referências</button></div>
     <div class="priority-results" id="priorityResults" aria-live="polite"><p>Preparando ranking de aderência…</p></div>
     <p class="priority-disclaimer"><strong>Critério científico:</strong> a pontuação compara somente correspondências bibliográficas com as preferências selecionadas. Não mede F1, acurácia, qualidade da evidência, eficácia clínica ou superioridade entre modelos. Dados ausentes ou não confirmados não são tratados como comprovados.</p>

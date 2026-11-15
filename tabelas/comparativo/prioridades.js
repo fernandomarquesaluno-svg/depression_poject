@@ -10,6 +10,17 @@
  ];
  const escapeHTML=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
  const makeDefault=()=>Object.fromEntries(DEFINITIONS.map(d=>[d.id,{enabled:d.enabled,weight:d.weight,value:d.options?.[0]??null}]));
+ const PRESETS={
+  llm:{condition:{value:"Depressão",weight:5},method:{value:"LLMs",weight:4},empirical:{weight:3}},
+  br:{condition:{value:"Depressão",weight:3},language:{weight:5},empirical:{weight:2}},
+  open:{access:{weight:5},datasetLink:{weight:4}}
+ };
+ function presetPreferences(name){
+  const result=makeDefault();
+  Object.values(result).forEach(p=>p.enabled=false);
+  Object.entries(PRESETS[name]||{}).forEach(([id,values])=>Object.assign(result[id],{enabled:true},values));
+  return result;
+ }
  function matches(study,id,value){
   switch(id){
    case "condition":return (study.conditions||[]).includes(value);
@@ -35,12 +46,17 @@
    return {study,criteria,points,totalWeight,score:Math.round(points/totalWeight*100)};
   }).sort((a,b)=>b.points-a.points||a.study.title.localeCompare(b.study.title,"pt-BR"));
  }
- if(typeof module!=="undefined"&&module.exports)module.exports={DEFINITIONS,makeDefault,matches,calculateRanking};
+ if(typeof module!=="undefined"&&module.exports)module.exports={DEFINITIONS,makeDefault,presetPreferences,matches,calculateRanking};
  if(!root.document)return;
  const document=root.document,controls=document.getElementById("priorityControls");
  if(!controls)return;
- let studies=[],preferences=makeDefault(),showAll=false;
+ let studies=[],preferences=presetPreferences("llm"),showAll=false,selectedPreset="llm";
  const $=id=>document.getElementById(id);
+ function renderPresetState(){
+  $("priorityPresets").querySelectorAll("[data-preset]").forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.preset===selectedPreset)));
+  const active=DEFINITIONS.filter(d=>preferences[d.id].enabled);
+  $("priorityProfileSummary").innerHTML='<strong>'+(selectedPreset?'Perfil sugerido':'Perfil personalizado')+':</strong> '+(active.length?active.map(d=>escapeHTML(d.options?preferences[d.id].value:d.label)).join(' <span aria-hidden="true">·</span> '):'selecione uma característica em “Personalizar critérios e pesos”');
+ }
  function renderControls(){
   controls.innerHTML=DEFINITIONS.map(d=>{
    const p=preferences[d.id];
@@ -59,8 +75,8 @@
    $("priorityResults").innerHTML='<div class="priority-empty">Nenhum critério ativo. Marque uma opção acima para construir seu ranking.</div>';
    $("priorityShowAll").hidden=true;return;
   }
-  const total=active.reduce((sum,d)=>sum+preferences[d.id].weight,0),visible=showAll?ranked:ranked.slice(0,10);
-  $("priorityExplanation").textContent=active.length+" critérios ativos · "+total+" pontos de peso possíveis · pontuação = soma dos pesos atendidos ÷ soma dos pesos selecionados × 100. Empates em ordem alfabética.";
+  const total=active.reduce((sum,d)=>sum+preferences[d.id].weight,0),visible=showAll?ranked:ranked.slice(0,5);
+  $("priorityExplanation").textContent="Ranking por aderência · "+active.length+" critérios ativos · "+total+" pontos de peso. Empates em ordem alfabética.";
   $("priorityResults").innerHTML=visible.map((r,i)=>{
    const match=r.criteria.filter(c=>c.pass),missing=r.criteria.filter(c=>!c.pass);
    return '<article class="priority-result"><div class="priority-result-top"><span class="priority-rank">'+String(i+1).padStart(2,"0")+'</span><div class="priority-result-name"><h4>'+escapeHTML(r.study.title)+'</h4><span>'+r.study.year+' · '+escapeHTML(r.study.language)+' · '+match.length+' de '+r.criteria.length+' critérios atendidos</span></div><strong class="priority-score">'+r.score+'<small>%</small></strong></div>'+
@@ -68,24 +84,26 @@
     '<div class="priority-evidence">'+match.map(c=>'<span class="priority-match">✓ '+escapeHTML(c.label)+' (+'+c.weight+')</span>').join('')+missing.map(c=>'<span class="priority-miss">— '+escapeHTML(c.label)+'</span>').join('')+'</div>'+
     '<div class="priority-actions"><button type="button" class="small-btn" data-priority-details="'+r.study.id+'">Ver ficha técnica</button><button type="button" class="small-btn" data-priority-compare="'+r.study.id+'">Comparar +</button></div></article>';
   }).join("");
-  $("priorityShowAll").hidden=ranked.length<=10;
-  $("priorityShowAll").textContent=showAll?"Mostrar apenas os 10 primeiros":"Mostrar todas as "+ranked.length+" referências";
+  $("priorityShowAll").hidden=ranked.length<=5;
+  $("priorityShowAll").textContent=showAll?"Mostrar apenas os 5 primeiros":"Mostrar todas as "+ranked.length+" referências";
  }
- function update(){renderControls();renderRanking();}
+ function update(){renderControls();renderPresetState();renderRanking();}
+ function applyPreset(name){preferences=presetPreferences(name);selectedPreset=name;showAll=false;$("priorityAdvanced").open=false;update();}
+ $("priorityPresets").addEventListener("click",event=>{const button=event.target.closest("[data-preset]");if(button)applyPreset(button.dataset.preset);});
  controls.addEventListener("change",event=>{
   const el=event.target;
   if(el.dataset.enable)preferences[el.dataset.enable].enabled=el.checked;
   if(el.dataset.option)preferences[el.dataset.option].value=el.value;
   if(el.dataset.weight)preferences[el.dataset.weight].weight=Number(el.value);
-  showAll=false;update();
+  selectedPreset=null;showAll=false;update();
  });
  controls.addEventListener("input",event=>{
   const id=event.target.dataset.weight;if(!id)return;
   preferences[id].weight=Number(event.target.value);
   const display=$("value-"+id);if(display)display.value=String(event.target.value);
-  renderRanking();
+  selectedPreset=null;renderPresetState();renderRanking();
  });
- $("priorityReset").addEventListener("click",()=>{preferences=makeDefault();showAll=false;update();});
+ $("priorityReset").addEventListener("click",()=>applyPreset("llm"));
  $("priorityShowAll").addEventListener("click",()=>{showAll=!showAll;renderRanking();});
  $("priorityResults").addEventListener("click",event=>{
   const detail=event.target.closest("[data-priority-details]");

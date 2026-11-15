@@ -2,7 +2,7 @@ const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const {readFileSync}=require('node:fs');
 const {join}=require('node:path');
-const {makeDefault,calculateRanking,matches}=require('../tabelas/comparativo/prioridades.js');
+const {makeDefault,presetPreferences,calculateRanking,matches}=require('../tabelas/comparativo/prioridades.js');
 const studies=JSON.parse(readFileSync(join(__dirname,'../tabelas/comparativo/estudos.json'),'utf8')).studies;
 
 test('usa as 33 fichas auditadas sem alterar seus dados',()=>{
@@ -42,6 +42,15 @@ test('não assume acesso público quando apenas há URL, nem considera revisões
 test('sem critérios selecionados não produz pontuação fictícia',()=>{
  const p=makeDefault();for(const key of Object.keys(p))p[key].enabled=false;
  assert.deepEqual(calculateRanking(studies,p),[]);
+});
+
+test('perfis rápidos alteram os critérios com um clique sem exigir ajuste manual de pesos',()=>{
+ const llm=presetPreferences('llm'),br=presetPreferences('br'),open=presetPreferences('open');
+ assert.deepEqual(Object.keys(llm).filter(k=>llm[k].enabled),['condition','method','empirical']);
+ assert.deepEqual(Object.keys(br).filter(k=>br[k].enabled),['condition','language','empirical']);
+ assert.deepEqual(Object.keys(open).filter(k=>open[k].enabled),['access','datasetLink']);
+ assert.equal(calculateRanking(studies,llm).length,33);
+ assert.equal(calculateRanking(studies,open).length,33);
 });
 
 test('preserva ordenação alfabética em empates e não consulta métricas de desempenho',()=>{
