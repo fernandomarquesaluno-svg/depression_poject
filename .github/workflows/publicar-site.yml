@@ -40,16 +40,15 @@ jobs:
           test -s styles.css
           test -s levantamento-bibliografico/index.html
           test -s tabelas/comparativo/index.html
+          test -s tabelas/comparativo/estudo-deproberta.html
           test -s tabelas/visualizacao-15-estudos/index.html
           mkdir -p public/levantamento-bibliografico public/tabelas/comparativo public/tabelas/visualizacao-15-estudos
           cp index.html styles.css public/
           cp levantamento-bibliografico/index.html public/levantamento-bibliografico/
-          cp tabelas/comparativo/index.html public/tabelas/comparativo/
-          cp tabelas/comparativo/prioridades.js tabelas/comparativo/prioridades.css public/tabelas/comparativo/
-          cp tabelas/comparativo/visualizacoes.js tabelas/comparativo/visualizacoes.css public/tabelas/comparativo/
+          cp -R tabelas/comparativo/. public/tabelas/comparativo/
           cp tabelas/visualizacao-15-estudos/index.html public/tabelas/visualizacao-15-estudos/
           touch public/.nojekyll
-          echo "As 4 paginas e o CSS estao presentes no artefato."
+          echo "Atlas, estudo interativo e recursos preparados para publicação."
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
